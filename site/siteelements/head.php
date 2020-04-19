@@ -3,20 +3,19 @@
 include_once "phpapi/getsettings.php";
 ?>
 <meta charset="utf-8">
-<base href="https://casegames.ch">
 <title><?php echo getSetting("site.name") ?></title>
 
 <?php
   if(isset($_COOKIE["css"])){
     if($_COOKIE["css"] == "l"){
-      echo '<link rel="stylesheet" href="css.css" type="text/css" />';
+      echo '<link rel="stylesheet" href="css.php" type="text/css" />';
     }elseif ($_COOKIE["css"] == "d") {
-      echo '<link rel="stylesheet" href="cssblack.css" type="text/css" />';
+      echo '<link rel="stylesheet" href="cssblack.php" type="text/css" />';
     }else{
-      echo '<link rel="stylesheet" href="css.css" type="text/css" />';
+      echo '<link rel="stylesheet" href="css.php" type="text/css" />';
     }
   }else{
-    echo '<link rel="stylesheet" href="css.css" type="text/css" />';
+    echo '<link rel="stylesheet" href="css.php" type="text/css" />';
   }
 ?>
 
