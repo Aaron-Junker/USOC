@@ -1,5 +1,5 @@
 # USOC
-useful simple open-source CMS
+useful simple open-source CMS.
 
 
 ## What's that?
