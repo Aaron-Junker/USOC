@@ -1,0 +1,24 @@
+[
+  {
+    "term": "lang.name",
+    "definition" :"English"
+  },
+  {
+    "term": "content",
+    "definition" :"",
+    "comment" : "This is only a mother object. Please don't change"
+  },
+  {
+    "term": "content.login",
+    "definition" :"",
+    "comment" : "This is only a mother object. Please don't change"
+  },
+  {
+    "term": "content.login.register",
+    "definition" :"register"
+  },
+  {
+    "term": "content.login.login",
+    "definition" :"login"
+  }
+]
