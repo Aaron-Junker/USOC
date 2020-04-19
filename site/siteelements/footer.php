@@ -1,6 +1,5 @@
 <footer>
-  <a href="impressum.php">Impressum</a><br />
-  <a href="datenschutzerklärung.php">Datenschutzerklärung</a><br /><p style="text-align:center;">©2019-2020 Case Games
+  <!-- Footerfile for include -->
   <?php
     if(isset($_COOKIE["css"])){
       if($_COOKIE["css"] == "l"){
