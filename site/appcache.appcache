@@ -1,0 +1,7 @@
+CACHE MANIFEST
+CACHE:
+/offline.html
+Caselogo.png
+FALLBACK:
+*.html /offline.html
+*.php /offline.html

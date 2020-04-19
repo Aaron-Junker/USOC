@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+
+      <loc>http://casegames.ch/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://casegames.ch/impressum.php</loc>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://casegames.ch/login.php</loc>
+
+      <changefreq>never</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://casegames.ch/page.php?URL=über_uns</loc>
+
+      <changefreq>never</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://casegames.ch/blogsite.php</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://casegames.ch/page.php?URL=minecraft simpler textures</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+   <url>
+
+      <loc>http://casegames.ch/page.php?URL=creturres</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+</urlset>
