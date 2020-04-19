@@ -15,7 +15,7 @@ include_once "phpapi/getsettings.php";
       echo '<link rel="stylesheet" href="css.php" type="text/css" />';
     }
   }else{
-    echo '<link rel="stylesheet" href="css.php" type="text/css" />';
+    echo '<link rel="stylesheet" href="css.php " type="text/css" />';
   }
 ?>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="<?php echo getSetting("site.lang") ?>" dir="ltr">
   <head>
       <?php
         include_once "siteelements/head.php"
@@ -11,7 +11,6 @@
     ?>
     <article>
       <h1>Blogartikel</h1>
-      <a href="https://admin.hostpoint.ch/mailman/listinfo/newsletter_casegames.ch" target="_blank">Newsletter abonnieren</a>
       <?php
       require_once ('login/konfiguration.php');
       $db_link = mysqli_connect (MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);

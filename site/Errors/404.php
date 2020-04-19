@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>404-Error</title>
+  </head>
+  <body>
+    <h1> Seite nicht gefunden </h1>
+    <a href="/index.php">Zur Hauptseite</a>
+  </body>
+</html>
