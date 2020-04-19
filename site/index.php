@@ -11,9 +11,6 @@
     ?>
     <article>
       <?php
-        if(isset($_GET["oldsite"])){
-          echo "<p>Hinweis:Wir sind von casegames.internet-box.ch zu casegames.ch umgezogen</p>";
-        }
         if(isset($_GET["action"])){
           if($_GET["action"]=="passchange"){
           echo "<h3>Passwort geändert</h3>";
