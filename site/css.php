@@ -17,7 +17,7 @@ header a h1 {
   display: inline;
 }
 #headerlink{
-	text-decoration:none;
+	text-decoration:none; 
 }
 header a img {
   display: inline;

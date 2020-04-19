@@ -1,5 +1,5 @@
 <?php
-  header('Content-Type: text/css');
+  header('Content-Type: text/css'); 
 ?>
 * {
   font-family: sans-serif;
