@@ -2,7 +2,7 @@
 <!-- Headerfile for include -->
 <a id="skipnavigation" href="<?php echo $_SERVER["PHP_SELF"];
 if(isset($_GET["URL"])){echo "?URL=".$_GET["URL"];}?>#maincontent">Skip navigation </a>
-  <a href="index.php" id="headerlink"><img src="Caselogo.png" height="100" alt="Logo" /><h1><?php echo getSetting("site.name") ?></h1></a>
+  <a href="index.php" id="headerlink"><img src="logo.png" height="100" alt="Logo" /><h1><?php echo getSetting("site.name") ?></h1></a>
 <br />
 <div style="border-top: 1px;border-top-style:solid;border-top-color:black;">
 <ul id="menu">
