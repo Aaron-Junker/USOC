@@ -2,6 +2,3 @@ AddHandler application/x-httpd-php74 .php
 
 ErrorDocument 404 /Errors/404.html
 ErrorDocument 403 /Errors/403.html
-
-#@__HCP_END__@#
-# Anything after the comment above is left alone

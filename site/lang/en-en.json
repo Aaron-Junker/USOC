@@ -3,5 +3,11 @@
     "content": " ",
     "content.login": " ",
     "content.login.register": "register",
-    "content.login.login": "login"
+    "content.login.login": "login",
+    "errors": " ",
+    "errors.404": "Page not found",
+    "errors.403": "No access",
+    "errors.mainpage": "Back to the %d",
+    "page.mainpage": "mainpage",
+    ""
 }

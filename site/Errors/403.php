@@ -5,7 +5,7 @@
     <title>403-Error</title>
   </head>
   <body>
-    <h1> Keine Zugriffsberechtigung </h1>
-    <a href="/index.php">Zur Hauptseite</a>
+    <h1><?php echo getLang("errors.403", lang) ?></h1>
+    <a href="/index.php"><?php echo sprintf(getLang("errors.mainpage", lang),getLang("page.mainpage", lang)) ?></a>
   </body>
 </html>

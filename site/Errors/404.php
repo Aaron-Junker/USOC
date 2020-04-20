@@ -5,7 +5,7 @@
     <title>404-Error</title>
   </head>
   <body>
-    <h1> Seite nicht gefunden </h1>
-    <a href="/index.php">Zur Hauptseite</a>
+    <h1><?php echo getLang("errors.404", lang) ?></h1>
+    <a href="/index.php"><?php echo sprintf(getLang("errors.mainpage", lang),getLang("page.mainpage", lang)) ?></a>
   </body>
 </html>

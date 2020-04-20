@@ -42,6 +42,6 @@
     }
     function getLang(string, lang){
       translate = json_decode(file_get_contents('lang/'.lang.".json"));
-      translate[0][string]
+      echo translate[string];
     }
  ?>
