@@ -23,5 +23,5 @@
     "login.account": "account",
     "login.2fa": " ",
     "login.2fa.google_authenticator": " ",
-    "login.2fa.google_authenticator.code": "Code from the Google Authenticator App:",
+    "login.2fa.google_authenticator.code": "Code from the Google Authenticator App:"
 }
