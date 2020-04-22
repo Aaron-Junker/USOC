@@ -14,7 +14,7 @@
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
     {
 
-      if((strtolower($_POST["B"])==strtolower($zeile["Username"])||strtolower($_POST["B"])==strtolower($zeile["Mail"]))&&(password_hash($_POST["P"],PASSWORD_DEFAULT,["salt"=>"\@]FBGsU,P?eFbHb)!'uaIt95JYhlH%TrRf+rZt|/~0T){%DjBasjhklozu"])==$zeile["Password"]||isset($_SESSION["code"])) ){
+      if((strtolower($_POST["B"])==strtolower($zeile["Username"])||strtolower($_POST["B"])==strtolower($zeile["Mail"]))&&(@password_hash($_POST["P"],PASSWORD_DEFAULT,["salt"=>"\@]FBGsU,P?eFbHb)!'uaIt95JYhlH%TrRf+rZt|/~0T){%DjBasjhklozu"])==$zeile["Password"]||isset($_SESSION["code"])) ){
 
         $login = True;
         $user_id = $zeile["Id"];
@@ -27,7 +27,7 @@
         }
         if($zeile["blocked"] == 1){
           $login = False;
-          echo "Ihr Konto wurde Permanent gesperrt.";
+          echo sprintf(getLang("login.locked"),getLang("login.account"));
           $blocked = True;
         }
       }
@@ -46,22 +46,23 @@
       $_SESSION["Admin"] = False;
       $_SESSION['temp_User_ID'] = md5($user_id);
       $_SESSION['temp_User_Name'] = $user_name;
-      echo <<<HEREDOC
+      $htmlcode = <<<HEREDOC
         <form action="2fa.php" method="post">
-        <label for="code">Code der Google Authenticator App:</label>
+        <label for="code">%d</label>
           <input name="code" />
           <input type="submit" name="login"/>
         </form>
       HEREDOC;
+      echo sprintf($htmlcode, getLang("login.2fa.google_authenticator.code"))
     }
     if($login === True){
 
-      echo "login geglückt";
+      echo getLang("login.succeed");
       $_SESSION['User_ID'] = md5($user_id);
       $_SESSION['User_Name'] = $user_name;
       header('Location: '.getDomain());
     }elseif($login === False && $blocked ===False) {
-      echo "login fehlgeschlagen";
+      echo getLang("login.fail");
       header('Location: '.getDomain().'/login.php?ERROR=0x000000');
     }
 ?>

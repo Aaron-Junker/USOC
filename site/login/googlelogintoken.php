@@ -30,22 +30,22 @@ $user_id = $token_data['payload']['sub'];
 
     }
   }else{
-    echo "Bereits eingeloggt<br>";
+    echo getLang("login.already_logged_in")."<br>";
   }
 }else{
-  echo "Formularfehler!<br>";
+  echo getLang("login.form_error")."<br>";
 }
 if(getSetting("login.login_open")=="0"){
-  echo "Login geschlossen<br>";
+  echo getLang("login.login_closed")."<br>";
   $login = False;
 }
 if($login == True){
-  echo "login geglückt";
+  echo getLang("login.succeed");
   $_SESSION['User_ID'] = md5($user_id);
   $_SESSION['User_Name'] = $user_name;
   header('Location: '.getDomain());
 }else {
-  echo "login fehlgeschlagen";
+  echo getLang("login.fail");
 }
 echo $_POST["token"];
 ?>
