@@ -3,5 +3,14 @@
     "content": " ",
     "content.login": " ",
     "content.login.register": "Registrieren",
-    "content.login.login": "Einloggen"
+    "content.login.login": "Einloggen",
+    "errors": " ",
+    "errors.404": "Seite nicht gefunden",
+    "errors.403": "Keine Zugriffsberechtigung",
+    "errors.mainpage": "Zurück zu: %d",
+    "page": " ",
+    "page.mainpage": "Startseite",
+    "style": " ",
+    "style.darkmode": "Dunklemodus",
+    "style.lightmode": "Heller Modus"
 }
