@@ -16,8 +16,8 @@ jobs:
       - name: pull request
         uses: actions/hello-world-javascript-action@v1
         with:
-          who-to-greet: 'User'
+          who-to-greet: $GITHUB_ACTOR
         
       - name: pull request greet
-        run: echo "Tahnk you for helping us. We will look at the pull request soo"
+        run: echo "Thank you for helping us. We will look at the pull request soon"
         
