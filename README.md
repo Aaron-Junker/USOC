@@ -11,4 +11,4 @@ USOC is translated on [PoEditor](https://poeditor.com/join/project/48DXSLQlVr)
 
 # License
 USOC is under the Case Games Open-Source license
-![License Logo](https://casegames.ch/license/os/v1.png)
+<img src="https://casegames.ch/license/os/v1.png" alt="License Logo" width="100" data-canonical-src="https://casegames.ch/license/os/v1.png">
