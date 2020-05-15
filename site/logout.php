@@ -6,8 +6,8 @@
     <meta charset="utf-8">
 <title>Case Games</title>
 <link rel="stylesheet" href="css.css" type="text/css" />
-      <meta name="google-signin-client_id" content="756607949092-ruurljso4jm5nqlntni2llfc4g625pl5.apps.googleusercontent.com">
-       <script src="https://apis.google.com/js/platform.js" async defer></script> 
+      <meta name="google-signin-client_id" content="*.apps.googleusercontent.com">
+       <script src="https://apis.google.com/js/platform.js" async defer></script>
       <script async>
       function signOut() {
       onLoad();
@@ -27,7 +27,7 @@
 },1500);
 signOut();})
 
-       
+
 </script>
 
   </head>
