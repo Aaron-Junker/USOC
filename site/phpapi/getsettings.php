@@ -42,6 +42,13 @@
     }
     function getLang(string){
       translate = json_decode(file_get_contents("lang/".getSetting("site.lang").".json"));
-      echo translate[string];
+      try {
+        return translate[string];
+      } catch (\Exception $e) {
+        translate = json_decode(file_get_contents("lang/en-en.json"));
+        return translate[string];
+      }
+
+
     }
  ?>
