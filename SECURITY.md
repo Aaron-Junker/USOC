@@ -11,4 +11,4 @@ Old pre-alpha and ore-beta versions aren't supported with bugfixes.
 | Pa1.0Bfx0   | :x: |
 | Pb1.0Bfx0   | :x: |
 | Pb1.0Bfx1   | :x: |
-
+| Pb1.0Bfx2   | :x: |
