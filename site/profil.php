@@ -68,7 +68,7 @@
       <b>Zweifaktorauthentifizierung mit Google Authenticator</b>
       <p>Folgenden Code einscannen mit Google Authenticator</p>
       <p>Achtung! Wenn man mit Google einloggt, wird die 2fa nicht aktiv</p>
-      <img src="<?php echo \Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION["User_Name"], $secret, 'Case Games Konto');?>">
+      <img src="<?php echo \Sonata\GoogleAuthenticator\GoogleQrUrl::generate($_SESSION["User_Name"], $secret, getSetting("2fa.name"));?>">
       <form action="login/2fa.php" method="post">
         <input type="hidden" name="secret" value="<?php echo $secret;?>" />
         <input name="register" type="submit" value="Den Code habe ich gescannt" />

@@ -1,3 +1,6 @@
+# Pb1.1Bfx0
+* Add 2fa settings
+* Removed dummy files
 # Pb1.0Bfx2
 * Fixed CHANGELOG.md (missed in Pb1.0Bfx0 and Pb1.0Bfx1)
 # Pb1.0Bfx1
