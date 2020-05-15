@@ -13,7 +13,7 @@
       <?php
         if(isset($_GET["action"])){
           if($_GET["action"]=="passchange"){
-          echo "<h3>Passwort geändert</h3>";
+          echo "<h3>".getLang("login.account.password_changed")."</h3>";
         }elseif($_GET["action"]=="register"){
           echo "<h3>Registriert!</h3>";
         }
@@ -21,7 +21,7 @@
 
       include_once "indexinhalt.php";
       include_once "siteelements/footer.php";
-      
+
     ?>
   </body>
 </html>

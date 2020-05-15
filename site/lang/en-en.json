@@ -21,6 +21,7 @@
     "login.fail": "Login failed",
     "login.locked": "Your %d is permanently blocked",
     "login.account": "account",
+    "login.account.password_changed" :"Password changed",
     "login.2fa": " ",
     "login.2fa.google_authenticator": " ",
     "login.2fa.google_authenticator.code": "Code from the Google Authenticator App:",
