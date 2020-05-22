@@ -9,6 +9,7 @@
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor">Einstellungen bearbeiten</a><br />
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=useredit">Benutzer editieren</a><br />
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=Newsletter">Newsletter verfassen</a><br />
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpageedit">Hauptseite editieren</a><br />
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=editor">Neue Seite erstellen</a><br />
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=blogeditor">Neue Blogseite erstellen</a><br />
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
