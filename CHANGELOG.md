@@ -1,3 +1,5 @@
+# Pb1.2Bfx0
+* Added several Languages
 # Pb1.1Bfx0
 * Add 2fa settings
 * Removed dummy files
