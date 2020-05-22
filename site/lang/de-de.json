@@ -25,5 +25,6 @@
     "login.2fa.google_authenticator": " ",
     "login.2fa.google_authenticator.code": "Code von der Google Authenticator App:",
     "blog": " ",
-    "blog.readmore": "Weiterlesen..."
+    "blog.readmore": "Weiterlesen...",
+    "login.account.password_changed": "Passwort geändert"
 }
