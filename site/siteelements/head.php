@@ -8,14 +8,14 @@ include_once "phpapi/getsettings.php";
 <?php
   if(isset($_COOKIE["css"])){
     if($_COOKIE["css"] == "l"){
-      echo '<link rel="stylesheet" href="css.php" type="text/css" />';
+      echo '<link rel="stylesheet" href="styles/'+getSetting("style.light.filename")+' type="text/css" />';
     }elseif ($_COOKIE["css"] == "d") {
-      echo '<link rel="stylesheet" href="cssblack.php" type="text/css" />';
+      echo '<link rel="stylesheet" href="styles/'+getSetting("style.dark.filename")+' type="text/css" />';
     }else{
-      echo '<link rel="stylesheet" href="css.php" type="text/css" />';
+      echo '<link rel="stylesheet" href="styles/'+getSetting("style.light.filename")+' type="text/css" />';
     }
   }else{
-    echo '<link rel="stylesheet" href="css.php " type="text/css" />';
+    echo '<link rel="stylesheet" href="styles/'+getSetting("style.light.filename")+' type="text/css" />';
   }
 ?>
 

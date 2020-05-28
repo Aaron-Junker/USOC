@@ -5,7 +5,7 @@
   <base href="https://casegames.ch">
     <meta charset="utf-8">
 <title>Case Games</title>
-<link rel="stylesheet" href="css.css" type="text/css" />
+<link rel="stylesheet" href="style/css.php" type="text/css" />
       <meta name="google-signin-client_id" content="*.apps.googleusercontent.com">
        <script src="https://apis.google.com/js/platform.js" async defer></script>
       <script async>

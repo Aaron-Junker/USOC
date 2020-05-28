@@ -1,3 +1,6 @@
+# Pb1.3Bfx0
+* Added style support
+* Changed .htaccess But it doesn't work  
 # Pb1.2Bfx0
 * Added several Languages Issue #17
 # Pb1.1Bfx0
