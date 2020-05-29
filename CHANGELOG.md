@@ -1,3 +1,7 @@
+# Pb1.4Bfx0
+* Added composer.json
+* Added Http 410 Error
+* Changed .htaccess
 # Pb1.3Bfx0
 * Added style support
 * Changed .htaccess But it doesn't work 

@@ -11,5 +11,6 @@ RewriteCond %{REQUEST_URI} !=*/siteelements/*
 RewriteCond %{REQUEST_URI} !=*/styles/*
 RewriteRule  .* /page.php?URL=/$0
 
-ErrorDocument 404 /Errors/404.html
-ErrorDocument 403 /Errors/403.html
+ErrorDocument 404 /Errors/404.php
+ErrorDocument 403 /Errors/403.php
+ErrorDocument 410 /Errors/410.php
