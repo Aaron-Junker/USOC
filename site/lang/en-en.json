@@ -26,5 +26,6 @@
     "login.2fa.google_authenticator.code": "Code from the Google Authenticator App:",
     "blog": " ",
     "blog.readmore": "Read more...",
-    "login.account.password_changed": "Password changed"
+    "login.account.password_changed": "Password changed",
+    "error.offline": "<h1>Page offline</h1>\n                <p>This page is no longer available.</p>"
 }
