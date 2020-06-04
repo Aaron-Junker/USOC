@@ -21,12 +21,12 @@
       include_once "siteelements/header.php"
     ?>
     <article>
-      <h3> Registrieren </h3>
+      <h3><?php echo getLang("content.login.register") ?></h3>
       <?php
       if (register_open()){
-        echo <<<HEREDOC
+        echo '
         <form action="login/register.php" method="post">
-          <label for="U">Benutzername</label>
+          <label for="U">'.getLang("login.username").'</label>
           <input type="text" name="U" /><br>
           <label for="M">Mailadresse</label>
           <input type="text" name="M" /><br>
@@ -34,10 +34,9 @@
           <input type="password" name="P" /><br>
           <label for="PR">Passwort wiederhohlen</label>
           <input type="password" name="PR" /><br>
-          <input type="checkbox" name="D" /><label for="D">Ich bestätige die <a href="Datenschutzerklärung.php">Datenschutzerklärung</a> gelesen und verstanden zu haben</label><br />
-          <input type="submit" value="Abschicken" />
+          <input type="submit" />
         </form>
-        HEREDOC;
+        '
       }else{
         echo "registrierung geschlossen";
       }
