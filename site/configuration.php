@@ -7,5 +7,5 @@ define ( 'MYSQL_PASSWORD',  'password' );
 define ( 'MYSQL_DATABASE', 'USOC' );
 //define
 $USOC["SITE_PATH"] = "";
-$USOC["ADMIN_PATH"] = "";
+$USOC["ADMIN_PATH"] = "admin";
 ?>
