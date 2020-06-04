@@ -8,4 +8,5 @@ define ( 'MYSQL_DATABASE', 'USOC' );
 //define
 $USOC["SITE_PATH"] = "";
 $USOC["ADMIN_PATH"] = "admin";
+$USOC["DOMAIN"] = "...";
 ?>
