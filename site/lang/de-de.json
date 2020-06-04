@@ -26,5 +26,6 @@
     "login.2fa.google_authenticator.code": "Code von der Google Authenticator App:",
     "blog": " ",
     "blog.readmore": "Weiterlesen...",
-    "login.account.password_changed": "Passwort geändert"
+    "login.account.password_changed": "Passwort geändert",
+    "error.offline": "<h1>Seite offline</h1>\n                <p>Diese Seite ist nicht mehr verfügbar.</p>\n                <p>Sollte sie das sein oder brauchst du sie melde dich bei support@casegames.ch</p>"
 }
