@@ -3,7 +3,8 @@ Useful simple open-source CMS
 # Is it ready to use
 No. In the moment you shouldn't use it
 # How can I help
-You can edit every file you want and add it to a new branch. If you want you can add your name on the [about page](https://github.com/Case-Games/USOC/blob/master/site/admin/pages/about.php).
+You can read our [Contibuting Document](https://github.com/Case-Games/USOC/blob/master/CONTRIBUTING.md) or our [Code of Conduct](https://github.com/Case-Games/USOC/blob/master/CODE_OF_CONDUCT.md)
+If you want you can add your name on the about page.
 Or you can translate several strings. 
 # Are modifications and add-ons allowed?
 Yes, but there must be also under the Case Games Open-Source license and follow the rules.
