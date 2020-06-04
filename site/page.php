@@ -16,8 +16,8 @@ include "phpapi/getdomain.php";
       <?php
         $sitehere = False;
         if(isset($_GET["URL"])){
-          require_once ('konfiguration.php');
-          $db_link = mysqli_connect (MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+          require_once ('configuration.php');
+          $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
           $sql = "SELECT * FROM Sites";
           $db_erg = mysqli_query( $db_link, $sql );
           while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
@@ -26,15 +26,19 @@ include "phpapi/getdomain.php";
             if($zeile["Online"]==1){
               $site = $zeile["Code"];
             }else{
-              $site = <<<HEREDOC
-                <h1>Seite offline</h1>
-                <p>Diese Seite ist nicht mehr verfügbar.</p>
-                <p>Sollte sie das sein oder brauchst du sie melde dich bei support@casegames.ch</p>
-              HEREDOC;
+              $site = getLang("error.offline")
             }
 
             }
-          }
+          }elseif($_SERVER["REQUEST_URI"].lower() == "index.php" || $_SERVER["REQUEST_URI"].lower() == "index.html"){
+            require_once ('configuration.php');
+            $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+            $sql = "SELECT * FROM Sites WHERE Name='index'";
+            $db_erg = mysqli_query( $db_link, $sql );
+            while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+              $site = $zeile["Code"];
+              $sitehere = True
+            }
         }
         if($sitehere){
           echo $site;
