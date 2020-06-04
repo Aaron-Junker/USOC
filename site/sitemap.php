@@ -1,6 +1,6 @@
 <?php
 header ("Content-Type:text/xml");
-include_once "konfiguration.php"
+include_once "configuration.php"
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 

@@ -1,15 +1,6 @@
 AddHandler application/x-httpd-php74 .php
 
-RewriteEngine ON
-RewriteCond %{REQUEST_URI} !=*/Errors/*
-RewriteCond %{REQUEST_URI} !=*/admin/*
-RewriteCond %{REQUEST_URI} !=*/install/*
-RewriteCond %{REQUEST_URI} !=*/lang/*
-RewriteCond %{REQUEST_URI} !=*/login/*
-RewriteCond %{REQUEST_URI} !=*/phpapi/*
-RewriteCond %{REQUEST_URI} !=*/siteelements/*
-RewriteCond %{REQUEST_URI} !=*/styles/*
-RewriteRule  .* /page.php?URL=/$0
+FallbackResource /index.php
 
 ErrorDocument 404 /Errors/404.php
 ErrorDocument 403 /Errors/403.php

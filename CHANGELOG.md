@@ -1,3 +1,7 @@
+# Pa1.5Bfx0
+* Added page.php as standard resource.
+* Added several traslations
+* Removed Case Games Content
 # Pb1.4Bfx0
 * Added composer.json
 * Added Http 410 Error
