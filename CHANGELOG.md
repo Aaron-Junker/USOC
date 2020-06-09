@@ -2,6 +2,7 @@
 * Fixed Typo in CHANGELOG.md
 * Improved installation.
 * Changed .htaccess
+* Improved configuration.php
 # Pb1.5Bfx0
 * Added page.php as standard resource.
 * Added several traslations
