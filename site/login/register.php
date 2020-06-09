@@ -6,7 +6,7 @@
         if(preg_match('/^[a-z0-9A-Z.]{3,15}$/',$_POST["U"])){
           if(preg_match('/^[a-z0-9A-Z.:,;]{8,25}$/',$_POST["P"])){
             $register = True;
-            require_once ('konfiguration.php');
+            require_once ('../configuration.php');
             $db_link = mysqli_connect (MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
             $sql = "SELECT * FROM User";
             $db_erg = mysqli_query( $db_link, $sql );
@@ -44,7 +44,7 @@
     $sql = 'INSERT INTO User (Username, Mail, Password, Type) VALUES ('."'".$_POST["U"]."'".','."'".$_POST["M"]."'".','."'".password_hash($_POST["P"],PASSWORD_DEFAULT,["salt"=>getSetting("login.salt")])."'".',0);';
     if($db_erg = mysqli_query( $db_link, $sql )){
       echo "geglückt";
-      header("Location: https://casegames.ch?action=register");
+      header("Location: "+$USOC["DOMAIN"]);
     }else{
       echo mysqli_error($db_link);
     }

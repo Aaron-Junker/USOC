@@ -1,4 +1,8 @@
-# Pa1.5Bfx0
+# Pb1.6Bfx0
+* Fixed Typo in CHANGELOG.md
+* Improved installation.
+* Changed .htaccess
+# Pb1.5Bfx0
 * Added page.php as standard resource.
 * Added several traslations
 * Removed Case Games Content
@@ -8,7 +12,7 @@
 * Changed .htaccess
 # Pb1.3Bfx0
 * Added style support
-* Changed .htaccess But it doesn't work 
+* Changed .htaccess But it doesn't work
 * Added LICENSE.md
 # Pb1.2Bfx0
 * Added several Languages Issue #17
