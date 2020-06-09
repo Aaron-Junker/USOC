@@ -1,4 +1,4 @@
-# USOC
+# USOC [![Documentation Status](https://readthedocs.org/projects/usoc/badge/?version=latest)](https://usoc.readthedocs.io/en/latest/?badge=latest)
 Useful simple open-source CMS
 # Is it ready to use
 No. In the moment you shouldn't use it
