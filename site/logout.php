@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
   <head>
-  <base href="https://casegames.ch">
     <meta charset="utf-8">
 <title>Case Games</title>
 <link rel="stylesheet" href="style/css.php" type="text/css" />
