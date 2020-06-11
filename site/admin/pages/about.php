@@ -8,7 +8,7 @@
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage">Back</a>
     <h1>USOC</h1>
     <h2>Usable Simple Open-source CMS</h2>
-    <p>Version: Pa1.0Bfx0</p>
+    <p>Version: Pa1.6Bfx0</p>
     <p>Under the Case Games Open Source License</p>
     <p>By Case Games 2020</p>
     <p>Developed by:</p>
