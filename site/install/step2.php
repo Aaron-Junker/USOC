@@ -70,7 +70,49 @@ ALTER TABLE `User`
 ALTER TABLE `User`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
-      HEREDOC;
+        HEREDOC;
+        mysqli_multi_query($db_link,$sql);
+        $sql = <<<HEREDOC
+        CREATE TABLE Sites (
+  ID int(11) NOT NULL,
+  Name varchar(33) NOT NULL,
+  Date date NOT NULL,
+  Author int(11) NOT NULL,
+  Code longtext NOT NULL,
+  Online tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO Sites (ID, `Name`, `Date`, Author, `Code`, Online) VALUES
+(0, "index","11-06-2020",0,"<p>Edit this Page on /admin</p>",1);
+ALTER TABLE Sites
+  ADD PRIMARY KEY (ID);
+
+
+ALTER TABLE Sites
+  MODIFY ID int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+COMMIT;
+        HEREDOC;
+        mysqli_multi_query($db_link,$sql);
+        $sql = <<<HEREDOC
+        CREATE TABLE Blog (
+  ID int(11) NOT NULL,
+  Name varchar(33) NOT NULL,
+  Date date NOT NULL,
+  Author int(11) NOT NULL,
+  Code longtext NOT NULL,
+  Online tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO Sites (ID, `Name`, `Date`, Author, `Code`, Online) VALUES
+(0, "First Blog","11-06-2020",0,"<p>Welcome to the Blog</p>",1);
+ALTER TABLE Sites
+  ADD PRIMARY KEY (ID);
+
+
+ALTER TABLE Sites
+  MODIFY ID int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+COMMIT;
+        HEREDOC;
+        mysqli_multi_query($db_link,$sql);
+        //File configuration.php creation
       }else{
         echo "Please fill out all fields.";
         exit("Error!");
