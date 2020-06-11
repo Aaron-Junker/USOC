@@ -33,8 +33,10 @@
       <h4>Database Login</h4>
       <label for="DBHost">Hostname:</label>
       <input name="DBHost" /><br />
-      <label for="DBName">Username:</label>
+       <label for="DBName">Database Name:</label>
       <input name="DBName" /><br />
+      <label for="DBUserName">Username:</label>
+      <input name="DBUserName" /><br />
       <label for="DBPass">Password:</label>
       <input type="password" name="DBPass" /><br />
       <input type="submit" />
