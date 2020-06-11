@@ -14,7 +14,7 @@
       <?php
         include_once "phpapi/getsettings.php";
         if(getSetting("login.changepassword") == 0){
-          echo "<p>Zur Zeit kann kein Passwort geändert werden. Für weitere Informationen wende dich an <a href='support@casegames.ch'>support@casegames.ch</a>";
+          echo "<p>Zur Zeit kann kein Passwort geändert werden.";
         }else{
           echo <<<HEREDOC
             <form action="login/changepass.php" method="post">
