@@ -3,6 +3,7 @@
 * Improved installation.
 * Changed .htaccess
 * Improved configuration.php
+* Fixed issues with unvailable Settings #12 and #15
 # Pb1.5Bfx0
 * Added page.php as standard resource.
 * Added several traslations
