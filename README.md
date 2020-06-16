@@ -1,4 +1,4 @@
-# USOC [![Documentation Status](https://readthedocs.org/projects/usoc/badge/?version=latest)](https://usoc.readthedocs.io/en/latest/?badge=latest)
+# USOC [![Documentation Status](https://readthedocs.org/projects/usoc/badge/?version=latest)](https://usoc.readthedocs.io/en/latest/?badge=latest)[![CodeFactor](https://www.codefactor.io/repository/github/case-games/usoc/badge/master)](https://www.codefactor.io/repository/github/case-games/usoc/overview/master)
 Useful simple open-source CMS
 # Is it ready to use
 No. In the moment you shouldn't use it
