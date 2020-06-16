@@ -24,19 +24,14 @@
         switch ($code) {
           case '0x000000':
             return "Error ".$code.": Benutzername oder Mailadresse passen nicht zu Passwort.";
-            break;
           case '0x000001':
             return "Error ".$code.": Passwort ist nicht korrekt.";
-            break;
           case '0x000002':
             return "Error ".$code.": HTTP-Error 404: Seite nicht gefunden";
-            break;
           case '0x000003':
             return "Error ".$code.":";
-            break;
           default:
             return "Error ".$code.": Nicht bekannter Fehler aufgetreten.";
-            break;
         }
       }
     }
