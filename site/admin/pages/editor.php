@@ -4,7 +4,7 @@ $edit = false;
     $edit = false;
     require_once ('konfiguration.php');
     $db_link = mysqli_connect (MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
-    $sql = "SELECT * FROM Sites Where Name = "."'".$_GET["SiteName"]."'";
+    $sql = "SELECT * FROM Sites Where Name = '".$_GET["SiteName"]."'";
     $db_erg = mysqli_query( $db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
     {
@@ -38,7 +38,7 @@ $edit = false;
     <?php
       if($edit){
         echo '<input type="hidden" name="edit" value="1"/>';
-        if($online = 1){
+        if($online == 1){
           echo 'Online:<input type="radio" name="online" value="1" checked/><br />';
           echo 'Offline:<input type="radio" name="online" value="0" />';
         }else{
