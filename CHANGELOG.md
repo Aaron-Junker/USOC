@@ -2,6 +2,7 @@
 * Fixed logout.php (Base: casegames.ch)
 * Deleted .user.ini
 * Deleted several casegames refereces
+* Several issues fixed.
 # Pb1.6Bfx0
 * Fixed Typo in CHANGELOG.md
 * Improved installation.
