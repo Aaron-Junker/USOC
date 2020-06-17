@@ -6,7 +6,7 @@
     $logina = 0;
     require_once ('konfiguration.php');
     $db_link = mysqli_connect (MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
-    $sql = "SELECT * FROM User Where Username = "."'".$_SESSION["User_Name"]."'";
+    $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
     $db_erg = mysqli_query( $db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
     {
