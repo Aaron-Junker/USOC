@@ -16,6 +16,10 @@
         }
         $salt = substr(str_shuffle(str_repeat(implode('', range('!','z')), $length)), 0, 25);
         $pass = password_hash($_POST["Pass"],PASSWORD_DEFAULT,["salt"=>$salt]);
+        $Name = $_POST["Name"];
+        $Author = $_POST["Author"];
+        $lang = $_POST["Lang"];
+        $UserName = $_POST["UserName"];
         $sql= <<<HEREDOC
         CREATE TABLE `Settings` (
           `Id` int(20) NOT NULL,  
@@ -30,11 +34,11 @@
         (3, 'test.int', '12', 'Int'),
         (4, 'test.string', 'Hi ', 'Text'),
         (5, 'login.changepassword', '1', 'Bool'),
-        (6, 'site.name', '$_POST["Name"]', 'Text'),
-        (7, 'site.author', '$_POST["Author"]', 'Text'),
+        (6, 'site.name', '$Name', 'Text'),
+        (7, 'site.author', '$Author', 'Text'),
         (8, 'site.description', '', 'Text'),
         (9, 'site.keywords', '', 'Text'),
-        (10, 'site.lang', '$_POST["Lang"]', 'Text'),
+        (10, 'site.lang', '$lang', 'Text'),
         (11, 'site.robots', 'index, follow', 'Text'),
         (12, '2fa.name', '', 'Text'),
         (13, 'login.salt', '$salt', 'Text');
@@ -61,7 +65,7 @@
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
         INSERT INTO `Settings` VALUES
-          (0, $_POST["UserName"], "webmaster@localhost", $pass, 1, 0, "","",0);
+          (0, $UserName, "webmaster@localhost", $pass, 1, 0, "","",0);
 
         ALTER TABLE `User`
           ADD PRIMARY KEY (`Id`),
@@ -86,7 +90,6 @@
         ALTER TABLE Sites
           ADD PRIMARY KEY (ID);
 
-
         ALTER TABLE Sites
           MODIFY ID int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
         COMMIT;
@@ -106,11 +109,11 @@
         ALTER TABLE Sites
           ADD PRIMARY KEY (ID);
 
-
         ALTER TABLE Sites
           MODIFY ID int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
         COMMIT;
         HEREDOC;
+        
         mysqli_multi_query($db_link,$sql);
         //File configuration.php creation
         $file = <<<'HEREDOC';
