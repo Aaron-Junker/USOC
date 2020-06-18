@@ -141,6 +141,5 @@
         echo "Please fill out all fields.";
         exit("Error!");
       }
-    ?>
   </body>
 </html>
