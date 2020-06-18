@@ -16,7 +16,7 @@ jobs:
           who-to-greet: $GITHUB_ACTOR
       - name: pull request greet
         run: echo "Thank you for helping us. We will look at the pull request soon"
-      - name: brach name    
+      - name: brach name  
         uses: deepakputhraya/action-branch-name@master
         with:
           regex: '*' # Regex the branch should match. This example enforces grouping
