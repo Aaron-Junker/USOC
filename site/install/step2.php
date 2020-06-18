@@ -134,7 +134,7 @@
         $replace_to = array($_POST["DBHost"],$_POST["DBUserName"],$_POST["DBPass"],$_POST["DBName"],str_replace("/install","",getcwd()),str_replace("/install","",getcwd())."/admin",$_SERVER['SERVER_NAME']);
         $file = str_replace($replace_here,$replace_to,$file);
         echo "<p>Replace the Text in configuration.php in the root dictonary and the admin dictonary with the following text:</p>";
-        echo "<textarea readonly>".$file."</textarea>"
+        echo "<textarea readonly>".$file."</textarea>";
       ?>
 
       }else{
