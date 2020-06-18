@@ -3,6 +3,7 @@
 * Deleted .user.ini
 * Deleted several casegames refereces
 * Several issues fixed.
+* Finished Installation Files
 # Pb1.6Bfx0
 * Fixed Typo in CHANGELOG.md
 * Improved installation.
