@@ -116,21 +116,21 @@
         
         mysqli_multi_query($db_link,$sql);
         //File configuration.php creation
-        $file = <<<'HEREDOC';
+        $file = <<<HEREDOC;
         <?php
           error_reporting(E_ALL);
           //MYSQL CREDITALS
-          define ( 'MYSQL_HOST',      '$1' );
-          define ( 'MYSQL_USER',  '$2' );
-          define ( 'MYSQL_PASSWORD',  '$3' );
-          define ( 'MYSQL_DATABASE', '$4' );
+          define ( 'MYSQL_HOST',      'k1' );
+          define ( 'MYSQL_USER',  'k2' );
+          define ( 'MYSQL_PASSWORD',  'k3' );
+          define ( 'MYSQL_DATABASE', 'k4' );
           //define
-          $USOC["SITE_PATH"] = "$5";
-          $USOC["ADMIN_PATH"] = "$6";
-          $USOC["DOMAIN"] = "$7";
+          $USOC["SITE_PATH"] = "k5";
+          $USOC["ADMIN_PATH"] = "k6";
+          $USOC["DOMAIN"] = "k7";
         ?>
         HEREDOC;
-        $replace_here = array("$1","$2","$3","$4","$5","$6","$7");
+        $replace_here = array("k1,"k2","k3","k4","k5","k6","k7");
         $replace_to = array($_POST["DBHost"],$_POST["DBUserName"],$_POST["DBPass"],$_POST["DBName"],str_replace("/install","",getcwd()),str_replace("/install","",getcwd())."/admin",$_SERVER['SERVER_NAME']);
         $file = str_replace($replace_here,$replace_to,$file);
         echo "<p>Replace the Text in configuration.php in the root dictonary and the admin dictonary with the following text:</p>";
