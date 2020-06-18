@@ -113,6 +113,27 @@ COMMIT;
         HEREDOC;
         mysqli_multi_query($db_link,$sql);
         //File configuration.php creation
+        $file = <<<'HEREDOC';
+        <?php
+          error_reporting(E_ALL);
+          //MYSQL CREDITALS
+          define ( 'MYSQL_HOST',      '$1' );
+          define ( 'MYSQL_USER',  '$2' );
+          define ( 'MYSQL_PASSWORD',  '$3' );
+          define ( 'MYSQL_DATABASE', '$4' );
+          //define
+          $USOC["SITE_PATH"] = "$5";
+          $USOC["ADMIN_PATH"] = "$6";
+          $USOC["DOMAIN"] = "$7";
+        ?>
+        HEREDOC;
+        $replace_here = array("$1","$2","$3","$4","$5","$6","$7");
+        $replace_to = array($_POST["DBHost"],$_POST["DBUserName"],$_POST["DBPass"],$_POST["DBName"],str_replace("/install","",getcwd()),str_replace("/install","",getcwd())."/admin",$_SERVER['SERVER_NAME']);
+        $file = str_replace($replace_here,$replace_to,$file);
+        echo "<p>Replace the Text in configuration.php in the root dictonary and the admin dictonary with the following text:</p>";
+        echo "<textarea readonly>".$file."</textarea>"
+?>
+
       }else{
         echo "Please fill out all fields.";
         exit("Error!");
