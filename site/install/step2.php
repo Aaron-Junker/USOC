@@ -135,11 +135,11 @@
         $file = str_replace($replace_here,$replace_to,$file);
         echo "<p>Replace the Text in configuration.php in the root dictonary and the admin dictonary with the following text:</p>";
         echo "<textarea readonly>".$file."</textarea>";
-      ?>
 
       }else{
         echo "Please fill out all fields.";
         exit("Error!");
       }
+    ?>
   </body>
 </html>
