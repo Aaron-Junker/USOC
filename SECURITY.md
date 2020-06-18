@@ -19,3 +19,4 @@ Old pre-alpha and ore-beta versions aren't supported with bugfixes.
 | Pb1.5Bfx0   | :x: |
 | Pb1.6Bfx0   | :x: |
 | Pb1.7Bfx0   | :x: |
+| Pb1.7Bfx1   | :x: |
