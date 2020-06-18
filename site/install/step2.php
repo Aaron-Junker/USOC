@@ -116,7 +116,7 @@
         
         mysqli_multi_query($db_link,$sql);
         //File configuration.php creation
-        $file = <<<HEREDOC;
+        $file = <<<'HEREDOC'
         <?php
           error_reporting(E_ALL);
           //MYSQL CREDITALS
