@@ -130,7 +130,7 @@
           $USOC["DOMAIN"] = "k7";
         ?>
         HEREDOC;
-        $replace_here = array("k1,"k2","k3","k4","k5","k6","k7");
+        $replace_here = array("k1","k2","k3","k4","k5","k6","k7");
         $replace_to = array($_POST["DBHost"],$_POST["DBUserName"],$_POST["DBPass"],$_POST["DBName"],str_replace("/install","",getcwd()),str_replace("/install","",getcwd())."/admin",$_SERVER['SERVER_NAME']);
         $file = str_replace($replace_here,$replace_to,$file);
         echo "<p>Replace the Text in configuration.php in the root dictonary and the admin dictonary with the following text:</p>";
