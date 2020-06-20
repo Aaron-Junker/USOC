@@ -1,3 +1,5 @@
+# Pb1.7Bfx1
+* Fixed #41
 # Pb1.7Bfx0
 * Fixed logout.php (Base: casegames.ch)
 * Deleted .user.ini
