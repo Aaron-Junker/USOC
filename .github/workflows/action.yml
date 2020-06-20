@@ -1,8 +1,0 @@
-steps:
-- uses: deepakputhraya/action-branch-name@master
-  with:
-    regex: '*' # Regex the branch should match. This example enforces grouping
-    allowed_prefixes: 'ver/,issue/,test/,new/,doc/' # All branches should start with the given prefix
-    ignore: master # Ignore exactly matching branch names from convention
-    min_length: 4 # Min length of the branch name
-    max_length: 50 # Max length of the branch name
