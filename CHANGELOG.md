@@ -1,3 +1,5 @@
+# Pb1.8Bfx0
+* Fixed #43, #28
 # Pb1.7Bfx1
 * Fixed #41
 # Pb1.7Bfx0

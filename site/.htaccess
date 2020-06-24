@@ -1,6 +1,6 @@
 AddHandler application/x-httpd-php74 .php
 
-FallbackResource /index.php
+FallbackResource /page.php
 #d
 
 ErrorDocument 404 /Errors/404.php

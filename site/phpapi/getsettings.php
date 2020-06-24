@@ -1,7 +1,7 @@
 <?php
   function getSetting($name){
-    require_once ('../configuration.php');
-    $db_link = mysqli_connect (MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+    require_once ('configuration.php');
+    $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
     $sql = "SELECT * FROM Settings WHERE Name='".$name."'";
     $db_erg = mysqli_query( $db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
@@ -9,8 +9,8 @@
     }
   }
   function getPP(){
-  	require_once ('../configuration.php');
-    $db_link = mysqli_connect (MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+  	require_once ('configuration.php');
+    $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
     $sql = "SELECT * FROM User WHERE Username='".$_SESSION['User_Name']."'";
     $db_erg = mysqli_query( $db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
@@ -18,7 +18,7 @@
     }
     $code = md5(strtolower( trim($mail) ) );
   	return "<img src='https://www.gravatar.com/avatar/".$code."' />";
-    }
+  }
     function getError($code, $lang){
       if($lang == "de"){
         switch ($code) {
@@ -35,15 +35,13 @@
         }
       }
     }
-    function getLang(string){
-      translate = json_decode(file_get_contents("lang/".getSetting("site.lang").".json"));
+    function getLang($string){
+      $translate = json_decode(file_get_contents("lang/".getSetting("site.lang").".json"));
       try {
-        return translate[string];
-      } catch (\Exception $e) {
-        translate = json_decode(file_get_contents("lang/en-en.json"));
-        return translate[string];
+        return $translate[$string];
+      } catch (Exception $e) {
+        $translate = json_decode(file_get_contents("lang/en-en.json"));
+        return $translate[$string];
       }
-
-
     }
  ?>

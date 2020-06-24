@@ -1,3 +1,6 @@
+<?php
+  include "../phpapi/getsettings.php"
+?>
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
   <head>
