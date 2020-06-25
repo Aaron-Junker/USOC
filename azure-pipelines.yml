@@ -32,11 +32,3 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      cat ~/GH_TOKEN.txt | docker login docker.pkg.github.com -u Aaron-Junker --password-stdin
-      docker tag IMAGE_ID docker.pkg.github.com/case-games/usoc/IMAGE_NAME:VERSION
-      docker push docker.pkg.github.com/case-games/usoc/IMAGE_NAME:VERSION
