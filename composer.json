@@ -1,0 +1,15 @@
+
+{
+	"name": "USOC",
+	"description": "Useful Simple Open-Source CMS",
+	"type": "USOC",
+	"keywords": ["USOC", "cms"],
+	"homepage": "https://github.com/Case-Games/USOC",
+	"authors": [
+		{
+			"name": "USOC Community"
+		}
+	],
+	"license": "CGS0003",
+	"require": {}
+ }
