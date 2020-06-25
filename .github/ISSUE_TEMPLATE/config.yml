@@ -3,3 +3,6 @@ contact_links:
   - name: Case Games Website
     url: https://casegames.ch
     about: Website
+  - name: Issue in ckeditor
+    url: https://github.com/ckeditor/ckeditor5/issues/new/choose
+    about: Report an issue in Ckeditor
