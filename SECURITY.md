@@ -9,6 +9,7 @@ Old pre-alpha and ore-beta versions aren't supported with bugfixes.
 ### Pre-Beta
 | Version | Supported|Newest Version|
 | ------- | ---------|--------------|
+| Pb1.7   | :x:      | Pb1.8Bfx0    |
 | Pb1.7   | :x:      | Pb1.7Bfx1    |
 | Pb1.6   | :x:      | Pb1.6Bfx0    |
 | Pb1.5   | :x:      | Pb1.5Bfx0    |
