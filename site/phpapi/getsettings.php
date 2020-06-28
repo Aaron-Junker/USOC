@@ -8,17 +8,6 @@
       return $zeile["Value"];
     }
   }
-  function getPP(){
-  	require_once ('configuration.php');
-    $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
-    $sql = "SELECT * FROM User WHERE Username='".$_SESSION['User_Name']."'";
-    $db_erg = mysqli_query( $db_link, $sql );
-    while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-      $mail = $zeile["Mail"];
-    }
-    $code = md5(strtolower( trim($mail) ) );
-  	return "<img src='https://www.gravatar.com/avatar/".$code."' />";
-  }
     function getError($code, $lang){
       if($lang == "de"){
         switch ($code) {
@@ -33,15 +22,6 @@
           default:
             return "Error ".$code.": Nicht bekannter Fehler aufgetreten.";
         }
-      }
-    }
-    function getLang($string){
-      $translate = json_decode(file_get_contents("lang/".getSetting("site.lang").".json"));
-      try {
-        return $translate[$string];
-      } catch (Exception $e) {
-        $translate = json_decode(file_get_contents("lang/en-en.json"));
-        return $translate[$string];
       }
     }
  ?>
