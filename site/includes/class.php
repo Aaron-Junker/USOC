@@ -5,19 +5,11 @@
       public $version = "Pb2.0Bfx0";
       public $version_code = 20200900;
       public $modded = false;
+
       function __construct(argument){
 
       }
-      public function getLang($string){
-        //Gets a string from the translation files
-        $translate = json_decode(file_get_contents($USOC["SITE_PATH"]."lang/".getSetting("site.lang").".json"));
-        try {
-          return $translate[$string];
-        } catch (Exception $e) {
-          $translate = json_decode(file_get_contents($USOC["SITE_PATH"]."lang/en-en.json"));
-          return $translate[$string];
-        }
-      }
+      include "getLang.inc.php";
       public function getPP(){
         //Gets profil picture from gravatar
       	require_once ($USOC["SITE_PATH"].'configuration.php');
