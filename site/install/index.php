@@ -7,7 +7,7 @@
   <body>
     <h1>Install USOC</h1>
     <ul>
-      <li>Version: Pa1.6Bfx0</li>
+      <li>Version: Pa1.8Bfx0</li>
       <li>You need PHP 7: <?php if (PHP_VERSION_ID > 69999){echo "Yes!";}else{echo "You must update!";} ?></li>
       <li>You need Mysql: Can't check</li>
       <form action="step2.php" method="post">
