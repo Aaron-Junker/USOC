@@ -4,8 +4,8 @@
   session_start();
     $blocked = False;
     $login = False;
-    require_once ('konfiguration.php');
-    $db_link = mysqli_connect (MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+    require_once ('../configuration.php');
+    $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
     $sql = "SELECT * FROM User";
     $db_erg = mysqli_query( $db_link, $sql );
     if(isset($_SESSION["code"])){
