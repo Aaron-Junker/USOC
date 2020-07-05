@@ -94,3 +94,19 @@ To include stylesheets use the `<link>` tag. Don't use `@import`.
 ### Use tabulator
 Don't use space as tabulator. Indent code right.
 ### Encoding
+Always use UTF-8 encoding in a document. Use `<meta charset="utf-8">`.
+### Trailing Whitespace
+Don't use a trailing whitespace. 
+
+False:
+```
+<p>Hello there! </p>
+```
+Right:
+```
+<p>Hello there!</p>
+```
+## Javascript
+### alert()
+Dont use `alert()` when it's not really needed.
+
