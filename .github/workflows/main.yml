@@ -32,3 +32,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: casegames/usoc
           tags: latest
+      - name: Image Optimizer
+        uses: crush-pics/crush-pics-github-action@v1.0
+ 
