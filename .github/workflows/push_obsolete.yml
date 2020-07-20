@@ -1,1 +1,7 @@
-
+on:
+  push:
+    branches:
+    - ver/Pb1.8
+    - ver/Pb1.7
+    - ver/Pb1.6
+    - ver/Pb1.5
