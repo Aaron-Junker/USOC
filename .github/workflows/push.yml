@@ -1,0 +1,17 @@
+name: CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: brach name
+        uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '*'
+          allowed_prefixes: 'ver/,issue/,doc/'
+          ignore: master
+          min_length: 5
+          max_length: 1000
+      - name: Image Optimizer
+        uses: crush-pics/crush-pics-github-action@v1.0
