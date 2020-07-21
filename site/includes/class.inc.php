@@ -1,15 +1,17 @@
 <?php
   if(gettype($USOC) == "array"){
+    function __autoload($class){
+      include_once $class.".inc.php"
+    }
     class U{
       //Version Codes
       public $version = "Pb2.0Bfx0";
       public $version_code = 20200900;
       public $modded = false;
 
-      function __construct(argument){
+      function __construct($argument){
 
       }
-      include "getLang.inc.php";
       public function getPP(){
         //Gets profil picture from gravatar
       	require_once ($USOC["SITE_PATH"].'configuration.php');
