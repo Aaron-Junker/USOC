@@ -1,8 +1,11 @@
 AddHandler application/x-httpd-php74 .php
 
 FallbackResource /page.php
-#d
 
-ErrorDocument 404 /Errors/404.php
+ErrorDocument 400 /Errors/400.php
 ErrorDocument 403 /Errors/403.php
+ErrorDocument 404 /Errors/404.php
+ErrorDocument 404 /Errors/405.php
 ErrorDocument 410 /Errors/410.php
+ErrorDocument 414 /Errors/414.php
+ErrorDocument 423 /Errors/423.php

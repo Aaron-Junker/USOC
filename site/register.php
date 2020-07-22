@@ -42,7 +42,7 @@
           HEREDOC;
           echo $HTML;
       }else{
-        echo U.getLang("")
+        echo U.getLang("register.succeeded")
       }
       ?>
     </article>
