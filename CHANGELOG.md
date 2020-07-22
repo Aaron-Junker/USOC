@@ -2,6 +2,8 @@
 * Added better class system
 * Better organisation of code
 * Added HTTP-Errors 400, 405, 410, 414, 423
+* Updated files to new code conventions
+* Added several translations
 # Pb1.8Bfx0
 * Fixed #43, #28 and other bugs.
 # Pb1.7Bfx1
