@@ -26,5 +26,7 @@
     "login.2fa.google_authenticator.code": "Code vo de Google Authenticator App",
     "blog": " ",
     "blog.readmore": "Witerläse",
-    "login.account.password_changed": "Passwort gänderet"
+    "login.account.password_changed": "Passwort gänderet",
+    "error.offline": "<h1>Site offline</h1>\n                <p>TDie sitte isch nid länger verfüegbar</p>",
+    "error.410": "Gange. Die Resource isch nid länger verfüegbar."
 }
