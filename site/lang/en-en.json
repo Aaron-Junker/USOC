@@ -27,5 +27,6 @@
     "blog": " ",
     "blog.readmore": "Read more...",
     "login.account.password_changed": "Password changed",
-    "error.offline": "<h1>Page offline</h1>\n                <p>This page is no longer available.</p>"
+    "error.offline": "<h1>Page offline</h1>\n                <p>This page is no longer available.</p>",
+    "error.410": "Gone. This resource is not longer here."
 }
