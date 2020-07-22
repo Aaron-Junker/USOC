@@ -12,6 +12,5 @@
     }else{
       echo '<a href="javascript:switchdark('."'d'".')">'.getLang("style.darkmode").'</a></p>';
     }
-
   ?>
 </footer>
