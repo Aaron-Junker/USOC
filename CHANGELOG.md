@@ -1,7 +1,7 @@
 # Pb2.0Bfx0
 * Added better class system
 * Better organisation of code
-* Added http-Errors 400, 410
+* Added HTTP-Errors 400, 405, 410, 414, 423
 # Pb1.8Bfx0
 * Fixed #43, #28 and other bugs.
 # Pb1.7Bfx1

@@ -8,4 +8,5 @@ ErrorDocument 404 /Errors/404.php
 ErrorDocument 404 /Errors/405.php
 ErrorDocument 410 /Errors/410.php
 ErrorDocument 414 /Errors/414.php
+ErrorDocument 418 /Errors/418.php
 ErrorDocument 423 /Errors/423.php
