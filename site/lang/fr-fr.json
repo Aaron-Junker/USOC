@@ -26,5 +26,7 @@
     "login.2fa.google_authenticator.code": "",
     "blog": " ",
     "blog.readmore": "",
-    "login.account.password_changed": ""
+    "login.account.password_changed": "",
+    "error.offline": "",
+    "error.410": ""
 }
