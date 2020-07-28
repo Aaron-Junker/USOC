@@ -6,7 +6,7 @@
       public $version_code = 20200900;
       public $modded = false;
 
-      function __construct($argument){
+      function __construct(){
 
       }
       function __call($name,$arguments){
@@ -18,7 +18,14 @@
           echo "Error! Function not found: ".$name."()";
         }
         if($found){
-          eval($name."(".implode(',', $arguments).")");
+          if(count($arguments) == 0){
+            $code = $name.'();';
+          }elseif(count($arguments) == 1){
+            $code = $name.'("'.$arguments[0].'");';
+          }else{
+            $code = $name.'("'.implode('","', $arguments).'");';
+          }
+          eval($code);
         }
       }
     }
