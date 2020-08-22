@@ -27,7 +27,7 @@
           <form action="login/register.php" method="post">
             <label for="U">'
           HEREDOC;
-          $HTML += getLang("login.username")
+          $HTML += getLang("login.username");
           $HTML += <<<HEREDOC
             </label>
             <input type="text" name="U" /><br>
@@ -42,7 +42,7 @@
           HEREDOC;
           echo $HTML;
       }else{
-        echo U.getLang("register.succeeded")
+        echo U.getLang("register.succeeded");
       }
       ?>
     </article>

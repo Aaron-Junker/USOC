@@ -49,7 +49,7 @@
         <input type="submit" name="login"/>
       </form>
     HEREDOC;
-    echo sprintf($htmlcode, getLang("login.2fa.google_authenticator.code"))
+    echo sprintf($htmlcode, getLang("login.2fa.google_authenticator.code"));
   }
   if($login === True){
     echo getLang("login.succeed");
