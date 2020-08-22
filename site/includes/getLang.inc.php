@@ -1,10 +1,15 @@
 <?php
   /**
+  * File with function getLang()
+  * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
+  * @version Pb2.0Bfx0
+  * @since Pb2.0Bfx0
+  */
+  /**
   * This is a function for the class U.
   * This function gets a string from the localisation files. It uses the default language.
   * When it can't find the string in the default language it searches the string in en-en
-  * @see U For more informations.
-  * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
+  * @see U For more informations about U.
   * @version Pb2.0Bfx0
   * @since Pb2.0Bfx0
   * @param string $string The name of the string. (For example: login.name)
