@@ -1,5 +1,5 @@
 <?php
-  public function getProfilePicture($Username){
+  function getProfilePicture($Username){
     //Gets profil picture from gravatar
     require_once ($USOC["SITE_PATH"].'configuration.php');
     $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
