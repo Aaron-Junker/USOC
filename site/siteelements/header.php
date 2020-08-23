@@ -29,9 +29,8 @@
           function register_open(){
             if(getSetting("login.register_open")=="1"){
               return True;
-            }else{
-              return False;
             }
+            return False;
           }
         }
         if(session_status() == PHP_SESSION_NONE){

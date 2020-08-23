@@ -1,11 +1,11 @@
 <?php
-  include_once "phpapi/getsettings.php";
+  include_once "configuration.php";
+  include_once "includes/class.inc.php";
   function register_open(){
     if(getSetting("login.register_open")=="1"){
       return True;
-    }else{
-      return False;
     }
+    return False;
   }
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
       include_once "siteelements/header.php"
     ?>
     <article>
-      <h3><?php echo getLang("content.login.register") ?></h3>
+      <h3><?php echo getLang("content.login.register"); ?></h3>
       <?php
         if(register_open()){
           $HTML =<<<HEREDOC
@@ -47,7 +47,7 @@
       ?>
     </article>
     <?php
-      include_once "siteelements/footer.php"
+      include_once "siteelements/footer.php";
     ?>
   </body>
 </html>

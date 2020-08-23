@@ -1,19 +1,23 @@
-<?php session_start() ?>
+<?php
+  session_start();
+  include_once "configuration.php";
+  include_once "includes/class.inc.php";
+  $U = new U();
+?>
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
   <head>
     <?php
-      include_once "siteelements/head.php"
+      include_once "siteelements/head.php";
     ?>
   </head>
   <body>
     <?php
-      include_once "siteelements/header.php"
+      include_once "siteelements/header.php";
     ?>
     <article>
       <?php
-        include_once "phpapi/getsettings.php";
-        if(getSetting("login.changepassword") == 0){
+        if($U->getSetting("login.changepassword") == 0){
           echo "<p>Zur Zeit kann kein Passwort geändert werden.";
         }else{
           echo <<<HEREDOC
@@ -29,7 +33,7 @@
 
     </article>
       <?php
-        include_once "siteelements/footer.php"
+        include_once "siteelements/footer.php";
       ?>
   </body>
 </html>

@@ -4,6 +4,8 @@
 * Added HTTP-Errors 400, 405, 410, 414, 423
 * Updated files to new code conventions
 * Added several translations
+* Removed is_there_usoc.json
+* Added more documentation
 # Pb1.8Bfx0
 * Fixed #43, #28 and other bugs.
 # Pb1.7Bfx1
