@@ -28,5 +28,8 @@
     "blog.readmore": "",
     "login.account.password_changed": "",
     "error.offline": "",
-    "error.410": ""
+    "error.410": "",
+    "register.succeeded": "",
+    "register.succeed": "",
+    "register.closed": ""
 }
