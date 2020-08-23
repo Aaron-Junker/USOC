@@ -28,5 +28,8 @@
     "blog.readmore": "Witerläse",
     "login.account.password_changed": "Passwort gänderet",
     "error.offline": "<h1>Site offline</h1>\n                <p>TDie sitte isch nid länger verfüegbar</p>",
-    "error.410": "Gange. Die Resource isch nid länger verfüegbar."
+    "error.410": "Gange. Die Resource isch nid länger verfüegbar.",
+    "register.succeeded": "Registrierig erfolgrich",
+    "register.succeed": "",
+    "register.closed": ""
 }
