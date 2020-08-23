@@ -1,6 +1,6 @@
 <?php
   include_once "configuration.php";
-  include_once "includes/class.inc.php";
+  include_once "includes/class.inc.php";
   $U = new U();
 ?>
 <!DOCTYPE html>
