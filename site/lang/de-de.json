@@ -29,6 +29,7 @@
     "login.account.password_changed": "Passwort geändert",
     "error.offline": "<h1>Seite offline</h1>\n                <p>Diese Seite ist nicht mehr verfügbar.</p>\n                <p>Sollte sie das sein oder brauchst du sie melde dich bei support@casegames.ch</p>",
     "error.410": "Weg. Diese Resource ist nicht länger verfügbar.",
+    "register.succeeded": "Registrierung erfolgreich",
     "register.succeed": "Registration geglückt",
     "register.closed": "Registration geschlossen"
 }
