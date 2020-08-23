@@ -1,5 +1,10 @@
+<?php
+  /**
+  * This file contains the header for all files.
+  * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
+  */
+?>
 <header>
-  <!-- Headerfile for include -->
   <a id="skipnavigation" href="<?php echo $_SERVER["PHP_SELF"];
   if(isset($_GET["URL"])){
     echo "?URL=".$_GET["URL"];
