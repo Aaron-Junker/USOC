@@ -2,8 +2,6 @@
   /**
   * File with function getProfilePicture()
   * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
-  * @version Pb2.0Bfx0
-  * @since Pb2.0Bfx0
   */
   /**
   * This is a function for the class U.

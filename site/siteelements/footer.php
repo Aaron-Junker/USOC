@@ -1,6 +1,12 @@
+<?php
+  /**
+  * This file contains the footer for all files.
+  * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
+  */
+?>
 <footer>
-  <!-- Footerfile for include -->
   <?php
+    // Switch between light- and darkmode
     if(isset($_COOKIE["css"])){
       if($_COOKIE["css"] == "l"){
         echo '<a href="javascript:switchdark('."'d'".')">'.getLang("style.darkmode").'</a></p>';
