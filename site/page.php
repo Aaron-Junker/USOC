@@ -32,6 +32,8 @@
                 }
               }
             }
+          }elseif(strpos($_GET["URL"], '/error/') !== false){
+            
           }else{
             $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
             $sql = "SELECT * FROM Sites";
