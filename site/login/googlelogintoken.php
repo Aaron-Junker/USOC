@@ -1,6 +1,6 @@
 <?php
-  include "../configuration.php";
-  include "../includes/class.inc.php";
+  include_once "../configuration.php";
+  include_once "../includes/class.inc.php";
   require_once 'google-api-php-client/src/Google/autoload.php';
 
   session_start();
@@ -11,7 +11,7 @@
     $token_data = $client->verifyIdToken($_POST["token"])->getAttributes();
     $user_id = $token_data['payload']['sub'];
     if(!isset($_SESSION["User_ID"])){
-      $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+      $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
       $sql = "SELECT * FROM User";
       $db_erg = mysqli_query( $db_link, $sql );
       while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))

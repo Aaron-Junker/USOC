@@ -9,7 +9,7 @@
     <?php
       if(isset($_POST["Name"],$_POST["Author"],$_POST["Lang"],$_POST["UserName"],$_POST["Pass"],$_POST["DBHost"],$_POST["DBName"],$_POST["DBUserName"],$_POST["DBPass"])){
         try{
-          $db_link = mysqli_connect ($_POST["DBHost"],$_POST["DBUserName"],$_POST["Pass"],$_POST["DBName"]);
+          $db_link = mysqli_connect($_POST["DBHost"],$_POST["DBUserName"],$_POST["Pass"],$_POST["DBName"]);
         }catch (Exception $e){
           echo "Can't connect to Database.";
           exit("Error!");

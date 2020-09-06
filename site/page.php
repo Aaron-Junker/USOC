@@ -19,7 +19,7 @@
         $sitehere = False;
         if(isset($_GET["URL"])){
           if(strpos($_GET["URL"], '/blog/') !== false){
-            $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+            $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
             $sql = "SELECT * FROM Blog";
             $db_erg = mysqli_query( $db_link, $sql );
             while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
@@ -33,7 +33,7 @@
               }
             }
           }else{
-            $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+            $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
             $sql = "SELECT * FROM Sites";
             $db_erg = mysqli_query( $db_link, $sql );
             while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
@@ -47,7 +47,7 @@
               }
             }}
         }elseif($_SERVER["REQUEST_URI"].lower() == "index.php" || $_SERVER["REQUEST_URI"].lower() == "index.html"){
-          $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
           $sql = "SELECT * FROM Sites WHERE Name='index'";
           $db_erg = mysqli_query( $db_link, $sql );
           while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
@@ -62,12 +62,27 @@
               $U->getErrorSite($_GET["E"]);
             }
           }
+        }elseif($_SERVER["REQUEST_URI"].lower() == "blogsite" || $_SERVER["REQUEST_URI"].lower() == "blogsite.php"){
+          echo "<h1>".$U->getLang("blog.overwiew")."</h1>";
+          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+          $sql = "SELECT * FROM Blog ORDER BY ID DESC;";
+          $db_erg = mysqli_query( $db_link, $sql );
+          while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+            if($zeile["Online"]==1){
+              echo "<h2 style='color:black;border-top: 1px;border-top-style:solid;border-top-color:black;'><a style='color:black;' href='/blog/".$zeile["Name"]."'>".$zeile["Name"]."</a></h2>";
+              echo substr($zeile["Code"],0,100)."...";
+              echo "<br /><br /><a href='/blog/".$zeile["Name"]."'><button class='readmore'>".$U->getLang("blog.readmore")."</button></a>";
+            }
+          }
+        }else{
+          header("HTTP/1.1 404 Not found");
+          header('Location: error?E=404');
         }
         if($sitehere){
           echo $site;
         }else{
           header("HTTP/1.1 404 Not found");
-          header('Location: Errors/404.html');
+          header('Location: error?E=404');
         }
        ?>
     </article>

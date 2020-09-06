@@ -8,7 +8,7 @@
         if(preg_match('/^[a-z0-9A-Z.]{3,15}$/',$_POST["U"])){
           if(preg_match('/^[a-z0-9A-Z.:,;]{8,25}$/',$_POST["P"])){
             $register = True;
-            $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+            $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
             $sql = "SELECT * FROM User";
             $db_erg = mysqli_query( $db_link, $sql );
             while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))

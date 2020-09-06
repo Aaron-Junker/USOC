@@ -5,7 +5,7 @@
   session_start();
   $blocked = False;
   $login = False;
-  $db_link = mysqli_connect (MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+  $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
   $sql = "SELECT * FROM User";
   $db_erg = mysqli_query( $db_link, $sql );
   if(isset($_SESSION["code"])){
@@ -55,9 +55,9 @@
     echo getLang("login.succeed");
     $_SESSION['User_ID'] = md5($user_id);
     $_SESSION['User_Name'] = $user_name;
-    header('Location: '.getDomain());
+    header('Location: '.$USOC["DOMAIN"]);
   }elseif($login === False && $blocked === False) {
     echo getLang("login.fail");
-    header('Location: '.getDomain().'/login.php?ERROR=0x000000');
+    header('Location: '.$USOC["DOMAIN"].'/login.php?ERROR=0x000000');
   }
 ?>
