@@ -5,7 +5,7 @@
   $U = new U();
 ?>
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="<?php echo getSetting("site.lang"); ?> dir="ltr">
   <head>
     <?php
       include_once "siteelements/head.php";
@@ -18,7 +18,7 @@
     <article>
       <?php
         if($U->getSetting("login.changepassword") == 0){
-          echo "<p>Zur Zeit kann kein Passwort geändert werden.";
+          echo "<p>Zur Zeit kann kein Passwort geändert werden.</p>";
         }else{
           echo <<<HEREDOC
             <form action="login/changepass.php" method="post">
