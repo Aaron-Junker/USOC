@@ -55,13 +55,18 @@
             $sitehere = True;
           }
         }elseif($_SERVER["REQUEST_URI"].lower() == "error"){
-          
+          if(isset($_GET["E"])){
+            if(!($_GET["E"] == "400" || $_GET["E"] == "403" || $_GET["E"] == "404" || $_GET["E"] == "405" || $_GET["E"] == "410" || $_GET["E"] == "414" || $_GET["E"] == "418" || $_GET["E"] == "423")){
+              echo "unknown Error";
+            }else{
+              $U->getErrorSite($_GET["E"]);
+            }
+          }
         }
         if($sitehere){
           echo $site;
         }else{
           header("HTTP/1.1 404 Not found");
-
           header('Location: Errors/404.html');
         }
        ?>

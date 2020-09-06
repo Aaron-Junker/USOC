@@ -6,6 +6,7 @@
 * Added several translations
 * Removed is_there_usoc.json
 * Added more documentation
+* Moved HTTP-Errors to page.php
 # Pb1.8Bfx0
 * Fixed #43, #28 and other bugs.
 # Pb1.7Bfx1
