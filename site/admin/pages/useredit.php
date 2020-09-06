@@ -27,7 +27,7 @@
         }else{
           $b = 0;
         }
-        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "UPDATE User SET Type='".$admin."', blocked ='".$b."' WHERE Id='".$_POST["N"]."';";
         $db_erg = mysqli_query( $db_link, $sql );
       }else{

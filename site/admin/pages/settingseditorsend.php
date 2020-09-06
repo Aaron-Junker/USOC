@@ -8,8 +8,7 @@
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage">Zurück</a>
     <?php
       if(isset($_GET["N"])&&isset($_GET["V"])){
-        require_once ('konfiguration.php');
-        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "UPDATE Settings SET Value='".$_GET["V"]."' WHERE Name ='".$_GET["N"]."';";
         $db_erg = mysqli_query( $db_link, $sql );
         echo "Einstellung geändert";

@@ -10,7 +10,7 @@ require_once 'google-api-php-client/src/Google/autoload.php';
 $user_id = $token_data['payload']['sub'];
     if(isset($_SESSION["User_ID"])){
       require_once ('konfiguration.php');
-      $db_link = mysqli_connect(MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+      $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
       $sql = "SELECT * FROM User WHERE Username='".mysqli_real_escape_string ($db_link,$_SESSION["User_Name"])."'";
       $db_erg = mysqli_query( $db_link, $sql );
       while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))

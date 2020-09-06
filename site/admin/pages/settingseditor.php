@@ -12,8 +12,7 @@
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <select name="N">
         CODE;
-          require_once ('konfiguration.php');
-          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
 
           $sql = "SELECT * FROM Settings";
           $db_erg = mysqli_query( $db_link, $sql );
@@ -31,7 +30,7 @@
         echo $text;
       }else{
         require_once ('konfiguration.php');
-        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_BENUTZER,MYSQL_KENNWORT,MYSQL_DATENBANK);
+        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "SELECT * FROM Settings;";
         $db_erg = mysqli_query( $db_link, $sql );
         while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
