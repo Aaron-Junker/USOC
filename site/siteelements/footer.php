@@ -9,14 +9,14 @@
     // Switch between light- and darkmode
     if(isset($_COOKIE["css"])){
       if($_COOKIE["css"] == "l"){
-        echo '<a href="javascript:switchdark('."'d'".')">'.getLang("style.darkmode").'</a></p>';
+        echo '<a href="javascript:switchdark('."'d'".')">'.$U->getLang("style.darkmode").'</a></p>';
       }elseif($_COOKIE["css"] == "d"){
-        echo '<a href="javascript:switchdark('."'l'".')">'.getLang("style.lightmode").'</a></p>';
+        echo '<a href="javascript:switchdark('."'l'".')">'.$U->getLang("style.lightmode").'</a></p>';
       }else{
-        echo '<a href="javascript:switchdark('."'d'".')">'.getLang("style.darkmode").'</a></p>';
+        echo '<a href="javascript:switchdark('."'d'".')">'.$U->getLang("style.darkmode").'</a></p>';
       }
     }else{
-      echo '<a href="javascript:switchdark('."'d'".')">'.getLang("style.darkmode").'</a></p>';
+      echo '<a href="javascript:switchdark('."'d'".')">'.$U->getLang("style.darkmode").'</a></p>';
     }
   ?>
 </footer>
