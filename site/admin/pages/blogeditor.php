@@ -19,17 +19,17 @@
   }
 ?>
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Adminbereich - Blogseite editieren</title>
-    <script src="../ckeditor/ckeditor.js"></script>
+    <title><?php echo $U->getLang("admin") ?> - <?php echo $U->getLang("admin.edit.blogsite") ?></title>
+    <script src="ckeditor/ckeditor.js"></script>
   </head>
   <body>
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage">Zurück</a>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back") ?></a>
     <form action="sendsiteblog.php" method="post">
-    Name:<input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";}?>/><br />
-    Content:
+    <?php echo $U->getLang("admin.site.name") ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";}?>/><br />
+    <?php echo $U->getLang("admin.site.content") ?>
     <textarea id="editor">
     <?php
       if($edit){
@@ -53,7 +53,7 @@
       }
     ?>
 
-    <br /><button type="submit" value="Absenden">Absenden</button>
+    <br /><button type="submit" value="Absenden"><?php echo $U->getLang("admin.send") ?></button>
   </form>
   <script>
   ClassicEditor

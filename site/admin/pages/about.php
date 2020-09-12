@@ -1,3 +1,8 @@
+<?php
+  include_once "configuration.php";
+  include_once $USOC["SITE_PATH"]."/includes/class.inc.php";
+  $U = new U();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,11 +12,11 @@
   <body>
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage">Back</a>
     <h1>USOC</h1>
-    <h2>Usable Simple Open-source CMS</h2>
-    <p>Version: Pb2.0Bfx0</p>
-    <p>Under the Case Games Open Source License</p>
+    <h2>Useful Simple Open-source CMS</h2>
+    <p><?php echo $U->getLang("admin.about.version") ?>: Pb2.0Bfx0</p>
+    <p><?php echo $U->getLang("admin.about.license") ?></p>
     <p>By Case Games 2020</p>
-    <p>Developed by:</p>
+    <p><?php echo $U->getLang("admin.about.developed_by") ?></p>
     <ul>
       <li>Aaron Junker</li>
     </ul>

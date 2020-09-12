@@ -2,20 +2,22 @@
 <html lang="de" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Adminbereich - Benutzer editieren</title>
+    <title><?php echo $U->getLang("admin") ?> - <?php echo $U->getLang("admin.user.edit") ?></title>
   </head>
   <body>
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage">Zurück</a>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back") ?></a>
     <?php
       if(isset($_POST["N"])&& !isset($_POST["Submit"])){
         $text = <<<'HEREDOC'
-        <form action="$_SERVER["PHP_SELF"]?URL=useredit" method="post">
-          <label for="A">Admin?</label><input name="A" type="checkbox" />
-          <label for="G">Gesperrt?</label><input name="G" type="checkbox" />
+        <form action="%a?URL=useredit" method="post">
+          <label for="A">%b</label><input name="A" type="checkbox" />
+          <label for="G">%c</label><input name="G" type="checkbox" />
           <input type="submit" name="Submit"/>
         HEREDOC;
         $text = $text."<input type='hidden' name='N' value='".$_POST["N"]."' /></form>";
-        echo str_replace('$_SERVER["PHP_SELF"]',$_SERVER['PHP_SELF'],$text);
+        echo str_replace('%a',$_SERVER['PHP_SELF'],$text);
+        $text = str_replace('%b',$U->getLang("admin.user.admin"),$text);
+        $text = str_replace('%c',$U->getLang("admin.user.block"),$text);
       }elseif(isset($_POST["Submit"])){
         if(isset($_POST["A"])){
           $admin = 1;

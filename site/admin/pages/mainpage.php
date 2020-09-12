@@ -5,13 +5,11 @@
     <title>Adminbereich</title>
   </head>
   <body>
-    <h1>Willkommen</h1>
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor">Einstellungen bearbeiten</a><br />
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=useredit">Benutzer editieren</a><br />
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=Newsletter">Newsletter verfassen</a><br />
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpageedit">Hauptseite editieren</a><br />
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=editor">Neue Seite erstellen</a><br />
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=blogeditor">Neue Blogseite erstellen</a><br />
+    <h1><?php echo $U->getLang("admin.welcome") ?></h1>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor"><?php echo $U->getLang("admin.settings.edit") ?></a><br />
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=useredit"><?php echo $U->getLang("admin.user.edit") ?></a><br />
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=editor"><?php echo $U->getLang("admin.edit.new.site") ?></a><br />
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=blogeditor"><?php echo $U->getLang("admin.edit.new.blogsite") ?></a><br />
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <select name="SiteName">
       <?php
@@ -25,7 +23,7 @@
        ?>
      </select>
     <input type="hidden" name="URL" value="editor" />
-      <button type="submit">Seite Editieren</button></form>
+      <button type="submit"><?php echo $U->getLang("admin.edit.site") ?></button></form>
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <select name="SiteName">
         <?php
@@ -39,7 +37,7 @@
          ?>
        </select>
         <input type="hidden" name="URL" value="blogeditor" />
-        <button type="submit">Blogseite Editieren</button>
+        <button type="submit"><?php echo $U->getLang("admin.edit.blogsite") ?></button>
     </form>
   </body>
 </html>
