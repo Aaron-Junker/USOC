@@ -24,15 +24,15 @@
       header('Location: '.$USOC["DOMAIN"].'/error?E=403');
     }
   }else{
-    echo <<<HTML
+    ?>
       <form action="login.php" method="post">
-        <label for="B">Benutzername</label>
+        <label for="B"><?php echo $U->getLang("login.username") ?></label>
         <input name="B" type="text" />
-        <label for="P">Passwort</label>
+        <label for="P"><?php echo $U->getLang("login.password") ?></label>
         <input name="P" type="password" />
         <input type="submit" />
       </form>
-    HTML;
 
+<?php
   }
  ?>
