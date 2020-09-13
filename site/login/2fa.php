@@ -8,7 +8,7 @@
   include_once "src/GoogleAuthenticator.php";
   include_once 'src/GoogleQrUrl.php';
 
-  $U = new U();
+  newClass();
   $g = new \Sonata\GoogleAuthenticator\GoogleAuthenticator();
   if(isset($_POST["secret"])&&isset($_POST["register"])){
     $secret = $_POST["secret"];

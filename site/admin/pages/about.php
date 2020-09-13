@@ -1,7 +1,7 @@
 <?php
   include_once "configuration.php";
   include_once $USOC["SITE_PATH"]."/includes/class.inc.php";
-  $U = new U();
+  newClass();
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">

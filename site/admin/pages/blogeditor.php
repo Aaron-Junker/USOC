@@ -1,7 +1,7 @@
 <?php
   include_once "configuration.php";
   include_once $USOC["SITE_PATH"]."/includes/class.inc.php";
-  $U = new U();
+  newClass();
   $edit = false;
   if(isset($_GET["SiteName"])){
     $edit = false;

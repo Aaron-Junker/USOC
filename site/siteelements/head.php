@@ -5,7 +5,7 @@
   */
   include_once "../configuration.php";
   include_once "../includes/class.inc.php";
-  $U = new U();
+  newClass();
 ?>
 <meta charset="<?php echo $U->getLang("lang.charset"); ?>">
 <title><?php echo getSetting("site.name") ?></title>

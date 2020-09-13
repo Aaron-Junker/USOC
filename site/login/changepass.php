@@ -2,7 +2,7 @@
   session_start();
   include_once "../configuration.php";
   include_once "../includes/class.inc.php";
-  $U = new U();
+  newClass();
   if(isset($_POST["oldpass"])&&isset($_POST["newpass1"])&&isset($_POST["newpass2"])&&isset($_SESSION['User_Name'])){
     if($_POST["newpass1"]==$_POST["newpass2"]&&preg_match('/^[a-z0-9A-Z.:,;]{8,25}$/',$_POST["newpass1"])){
       $passc = False;

@@ -1,7 +1,7 @@
 <?php
   require_once "../configuration.php";
   require_once "../includes/class.inc.php";
-  $U = new U();
+  newClass();
   session_start();
   $blocked = False;
   $login = False;
