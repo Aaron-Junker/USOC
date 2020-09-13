@@ -9,7 +9,7 @@
   }
 ?>
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
   <head>
     <?php
       include_once "siteelements/head.php"
@@ -42,7 +42,7 @@
           HEREDOC;
           echo $HTML;
       }else{
-        echo U.getLang("register.succeeded");
+        echo U.getLang("register.succeed");
       }
       ?>
     </article>

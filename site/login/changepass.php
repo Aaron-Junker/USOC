@@ -16,14 +16,14 @@
           }
         }
     }else{
-      echo "Bitte zweimal gleiches Passwort eingeben. Oder ein gültiges Passwort";
+      echo $U->getLang("login.changepass.twopassword");
     }
   }else{
-    echo "Nicht alles ausgefüllt oder nicht eingeloggt";
+    echo $U->getLang("login.changepass.not_filled");
   }
   if($U->getSetting("login.changepassword") == 0){
     $passc = False;
-    echo "Passwortänderung konnte nicht erfolgen";
+    echo $U->getLang("login.changepass.fail");
   }
   echo $passc;
   if($passc){

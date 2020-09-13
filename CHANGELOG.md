@@ -3,7 +3,7 @@
 * Better organisation of code
 * Added HTTP-Errors 400, 405, 410, 414, 423
 * Updated files to new code conventions
-* Added several translations
+* Added all translations
 * Removed is_there_usoc.json
 * Added more documentation
 * Moved HTTP-Errors to page.php

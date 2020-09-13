@@ -7,7 +7,7 @@
   include_once "../includes/class.inc.php";
   $U = new U();
 ?>
-<meta charset="utf-8">
+<meta charset="<?php echo $U->getLang("lang.charset"); ?>">
 <title><?php echo getSetting("site.name") ?></title>
 <?php
   if(isset($_COOKIE["css"])){

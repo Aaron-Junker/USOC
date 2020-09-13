@@ -1,6 +1,6 @@
 <?php session_start() ?>
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
   <head>
   <?php
       include_once "siteelements/head.php"
@@ -34,7 +34,6 @@
     ?>
     <article>
       <?php
-      include_once "phpapi/getsettings.php";
       if(isset($_GET["ERROR"])){
         echo "<p id='error'>".getError($_GET["ERROR"],"de")."</p>";
       }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title><?php echo $U->getLang("admin") ?> - <?php echo $U->getLang("admin.user.edit") ?></title>

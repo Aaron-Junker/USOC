@@ -24,7 +24,6 @@
   if(isset($_POST["N"])&&isset($_POST["C"])&&$logina==1&&$edit){
     $sql = "UPDATE Sites SET Code='".addslashes($_POST["C"])."', Online='".$_POST["online"]."' WHERE Name='".$_POST["N"]."';";
     $db_erg = mysqli_query( $db_link, $sql );
-    // fix path https://github.com/Case-Games/USOC/issues/13
-    header("Location: /".$_POST["N"]);
+    header("Location: ".$USOC["DOMAIN"]."/page.php?URL=".$_POST["N"]);
   }
 ?>

@@ -19,10 +19,10 @@ $user_id = $token_data['payload']['sub'];
           if($zeile["google_token"] == ""){
           $change = True;
         }else{
-          echo "Bereits einen Google account verknüpft";
+          echo str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.fail"));
         }
         }else{
-          echo "Fehler";
+          echo $U->getLang("login.oAuth.error_fail");
         }
 
       }
@@ -31,10 +31,10 @@ $user_id = $token_data['payload']['sub'];
         mysqli_query( $db_link, $sql );
       }
     }else{
-    echo "Nicht eingeloggt";
+    echo $U->getLang("login.not_logged_in");
     }
   }else{
-    echo "Fehler";
+    echo $U->getLang("login.oAuth.error_fail");
   }
 
 

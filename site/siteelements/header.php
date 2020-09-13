@@ -27,7 +27,7 @@
 
         if(!function_exists("register_open")){
           function register_open(){
-            if(getSetting("login.register_open")=="1"){
+            if($U->getSetting("login.register_open")=="1"){
               return True;
             }
             return False;

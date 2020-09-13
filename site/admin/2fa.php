@@ -24,7 +24,7 @@
           $_SESSION["code"] = True;
           header("Location: login.php");
         }else{
-          echo "Code nicht korrekt";
+          echo $U->getLang("login.2fa.false_code");
         }
       }
   }elseif(isset($_POST["delete"])){

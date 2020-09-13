@@ -22,19 +22,19 @@
 
             }
           }else{
-            echo "ungültiges Passwort";
+            echo str_replace("%a",$U->getLang("login.password"),$U->getLang("login.invalid"));
           }
         }else{
-          echo "ungültiger Benutzername";
+          echo str_replace("%a",$U->getLang("login.username"),$U->getLang("login.invalid"));
         }
       }else{
-        echo "Ungültige Mailadresse";
+        echo str_replace("%a",$U->getLang("login.mail"),$U->getLang("login.invalid"));
       }
     }else{
-      echo "Passwort nicht gleich.";
+      echo $U->getLang("login.fail_same_password");
     }
   }else{
-    echo "Bitte alles ausfüllen";
+    echo $U->getLang("login.fillout");
   }
   if($U->getSetting("login.register_open")=="0"){
     echo $U->getLang("register.closed");
