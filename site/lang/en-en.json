@@ -1,6 +1,6 @@
 {
     "lang.name": "English",
-    "lang.charset": "UTF-8"
+    "lang.charset": "UTF-8",
     "content": "Content",
     "content.login": " ",
     "content.login.register": "register",
