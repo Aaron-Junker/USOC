@@ -9,15 +9,4 @@
   $USOC["SITE_PATH"] = "../";
   $USOC["ADMIN_PATH"] = "";
   $USOC["DOMAIN"] = "...";
-
-
-
-  //Don't remove this function
-  function newClass()
-  {
-    global $U;
-    if(!isset($U)){
-      $U = new U();
-    }
-  }
 ?>
