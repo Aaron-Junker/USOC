@@ -20,14 +20,14 @@
       include_once "siteelements/header.php"
     ?>
     <article>
-      <h3><?php echo getLang("content.login.register"); ?></h3>
+      <h3><?php echo $U->getLang("content.login.register"); ?></h3>
       <?php
         if(register_open()){
           $HTML =<<<HEREDOC
           <form action="login/register.php" method="post">
             <label for="U">'
           HEREDOC;
-          $HTML += getLang("login.username");
+          $HTML += $U->getLang("login.username");
           $HTML += <<<HEREDOC
             </label>
             <input type="text" name="U" /><br>
@@ -42,7 +42,7 @@
           HEREDOC;
           echo $HTML;
       }else{
-        echo U.getLang("register.succeed");
+        echo $U->getLang("register.succeed");
       }
       ?>
     </article>

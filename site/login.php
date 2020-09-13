@@ -39,11 +39,8 @@
       }
       if (isset($_SESSION["User_ID"])) {
         echo "Bereits angemeldet";
-      }elseif(getSetting("login.login_open")==0){
-        echo <<<HERE
-          <h3>Login Geschlossen</h3>
-          <p> Bitte melde dies beim Webmaster <a href="mailto:aaron.junker@outlook.com">aaron.junker@outlook.com</a></p>
-        HERE;
+      }elseif($U->getSetting("login.login_open")==0){
+        echo "<h3>Login Geschlossen</h3>";
       }else{
         echo <<<HEREDOC
         <form action="login/login.php" method="post">
