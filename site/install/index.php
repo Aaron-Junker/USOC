@@ -6,6 +6,7 @@
   </head>
   <body>
     <h1>Install USOC</h1>
+    <h2>Experimantal feature. Sometimes doesn't work</h2>
     <ul>
       <li>Version: Pa1.8Bfx0</li>
       <li>You need PHP 7: <?php if (PHP_VERSION_ID > 69999){echo "Yes!";}else{echo "You must update!";} ?></li>

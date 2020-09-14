@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php
+  session_start();
+  include_once "configuration.php";
+  include_once "includes/class.inc.php";
+  newClass();
+?>
 <!DOCTYPE html>
 <html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
   <head>
@@ -34,26 +39,29 @@
     ?>
     <article>
       <?php
-      if(isset($_GET["ERROR"])){
-        echo "<p id='error'>".getError($_GET["ERROR"],"de")."</p>";
-      }
-      if (isset($_SESSION["User_ID"])) {
-        echo "Bereits angemeldet";
-      }elseif($U->getSetting("login.login_open")==0){
-        echo "<h3>Login Geschlossen</h3>";
-      }else{
-        echo <<<HEREDOC
-        <form action="login/login.php" method="post">
-        Benutzername:
-        <input type="text" name="B" />
-        Passwort:
-        <input type="password" name="P" />
-        <input type="submit" name="button"/>
-      </form>
-      <h5>Mit Google anmelden</h5>
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
-      HEREDOC;
-    }
+        if(isset($_GET["ERROR"])){
+          echo "<p id='error'>".@getError($_GET["ERROR"],"de")."</p>";
+        }
+        if (isset($_SESSION["User_ID"])) {
+          echo $U->getLang("login.already");
+        }elseif($U->getSetting("login.login_open")==0){
+          echo "<h3>".$U->getLang("login.login_closed")."</h3>";
+        }else{
+          $HTML = <<<HEREDOC
+          <form action="login/login.php" method="post">
+          <label for="B">%a</label>
+          <input type="text" name="B" />
+          <label for="P">%b</label>
+          <input type="password" name="P" />
+          <input type="submit" name="button"/>
+          </form>
+          <h5>Mit Google anmelden</h5>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          HEREDOC;
+          $HTML = str_replace("%a",$U->getLang("login.username.g"),$HTML);
+          $HTML = str_replace("%b",$U->getLang("login.password.g"),$HTML);
+          echo $HTML;
+        }
       ?>
       <form style="display:none;" action="login/googlelogintoken.php" method="post">
         <input type="text" name="token" />

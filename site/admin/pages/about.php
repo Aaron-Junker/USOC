@@ -13,7 +13,7 @@
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage">Back</a>
     <h1>USOC</h1>
     <h2>Useful Simple Open-source CMS</h2>
-    <p><?php echo $U->getLang("admin.about.version") ?>: Pb2.0Bfx0</p>
+    <p><?php echo $U->getLang("admin.about.version") ?>: Pb2.0Bfx0RCA</p>
     <p><?php echo $U->getLang("admin.about.license") ?></p>
     <p>By Case Games 2020</p>
     <p><?php echo $U->getLang("admin.about.developed_by") ?></p>

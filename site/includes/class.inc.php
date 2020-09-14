@@ -9,8 +9,8 @@
   if(gettype($USOC) == "array"){
     /**
     * This function initialise the U class in $U if it doesn't exist
-    * @version Pb2.0Bfx0
-    * @since Pb2.0Bfx0
+    * @version Pb2.0Bfx0RCA
+    * @since Pb2.0Bfx0RCA
     */
     function newClass(){
       global $U;
@@ -21,25 +21,25 @@
     * This class only works when configuration.php is included.
     * Use newClass() and not this class.
     * @see newClass()
-    * @version Pb2.0Bfx0
-    * @since Pb2.0Bfx0
+    * @version Pb2.0Bfx0RCA
+    * @since Pb2.0Bfx0RCA
     */
     class U{
       /**
       * Version name.
-      * @since Pb2.0Bfx0
+      * @since Pb2.0Bfx0RCA
       * @var string
       */
-      public $version = "Pb2.0Bfx0";
+      public $version = "Pb2.0Bfx0RCA";
       /**
       * Version code
-      * @since Pb2.0Bfx0
+      * @since Pb2.0Bfx0RCA
       * @var int
       */
       public $version_code = 20200900;
       /**
       * True when USOC is modded.
-      * @since Pb2.0Bfx0
+      * @since Pb2.0Bfx0RCA
       * @var boolean
       */
       public $modded = false;

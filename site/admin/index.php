@@ -26,9 +26,9 @@
   }else{
     ?>
       <form action="login.php" method="post">
-        <label for="B"><?php echo $U->getLang("login.username") ?></label>
+        <label for="B"><?php echo $U->getLang("login.username.g") ?></label>
         <input name="B" type="text" />
-        <label for="P"><?php echo $U->getLang("login.password") ?></label>
+        <label for="P"><?php echo $U->getLang("login.password.g") ?></label>
         <input name="P" type="password" />
         <input type="submit" />
       </form>

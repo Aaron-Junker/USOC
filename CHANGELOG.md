@@ -1,15 +1,30 @@
-# Pb2.0Bfx0
+# Pb2.0Bfx0RCA
+> This Version isn't backward compatible to older versions
+
+> The install wizard doesn't work.
+
+This is a release Candidate version. Issues will be tracked in #49
+
+## Additions
 * Added better class system
-* Better organisation of code
 * Added HTTP-Errors 400, 405, 410, 414, 423
-* Updated files to new code conventions
+* Added experimental information to installer.
+## Changes
+* Better organisation of code
+* Renamed profil.php in profile.php
+* Added more documentation to code
+* Moved blogsite, index and HTTP-Errors to page.php
 * Added all translations
+* Updated files to new code conventions
+## Removed
 * Removed is_there_usoc.json
-* Added more documentation
-* Moved HTTP-Errors to page.php
-* Moved index page to normal pages.
-* Moved blogsite to page.php
-* fixed #48
+* /errors/*
+* blog.php
+* blogsite.php
+* option for a hash
+## Fixed bugs
+* #48
+* And other
 # Pb1.8Bfx0
 * Fixed #43, #28 and other bugs.
 # Pb1.7Bfx1

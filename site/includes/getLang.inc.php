@@ -8,8 +8,8 @@
   * This function gets a string from the localisation files. It uses the default language.
   * When it can't find the string in the default language it searches the string in en-en
   * @see U For more informations about U.
-  * @version Pb2.0Bfx0
-  * @since Pb2.0Bfx0
+  * @version Pb2.0Bfx0RCA
+  * @since Pb2.0Bfx0RCA
   * @param string $string The name of the string. (For example: login.name)
   * @return string The translated string
   */

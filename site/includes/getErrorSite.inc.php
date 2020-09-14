@@ -8,8 +8,8 @@
   * This function return the code for the Error Page with error $error
   * When it can't find the string in the default language it searches the string in en-en
   * @see U For more informations about U.
-  * @version Pb2.0Bfx0
-  * @since Pb2.0Bfx0
+  * @version Pb2.0Bfx0RCA
+  * @since Pb2.0Bfx0RCA
   * @param string $error String with the error (example: "404")
   * @return string The code
   */

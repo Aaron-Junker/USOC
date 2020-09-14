@@ -18,7 +18,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c5f474aa55e4eb1a63729a4692aaf90)](https://www.codacy.com/gh/Case-Games/USOC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Case-Games/USOC&amp;utm_campaign=Badge_Grade)
 Useful simple open-source CMS
 
-![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.0Bfx0-blue)
+![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.0Bfx0RCA-blue)
 # Is it ready to use
 No. In the moment you shouldn't use it
 # How can I help

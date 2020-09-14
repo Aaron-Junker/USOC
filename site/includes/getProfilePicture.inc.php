@@ -7,8 +7,8 @@
   * This is a function for the class U.
   * This function gets a value from the "settings" database.
   * @see U For more informations about U.
-  * @version Pb2.0Bfx0
-  * @since Pb2.0Bfx0
+  * @version Pb2.0Bfx0RCA
+  * @since Pb2.0Bfx0RCA
   * @param string $name The name of the setting. (For example: login.name)
   * @return mixed The value from the database.
   */

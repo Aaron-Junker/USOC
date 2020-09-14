@@ -1,12 +1,15 @@
 <?php
   session_start();
   session_destroy();
+  include "configuration.php";
+  include "/includes/class.inc.php";
+  newClass();
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>Case Games</title>
+    <meta charset="<?php echo $U->getLang("lang.charset"); ?>">
+    <title><?php echo getSetting("site.name") ?></title>
     <link rel="stylesheet" href="style/css.php" type="text/css" />
     <meta name="google-signin-client_id" content="*.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -35,7 +38,7 @@
       include_once "siteelements/header.php"
     ?>
     <article>
-      <h1>Sie wurden ausgeloggt</h1>
+      <h1><?php echo $U->getLang("login.logout");?></h1>
     </article>
     <?php
       include_once "siteelements/footer.php"

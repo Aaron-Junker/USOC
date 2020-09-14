@@ -1,6 +1,7 @@
 <?php
   include_once "configuration.php";
   include_once "includes/class.inc.php";
+  newClass();
   function register_open(){
     if(getSetting("login.register_open")=="1"){
       return True;
@@ -31,15 +32,18 @@
           $HTML += <<<HEREDOC
             </label>
             <input type="text" name="U" /><br>
-            <label for="M">Mailadresse</label>
+            <label for="M">%a</label>
             <input type="text" name="M" /><br>
-            <label for="P">Passwort</label>
+            <label for="P">%b</label>
             <input type="password" name="P" /><br>
-            <label for="PR">Passwort wiederhohlen</label>
+            <label for="PR">%c</label>
             <input type="password" name="PR" /><br>
             <input type="submit" />
           </form>
           HEREDOC;
+          $HTML = str_replace("%a",$U->getLang("login.mail.g"),$HTML);
+          $HTML = str_replace("%b",$U->getLang("login.password.g"),$HTML);
+          $HTML = str_replace("%c",$U->getLang("login.password.repeat.g"),$HTML);
           echo $HTML;
       }else{
         echo $U->getLang("register.succeed");

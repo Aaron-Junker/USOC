@@ -5,7 +5,7 @@
   newClass();
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $U->getSetting("site.lang"); ?> dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
   <head>
     <?php
       include_once "siteelements/head.php";
