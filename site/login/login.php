@@ -12,7 +12,7 @@
     $_POST["B"] = $_SESSION['temp_User_Name'];
   }
   while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-    if((strtolower($_POST["B"])==strtolower($zeile["Username"])||strtolower($_POST["B"])==strtolower($zeile["Mail"]))&&(@password_hash($_POST["P"],PASSWORD_DEFAULT,["salt"=>getSetting("login.salt")])==$zeile["Password"]||isset($_SESSION["code"])) ){
+    if((strtolower($_POST["B"])==strtolower($zeile["Username"])||strtolower($_POST["B"])==strtolower($zeile["Mail"]))&&(password_verify($_POST["P"],$zeile["Password"])||isset($_SESSION["code"])) ){
       $login = True;
       $user_id = $zeile["Id"];
       $user_name = $zeile["Username"];

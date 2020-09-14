@@ -11,7 +11,7 @@
       $db_erg = mysqli_query( $db_link, $sql );
       while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
         {
-          if(md5($zeile["Id"]) == $_SESSION['User_ID']&&$zeile["Password"]==password_hash($_POST["oldpass"],PASSWORD_DEFAULT,["salt"=>$U->getSetting("login.salt")])){
+          if(md5($zeile["Id"]) == $_SESSION['User_ID']&&password_verify($_POST["oldpass"],$zeile["Password"])){
             $passc = True;
           }
         }
@@ -25,9 +25,8 @@
     $passc = False;
     echo $U->getLang("login.changepass.fail");
   }
-  echo $passc;
   if($passc){
-    $sql = "UPDATE User SET password='".password_hash($_POST["oldpass"],PASSWORD_DEFAULT,["salt"=>$U->getSetting("login.salt")])."' WHERE Id='".$_SESSION['User_ID']."';";
+    $sql = "UPDATE User SET password='".password_hash($_POST["newpass"])."' WHERE Id='".$_SESSION['User_ID']."';";
     echo $sql;
     $db_erg = mysqli_query( $db_link, $sql );
   }

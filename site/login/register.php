@@ -41,7 +41,7 @@
     $register = False;
   }
   if($register){
-    $sql = 'INSERT INTO User (Username, Mail, Password, Type) VALUES ('."'".$_POST["U"]."'".','."'".$_POST["M"]."'".','."'".password_hash($_POST["P"],PASSWORD_DEFAULT,["salt"=>getSetting("login.salt")])."'".',0);';
+    $sql = 'INSERT INTO User (Username, Mail, Password, Type) VALUES ('."'".$_POST["U"]."'".','."'".$_POST["M"]."'".','."'".password_hash($_POST["P"],PASSWORD_DEFAULT)."'".',0);';
     if($db_erg = mysqli_query( $db_link, $sql )){
       echo $U->getLang("register.succeed");
       header("Location: ".$USOC["DOMAIN"]);

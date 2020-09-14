@@ -16,6 +16,7 @@ This is a release Candidate version. Issues will be tracked in #49
 * Moved blogsite, index and HTTP-Errors to page.php
 * Added all translations
 * Updated files to new code conventions
+* Changed de.gravatar.com to gravatar.com
 ## Removed
 * Removed is_there_usoc.json
 * /errors/*

@@ -15,6 +15,7 @@
     "style.darkmode": "Darkmode",
     "style.lightmode": "Normalmode",
     "login": "login",
+    "login.g": "Login",
     "login.already_logged_in": "You're already logged in",
     "login.form_error": "Form error!",
     "login.login_closed": "Login closed",
@@ -56,11 +57,14 @@
     "login.fail_same_password": "Not the same password",
     "login.fillout": "Please fill out everything",
     "login.logout": "You're logged out",
+    "login.logout.action": "Logout",
     "blog": "blog",
     "blog.readmore": "Read more...",
     "login.account.password_changed": "Password changed",
     "error.offline": "<h1>Page offline</h1>\n                <p>This page is no longer available.</p>",
     "error.410": "Gone. This resource is not longer here.",
+    "register": "register",
+    "register.g": "Register",
     "register.succeed": "Register succeeded",
     "register.closed": "Register closed",
     "blog.overwiew": "Blog overview",
@@ -89,5 +93,6 @@
     "admin.welcome": "Welcome!",
     "profile": "Profile",
     "profile.settings": "Profile settings",
-    ""
+    "profile.changePP": "Change profile picture on Gravatar.com",
+    "accessibility.skipnavigation": "Skip Navigation"
 }

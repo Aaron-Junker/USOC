@@ -45,7 +45,7 @@
         <?php
           echo $U->getPP();
         ?>
-        <br><a target="_blank" href="https://de.gravatar.com"><button>Profilbild ändern auf Gravatar.com</button></a><br />
+        <br><a target="_blank" href="https://gravatar.com"><button><?php $U->getLang("profile.changePP") ?></button></a><br />
         <?php
         $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "SELECT * FROM User WHERE Username='".$_SESSION["User_Name"]."'";

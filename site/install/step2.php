@@ -14,15 +14,14 @@
           echo "Can't connect to Database.";
           exit("Error!");
         }
-        $salt = substr(str_shuffle(str_repeat(implode('', range('!','z')), $length)), 0, 25);
-        $pass = password_hash($_POST["Pass"],PASSWORD_DEFAULT,["salt"=>$salt]);
+        $pass = password_hash($_POST["Pass"],PASSWORD_DEFAULT);
         $Name = $_POST["Name"];
         $Author = $_POST["Author"];
         $lang = $_POST["Lang"];
         $UserName = $_POST["UserName"];
         $sql= <<<HEREDOC
         CREATE TABLE `Settings` (
-          `Id` int(20) NOT NULL,  
+          `Id` int(20) NOT NULL,
           `Name` varchar(99) NOT NULL,
           `Value` varchar(99) NOT NULL,
           `Type` varchar(4) NOT NULL
@@ -41,7 +40,6 @@
         (10, 'site.lang', '$lang', 'Text'),
         (11, 'site.robots', 'index, follow', 'Text'),
         (12, '2fa.name', '', 'Text'),
-        (13, 'login.salt', '$salt', 'Text');
 
         ALTER TABLE `Settings`
           ADD PRIMARY KEY (`Id`);
@@ -113,7 +111,7 @@
           MODIFY ID int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
         COMMIT;
         HEREDOC;
-        
+
         mysqli_multi_query($db_link,$sql);
         //File configuration.php creation
         $file = <<<'HEREDOC'
