@@ -32,7 +32,6 @@
         <input name="P" type="password" />
         <input type="submit" />
       </form>
-
 <?php
   }
  ?>
