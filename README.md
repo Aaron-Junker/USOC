@@ -1,10 +1,7 @@
 # USOC 
 ![Documentation Status](https://readthedocs.org/projects/usoc/badge/?version=latest)
-![Docs](https://usoc.readthedocs.io/en/latest/?badge=latest)
 ![CodeFactor](https://www.codefactor.io/repository/github/case-games/usoc/badge/master)
-![Codefactor](https://www.codefactor.io/repository/github/case-games/usoc/overview/master)
 ![GitHub contributors](https://img.shields.io/github/contributors/Case-Games/USOC)
-![GitHub repo size](https://img.shields.io/github/repo-size/Case-Games/USOC)
 ![GitHub issues](https://img.shields.io/github/issues/Case-Games/USOC)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/Case-Games/USOC)
 ![GitHub issues by-label](https://img.shields.io/github/issues/Case-Games/USOC/bug)
@@ -15,7 +12,8 @@
 ![GitHub forks](https://img.shields.io/github/forks/Case-Games/USOC)
 ![Members](https://github.com/Case-Games/USOC/network/members)
 ![License](https://img.shields.io/badge/License-Case%20Games%20Open--Source%20License-important)](https://standards.casegames.ch/cgs/0003/v1.txt)
-![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c5f474aa55e4eb1a63729a4692aaf90)](https://www.codacy.com/gh/Case-Games/USOC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Case-Games/USOC&amp;utm_campaign=Badge_Grade)
+![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c5f474aa55e4eb1a63729a4692aaf90)]
+![Codeacy](https://www.codacy.com/gh/Case-Games/USOC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Case-Games/USOC&amp;utm_campaign=Badge_Grade)
 Useful simple open-source CMS
 
 ![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.0Bfx0RCA-blue)
