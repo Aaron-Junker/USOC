@@ -2,6 +2,7 @@
 ## Additions
 * Access blog pages through /blog/name
 * Access pages through /name
+* Added link to install.md
 ## Changes
 * Added some missing, but optional ";"
 * Don't show google login when it's deactivated
