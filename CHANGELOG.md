@@ -1,4 +1,5 @@
 # Pb2.0Bfx1
+## Fixed Bugs
 * Version names false in Pb2.0Bfx0 as named as Pb2.0Bfx0RCA
 # Pb2.0Bfx0
 ## Additions
