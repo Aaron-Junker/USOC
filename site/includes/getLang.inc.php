@@ -8,18 +8,20 @@
   * This function gets a string from the localisation files. It uses the default language.
   * When it can't find the string in the default language it searches the string in en-en
   * @see U For more informations about U.
-  * @version Pb2.0Bfx0RCA
+  * @version Pb2.0Bfx0
   * @since Pb2.0Bfx0RCA
   * @param string $string The name of the string. (For example: login.name)
   * @return string The translated string
   */
   function getLang($string){
-    $translate = json_decode(file_get_contents($USOC["SITE_PATH"]."lang/".getSetting("site.lang").".json",true));
+    global $USOC;
+    global $U;
+    $translate = json_decode(file_get_contents($USOC["DOMAIN"]."/lang/".$U->getSetting("site.lang").".json"));
     try {
-      return $translate[$string];
+      return $translate->{$string};
     } catch (Exception $e) {
-      $translate = json_decode(file_get_contents($USOC["SITE_PATH"]."lang/en-en.json",true));
-      return $translate[$string];
+      $translate = json_decode(file_get_contents($USOC["DOMAIN"]."/lang/en-en.json"));
+      return $translate->{$string};
     }
   }
 ?>

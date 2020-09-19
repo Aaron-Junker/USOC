@@ -27,10 +27,10 @@
 </head>
 <body>
   <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back") ?></a>
-  <form action="sendsiteblog.php" method="post">
-  <?php echo $U->getLang("admin.site.name") ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";}?>/><br />
-  <?php echo $U->getLang("admin.site.content") ?>
-  <textarea id="editor">
+  <form action="sendsite.php" method="post">
+  <?php echo $U->getLang("admin.edit.name") ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";}?>/><br />
+  <?php echo $U->getLang("admin.edit.content") ?>
+  <textarea id="editor" name="C">
   <?php
     if($edit){
       echo $html;

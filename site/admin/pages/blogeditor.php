@@ -30,7 +30,7 @@
     <form action="sendsiteblog.php" method="post">
     <?php echo $U->getLang("admin.site.name") ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";}?>/><br />
     <?php echo $U->getLang("admin.site.content") ?>
-    <textarea id="editor">
+    <textarea id="editor" name="C">
     <?php
       if($edit){
         echo $html;

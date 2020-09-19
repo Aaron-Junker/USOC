@@ -1,0 +1,4 @@
+<Files client_string.json>
+Order Allow,Deny
+Deny from all
+</Files>

@@ -9,19 +9,21 @@
   if(gettype($USOC) == "array"){
     /**
     * This function initialise the U class in $U if it doesn't exist
-    * @version Pb2.0Bfx0RCA
+    * @version Pb2.0Bfx0
     * @since Pb2.0Bfx0RCA
     */
     function newClass(){
       global $U;
-      $U = isset($U) ? new U() : $U;
+      if(!isset($U)){
+        $U = new U();
+      }
     }
     /**
     * This class contains all functions for USOC. When a function is needed, U includes it.
     * This class only works when configuration.php is included.
     * Use newClass() and not this class.
     * @see newClass()
-    * @version Pb2.0Bfx0RCA
+    * @version Pb2.0Bfx0
     * @since Pb2.0Bfx0RCA
     */
     class U{
@@ -62,7 +64,8 @@
           }else{
             $code = $name.'("'.implode('","', $arguments).'");';
           }
-          eval($code);
+          eval('$return='.$code);
+          return $return;
         }
       }
     }

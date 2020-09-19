@@ -3,23 +3,28 @@
   * This file contains the head tag for all files.
   * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
   */
-  include_once "../configuration.php";
-  include_once "../includes/class.inc.php";
+  if(file_exists("configuration.php")){
+    include_once "configuration.php";
+    include_once "includes/class.inc.php";
+  }else {
+    include_once "../configuration.php";
+    include_once "../includes/class.inc.php";
+  }
   newClass();
 ?>
 <meta charset="<?php echo $U->getLang("lang.charset"); ?>">
-<title><?php echo getSetting("site.name") ?></title>
+<title><?php echo $U->getSetting("site.name") ?></title>
 <?php
   if(isset($_COOKIE["css"])){
     if($_COOKIE["css"] == "l"){
-      echo '<link rel="stylesheet" href="styles/'+$U->getSetting("style.light.filename")+' type="text/css" />';
+      echo '<link rel="stylesheet" href="'.$USOC["DOMAIN"].'/styles/'.$U->getSetting("style.light.filename").'" type="text/css" />';
     }elseif ($_COOKIE["css"] == "d") {
-      echo '<link rel="stylesheet" href="styles/'+$U->getSetting("style.dark.filename")+' type="text/css" />';
+      echo '<link rel="stylesheet" href="'.$USOC["DOMAIN"].'/styles/'.$U->getSetting("style.dark.filename").'" type="text/css" />';
     }else{
-    echo '<link rel="stylesheet" href="styles/'+$U->getSetting("style.light.filename")+' type="text/css" />';
+    echo '<link rel="stylesheet" href="'.$USOC["DOMAIN"].'/styles/'.$U->getSetting("style.light.filename").'" type="text/css" />';
     }
   }else{
-    echo '<link rel="stylesheet" href="styles/'+$U->getSetting("style.light.filename")+' type="text/css" />';
+    echo '<link rel="stylesheet" href="'.$USOC["DOMAIN"].'/styles/'.$U->getSetting("style.light.filename").'" type="text/css" />';
   }
 ?>
 

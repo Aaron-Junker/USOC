@@ -2,7 +2,7 @@
   session_start();
   session_destroy();
   include "configuration.php";
-  include "/includes/class.inc.php";
+  include "includes/class.inc.php";
   newClass();
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
   <head>
     <meta charset="<?php echo $U->getLang("lang.charset"); ?>">
     <title><?php echo getSetting("site.name") ?></title>
-    <link rel="stylesheet" href="style/css.php" type="text/css" />
+    <link rel="stylesheet" href="styles/css.php" type="text/css" />
     <meta name="google-signin-client_id" content="*.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script async>

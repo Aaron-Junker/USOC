@@ -4,7 +4,7 @@
   newClass();
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
   <head>
       <?php
         include_once "siteelements/head.php";
@@ -45,8 +45,9 @@
                   $site = $U->getLang("error.offline");
                 }
               }
-            }}
-        }elseif($_SERVER["REQUEST_URI"].lower() == "index.php" || $_SERVER["REQUEST_URI"].lower() == "index.html"){
+            }
+          }
+        }elseif(strtolower($_SERVER["REQUEST_URI"]) == "/index.php" || strtolower($_SERVER["REQUEST_URI"]) == "/index.html"|| strtolower($_SERVER["REQUEST_URI"]) == "/"){
           $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
           $sql = "SELECT * FROM Sites WHERE Name='index'";
           $db_erg = mysqli_query( $db_link, $sql );
@@ -54,35 +55,68 @@
             $site = $zeile["Code"];
             $sitehere = True;
           }
-        }elseif($_SERVER["REQUEST_URI"].lower() == "error"){
+        }elseif(strpos(strtolower($_SERVER["REQUEST_URI"]),"/error") !== false){
           if(isset($_GET["E"])){
             if(!($_GET["E"] == "400" || $_GET["E"] == "403" || $_GET["E"] == "404" || $_GET["E"] == "405" || $_GET["E"] == "410" || $_GET["E"] == "414" || $_GET["E"] == "418" || $_GET["E"] == "423")){
-              echo "unknown Error";
+              $site = "<p>".$U->getLang("errors.unknown")."</p>";
             }else{
-              $U->getErrorSite($_GET["E"]);
+              $site = $U->getErrorSite($_GET["E"]);
             }
+          }else{
+            $site = "<p>".$U->getLang("errors.unknown")."</p>";
           }
-        }elseif($_SERVER["REQUEST_URI"].lower() == "blogsite" || $_SERVER["REQUEST_URI"].lower() == "blogsite.php"){
-          echo "<h1>".$U->getLang("blog.overwiew")."</h1>";
+          $sitehere = True;
+        }elseif(strtolower($_SERVER["REQUEST_URI"]) == "/blogsite" || strtolower($_SERVER["REQUEST_URI"]) == "/blogsite.php"){
+          $site = "<h1>".$U->getLang("blog.overwiew")."</h1>";
           $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
           $sql = "SELECT * FROM Blog ORDER BY ID DESC;";
           $db_erg = mysqli_query( $db_link, $sql );
           while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
             if($zeile["Online"]==1){
-              echo "<h2 style='color:black;border-top: 1px;border-top-style:solid;border-top-color:black;'><a style='color:black;' href='/blog/".$zeile["Name"]."'>".$zeile["Name"]."</a></h2>";
-              echo substr($zeile["Code"],0,100)."...";
-              echo "<br /><br /><a href='/blog/".$zeile["Name"]."'><button class='readmore'>".$U->getLang("blog.readmore")."</button></a>";
+              $site .= "<h2 style='color:black;border-top: 1px;border-top-style:solid;border-top-color:black;'><a style='color:black;' href='/blog/".$zeile["Name"]."'>".$zeile["Name"]."</a></h2>";
+              $site .= substr($zeile["Code"],0,100)."...";
+              $site .= "<br /><br /><a href='/blog/".$zeile["Name"]."'><button class='readmore'>".$U->getLang("blog.readmore")."</button></a>";
+            }
+          }
+          $sitehere = True;
+        }elseif(strpos(strtolower($_SERVER["REQUEST_URI"]),"/blog/") !== false){
+          $URL = str_replace('/blog/', "", $_SERVER["REQUEST_URI"]);
+          $URL = str_replace("/Blog/", "", $URL);
+          $URL = str_replace("/BLOG/", "", $URL);
+          $URL = str_replace("%20", " ", $URL);
+          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+          $sql = "SELECT * FROM Blog";
+          $db_erg = mysqli_query( $db_link, $sql );
+          while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+            if($zeile["Name"] == $URL){
+              $sitehere = True;
+              if($zeile["Online"]==1){
+                $site = $zeile["Code"];
+              }else{
+                $site = $U->getLang("error.offline");
+              }
             }
           }
         }else{
-          header("HTTP/1.1 404 Not found");
-          header('Location: error?E=404');
+          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+          $sql = "SELECT * FROM Sites";
+          $db_erg = mysqli_query( $db_link, $sql );
+          while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+            if($zeile["Name"] == str_replace('/', "", $_SERVER["REQUEST_URI"])){
+              $sitehere = True;
+              if($zeile["Online"]==1){
+                $site = $zeile["Code"];
+              }else{
+                $site = $U->getLang("error.offline");
+              }
+            }
+          }
         }
         if($sitehere){
           echo $site;
         }else{
           header("HTTP/1.1 404 Not found");
-          header('Location: error?E=404');
+          header('Location: '.$USOC["DOMAIN"].'/error?E=404');
         }
        ?>
     </article>

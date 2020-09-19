@@ -8,6 +8,7 @@
   $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
   $sql = "SELECT * FROM User";
   $db_erg = mysqli_query( $db_link, $sql );
+  $fa = false;
   if(isset($_SESSION["code"])){
     $_POST["B"] = $_SESSION['temp_User_Name'];
   }
@@ -37,7 +38,6 @@
     $fa = False;
   }
   if($fa && $login){
-
     $login = 10;
     $_SESSION["Admin"] = False;
     $_SESSION['temp_User_ID'] = md5($user_id);
@@ -49,15 +49,15 @@
         <input type="submit" name="login"/>
       </form>
     HEREDOC;
-    echo sprintf($htmlcode, getLang("login.2fa.google_authenticator.code"));
+    echo str_replace("%d",$U->getLang("login.2fa.google_authenticator.code"),$htmlcode);
   }
   if($login === True){
-    echo getLang("login.succeed");
+    echo $U->getLang("login.succeed");
     $_SESSION['User_ID'] = md5($user_id);
     $_SESSION['User_Name'] = $user_name;
     header('Location: '.$USOC["DOMAIN"]);
   }elseif($login === False && $blocked === False) {
-    echo getLang("login.fail");
+    echo $U->getLang("login.fail");
     header('Location: '.$USOC["DOMAIN"].'/login.php?ERROR=0x000000');
   }
 ?>

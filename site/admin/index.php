@@ -2,6 +2,7 @@
   session_start();
   include_once "configuration.php";
   include_once $USOC["SITE_PATH"]."/includes/class.inc.php";
+  newClass();
   if(isset($_SESSION["User_ID"])){
     //Check login
     $logina = 0;
@@ -32,6 +33,7 @@
         <input name="P" type="password" />
         <input type="submit" />
       </form>
+
 <?php
   }
  ?>

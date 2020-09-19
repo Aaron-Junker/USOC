@@ -31,6 +31,7 @@
           $code = str_replace("%a",$U->getLang("login.changepass.old"),$code);
           $code = str_replace("%b",$U->getLang("login.changepass.new"),$code);
           $code = str_replace("%c",$U->getLang("login.changepass.new_twice"),$code);
+          echo $code;
         }
       ?>
 

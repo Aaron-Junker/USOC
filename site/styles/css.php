@@ -42,7 +42,7 @@ article {
 input[type=text],input[type=password],input[type=mail], select, textarea{
   width: 100%;
   padding: 12px;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
@@ -51,7 +51,7 @@ input[type=text],input[type=password],input[type=mail], select, textarea{
 input[type=submit], button {
   background-color: white;
   color: black;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   cursor: pointer;
 }
 #headerlink{
@@ -179,7 +179,7 @@ z-index:-999;
 .readmore{
 background-color: white;
   color: black;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   cursor: pointer;
   }
 a,a:visited,a:hover{

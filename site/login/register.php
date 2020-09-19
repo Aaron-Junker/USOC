@@ -1,8 +1,10 @@
 <?php
   require_once "../configuration.php";
   require_once "../includes/class.inc.php";
+  newClass();
   $register = False;
-  if(isset($_POST["U"])&&isset($_POST["M"])&&isset($_POST["P"])&&isset($_POST["PR"])&&isset($_POST["D"])&&$_POST["D"]=="on"){
+  $in_use = False;
+  if(isset($_POST["U"])&&isset($_POST["M"])&&isset($_POST["P"])&&isset($_POST["PR"])){
     if($_POST["P"]==$_POST["PR"]){
       if(preg_match('/^[^\x00-\x20()<>@,;:\\".[\]\x7f-\xff]+(?:\.[^\x00-\x20()<>@,;:\\".[\]\x7f-\xff]+)*\@[^\x00-\x20()<>@,;:\\".[\]\x7f-\xff]+(?:\.[^\x00-\x20()<>@,;:\\".[\]\x7f-\xff]+)+$/i', $_POST["M"])){
         if(preg_match('/^[a-z0-9A-Z.]{3,15}$/',$_POST["U"])){
@@ -14,12 +16,13 @@
             while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
             {
               if(strtolower($zeile["Username"]) == strtolower($_POST["U"])){
-                $register=False;
+                $register = False;
+                $in_use = True;
               }
               if(strtolower($zeile["Mail"])==strtolower($_POST["M"])){
-                  $register = False;
+                $register = False;
+                $in_use = True;
               }
-
             }
           }else{
             echo str_replace("%a",$U->getLang("login.password"),$U->getLang("login.invalid"));
@@ -48,8 +51,8 @@
     }else{
       echo mysqli_error($db_link);
     }
-  }else{
-    echo "Benutzername bereits vergeben oder Mailadresse bereits vergeben.";
   }
-
+  if($in_use){
+    echo $U->getLang("register.in_use");
+  }
 ?>

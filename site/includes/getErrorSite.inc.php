@@ -8,13 +8,14 @@
   * This function return the code for the Error Page with error $error
   * When it can't find the string in the default language it searches the string in en-en
   * @see U For more informations about U.
-  * @version Pb2.0Bfx0RCA
+  * @version Pb2.0Bfx0
   * @since Pb2.0Bfx0RCA
   * @param string $error String with the error (example: "404")
   * @return string The code
   */
   function getErrorSite($error){
-    $code = "<h1>".$this->getLang("errors.".$error)."</h1><a href='/index.php'>".sprintf($this->getLang("errors.mainpage"),$this->getLang("page.mainpage"))."</a>";
+    global $U;
+    $code = "<h1>".$U->getLang("errors.".$error)."</h1><a href='/index.php'>".str_replace("%d",$U->getLang("page.mainpage"),$U->getLang("errors.mainpage"))."</a>";
     return $code;
   }
 ?>

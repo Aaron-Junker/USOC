@@ -40,7 +40,7 @@
     <article>
       <?php
         if(isset($_GET["ERROR"])){
-          echo "<p id='error'>".@getError($_GET["ERROR"],"de")."</p>";
+          echo "<p id='error'>False Password or Username</p>";
         }
         if (isset($_SESSION["User_ID"])) {
           echo $U->getLang("login.already");
@@ -49,17 +49,23 @@
         }else{
           $HTML = <<<HEREDOC
           <form action="login/login.php" method="post">
-          <label for="B">%a</label>
-          <input type="text" name="B" />
-          <label for="P">%b</label>
-          <input type="password" name="P" />
-          <input type="submit" name="button"/>
+            <label for="B">%a</label>
+            <input type="text" name="B" />
+            <label for="P">%b</label>
+            <input type="password" name="P" />
+            <input type="submit" name="button"/>
           </form>
-          <h5>Mit Google anmelden</h5>
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
           HEREDOC;
+          if(file_exists("client_string.json")){
+            $HTML .= <<<HEREDOC
+            <h5>%c</h5>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            HEREDOC;
+          }
           $HTML = str_replace("%a",$U->getLang("login.username.g"),$HTML);
           $HTML = str_replace("%b",$U->getLang("login.password.g"),$HTML);
+          $HTML = str_replace("%c",$U->getLang("login.oAuth.login"),$HTML);
+          $HTML = str_replace("%a",$U->getLang("login.oAuth.google"),$HTML);
           echo $HTML;
         }
       ?>

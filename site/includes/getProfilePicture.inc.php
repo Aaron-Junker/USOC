@@ -7,13 +7,14 @@
   * This is a function for the class U.
   * This function gets a value from the "settings" database.
   * @see U For more informations about U.
-  * @version Pb2.0Bfx0RCA
+  * @version Pb2.0Bfx0
   * @since Pb2.0Bfx0RCA
   * @param string $name The name of the setting. (For example: login.name)
   * @return mixed The value from the database.
   */
   function getProfilePicture($Username){
-    require_once ($USOC["SITE_PATH"].'configuration.php');
+    global $USOC;
+    global $U;
     $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
     $sql = "SELECT * FROM User WHERE Username='".$Username."'";
     $db_erg = mysqli_query( $db_link, $sql );

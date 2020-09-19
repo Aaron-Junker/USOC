@@ -7,5 +7,4 @@ ErrorDocument 403 /error?E=403
 ErrorDocument 404 /error?E=404
 ErrorDocument 410 /error?E=410
 ErrorDocument 414 /error?E=414
-ErrorDocument 418 /error?E=418
 ErrorDocument 423 /error?E=423
