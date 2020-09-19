@@ -1,3 +1,12 @@
+# Pb2.0Bfx0
+## Additions
+* Access blog pages through /blog/name
+* Access pages through /name
+## Changes
+* Added some missing, but optional ";"
+* Don't show google login when it's deactivated
+## Fixed bugs
+* All bugs in #49
 # Pb2.0Bfx0RCA
 > This Version isn't backward compatible to older versions
 
