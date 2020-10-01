@@ -1,6 +1,16 @@
+# Pb2.1Bfx0
+## Additions
+* Added more documentation in login folder
+## Changes
+* Edited some little things in login/login.php
+* Edited some little things in login/register.php  
+## Fixed bugs
+* No translation in the title of the mainpage of the adminarea
+* Fixed a little security bug in login/login.php
+* Changed some misplaced session_start() #51
 # Pb2.0Bfx1
-## Fixed Bugs
-* Version names false in Pb2.0Bfx0 as named as Pb2.0Bfx0RCA
+## Fixed bugs
+* Version named Pb2.0Bfx0 instead of Pb2.0Bfx0RCA
 # Pb2.0Bfx0
 ## Additions
 * Access blog pages through /blog/name

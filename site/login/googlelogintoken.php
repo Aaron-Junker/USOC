@@ -1,9 +1,9 @@
 <?php
+  session_start();
   include_once "../configuration.php";
   include_once "../includes/class.inc.php";
   require_once 'google-api-php-client/src/Google/autoload.php';
   newClass();
-  session_start();
   $login = False;
   if(file_exists("client_string.json")){
     if(isset($_POST["token"])){

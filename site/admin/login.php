@@ -1,8 +1,8 @@
 <?php
+  session_start();
   require_once "../configuration.php";
   require_once "../includes/class.inc.php";
   newClass();
-  session_start();
   $blocked = False;
   $login = False;
   $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);

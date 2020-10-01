@@ -1,6 +1,6 @@
 <?php
-  require_once 'google-api-php-client/src/Google/autoload.php';
   session_start();
+  require_once 'google-api-php-client/src/Google/autoload.php';
   $change = False;
   if(file_exists("client_string.json")){
     if(isset($_POST["token"])){

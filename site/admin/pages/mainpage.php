@@ -2,7 +2,7 @@
 <html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Adminbereich</title>
+    <title><?php echo $U->getLang("admin") ?></title>
   </head>
   <body>
     <h1><?php echo $U->getLang("admin.welcome") ?></h1>
