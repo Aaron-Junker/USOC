@@ -6,14 +6,13 @@
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/Case-Games/USOC)
 ![GitHub issues by-label](https://img.shields.io/github/issues/Case-Games/USOC/bug)
 ![GitHub stars](https://img.shields.io/github/stars/Case-Games/USOC)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Case-Games/USOC?label=Latest%20Version)
-![Releases](https://github.com/Case-Games/USOC/releases)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Case-Games/USOC?label=Latest%20Version)](https://github.com/Case-Games/USOC/releases)
 ![GitHub language count](https://img.shields.io/github/languages/count/Case-Games/USOC)
 ![GitHub forks](https://img.shields.io/github/forks/Case-Games/USOC)
-![Members](https://github.com/Case-Games/USOC/network/members)
-![License](https://img.shields.io/badge/License-Case%20Games%20Open--Source%20License-important)](https://standards.casegames.ch/cgs/0003/v1.txt)
-![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c5f474aa55e4eb1a63729a4692aaf90)]
-![Codeacy](https://www.codacy.com/gh/Case-Games/USOC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Case-Games/USOC&amp;utm_campaign=Badge_Grade)
+[![License](https://img.shields.io/badge/License-Case%20Games%20Open--Source%20License-important)](https://standards.casegames.ch/cgs/0003/v1.txt)
+![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c5f474aa55e4eb1a63729a4692aaf90)
+
+
 Useful simple open-source CMS
 
 ![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.1Bfx0-blue)
