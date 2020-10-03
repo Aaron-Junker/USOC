@@ -9,7 +9,7 @@
       $token_data = $client->verifyIdToken($_POST["token"])->getAttributes();
       $user_id = $token_data['payload']['sub'];
       if(isset($_SESSION["User_ID"])){
-        require_once ('konfiguration.php');
+        require_once ('configuration.php');
         $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "SELECT * FROM User WHERE Username='".mysqli_real_escape_string ($db_link,$_SESSION["User_Name"])."'";
         $db_erg = mysqli_query( $db_link, $sql );

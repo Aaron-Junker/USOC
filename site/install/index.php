@@ -9,7 +9,7 @@
     <h2>Experimantal feature. Sometimes doesn't work</h2>
     <p> We reccomend to install manually. See the <a href="../install.md">install.md</a> file.</p>
     <ul>
-      <li>Version: Pb2.0Bfx1</li>
+      <li>Version: Pb2.1Bfx0</li>
       <li>You need PHP 7: <?php if (PHP_VERSION_ID > 69999){echo "Yes!";}else{echo "You must update!";} ?></li>
       <li>You need Mysql: Can't check</li>
       <form action="step2.php" method="post">

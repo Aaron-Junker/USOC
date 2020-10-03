@@ -9,6 +9,7 @@ Old pre-alpha and pre-beta versions aren't supported with bugfixes.
 ### Pre-Beta
 | Version | Supported|Newest Version|
 | ------- | ---------|--------------|
+| Pb2.1   | :x:      | Pb2.1Bfx0    |
 | Pb2.0   | :x:      | Pb2.0Bfx1    |
 | Pb1.8   | :x:      | Pb1.8Bfx0    |
 | Pb1.7   | :x:      | Pb1.7Bfx1    |

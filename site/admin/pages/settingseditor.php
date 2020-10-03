@@ -30,7 +30,6 @@
         $text = str_replace('%b',$U->getLang("admin.settings.edit.p"),$text);
         echo $text;
       }else{
-        require_once ('konfiguration.php');
         $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "SELECT * FROM Settings;";
         $db_erg = mysqli_query( $db_link, $sql );
@@ -45,11 +44,11 @@
         if($type == "Bool"){
           $text = <<<'CODE'
           <form action="%a">
-          <input type="hidden" name="URL" value="settingseditorsend" />
-          <input type="hidden" name="N" value="%b" />
-          <br />1:<input type="radio" name="V" value="1" />
-          <br />0:<input type="radio" name="V" value="0" /><br />
-          <button type="submit">%c</button>
+            <input type="hidden" name="URL" value="settingseditorsend" />
+            <input type="hidden" name="N" value="%b" />
+            <br />1:<input type="radio" name="V" value="1" />
+            <br />0:<input type="radio" name="V" value="0" /><br />
+            <button type="submit">%c</button>
           </form>
           CODE;
           $text = str_replace('%b',$_GET["N"],$text);

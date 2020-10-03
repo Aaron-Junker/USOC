@@ -11,6 +11,7 @@
 * Changed some misplaced session_start() #51
 * No traslated back on admin/pages/about.php
 * Fixed bugs in admin/login.php and admin/2fa.php
+* Some include_once "konfiguration.php" existed 
 # Pb2.0Bfx1
 ## Fixed bugs
 * Version named Pb2.0Bfx0 instead of Pb2.0Bfx0RCA
