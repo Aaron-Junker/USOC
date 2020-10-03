@@ -3,11 +3,13 @@
 * Added more documentation in login folder
 ## Changes
 * Edited some little things in login/login.php
-* Edited some little things in login/register.php  
+* Edited some little things in login/register.php
+* The version in admin/pages/about.php is now readed from the class
 ## Fixed bugs
 * No translation in the title of the mainpage of the adminarea
 * Fixed a little security bug in login/login.php
 * Changed some misplaced session_start() #51
+* No traslated back on admin/pages/about.php
 # Pb2.0Bfx1
 ## Fixed bugs
 * Version named Pb2.0Bfx0 instead of Pb2.0Bfx0RCA
