@@ -1,0 +1,149 @@
+<html>
+<body>
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="How_to_install_0"></a>How to install</h1>
+<ol>
+<li class="has-line-data" data-line-start="1" data-line-end="2">Download USOC and change the unzip the site folder to your webserver. (Recommended: Root-folder)</li>
+<li class="has-line-data" data-line-start="2" data-line-end="3">edit configuration.php.example in (root) and in the admin folder.</li>
+<li class="has-line-data" data-line-start="3" data-line-end="4">Rename the two configuration.php.example to configuration.php</li>
+<li class="has-line-data" data-line-start="4" data-line-end="5">Create a database</li>
+<li class="has-line-data" data-line-start="5" data-line-end="6">execute the following code in your database (Please edit some things):</li>
+</ol>
+<pre><code class="has-line-data" data-line-start="7" data-line-end="136" class="language-sql">
+<span class="hljs-operator"><span class="hljs-keyword">SET</span> SQL_MODE = <span class="hljs-string">"NO_AUTO_VALUE_ON_ZERO"</span>;</span>
+<span class="hljs-operator"><span class="hljs-keyword">START</span> <span class="hljs-keyword">TRANSACTION</span>;</span>
+<span class="hljs-operator"><span class="hljs-keyword">SET</span> <span class="hljs-keyword">time_zone</span> = <span class="hljs-string">"+00:00"</span>;</span>
+
+
+<span class="hljs-comment">/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */</span>;
+<span class="hljs-comment">/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */</span>;
+<span class="hljs-comment">/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */</span>;
+<span class="hljs-comment">/*!40101 SET NAMES utf8mb4 */</span>;
+
+
+<span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`blog`</span> (
+  <span class="hljs-string">`ID`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Name`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">33</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Date`</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Author`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Code`</span> longtext <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Online`</span> tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4;</span>
+
+
+
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`blog`</span> (<span class="hljs-string">`ID`</span>, <span class="hljs-string">`Name`</span>, <span class="hljs-string">`Date`</span>, <span class="hljs-string">`Author`</span>, <span class="hljs-string">`Code`</span>, <span class="hljs-string">`Online`</span>) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">'First Blog'</span>, <span class="hljs-string">'0000-00-00'</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'&lt;p&gt;Welcome to the Blog&lt;/p&gt;'</span>, <span class="hljs-number">1</span>);</span>
+
+
+
+<span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`settings`</span> (
+  <span class="hljs-string">`Id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Name`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">99</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Value`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">99</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Type`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4;</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`settings`</span> (<span class="hljs-string">`Id`</span>, <span class="hljs-string">`Name`</span>, <span class="hljs-string">`Value`</span>, <span class="hljs-string">`Type`</span>) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">'login.register_open'</span>, <span class="hljs-string">'1'</span>, <span class="hljs-string">'Bool'</span>),
+(<span class="hljs-number">2</span>, <span class="hljs-string">'login.login_open'</span>, <span class="hljs-string">'1'</span>, <span class="hljs-string">'Bool'</span>),
+(<span class="hljs-number">3</span>, <span class="hljs-string">'test.int'</span>, <span class="hljs-string">'12'</span>, <span class="hljs-string">'Int'</span>),
+(<span class="hljs-number">4</span>, <span class="hljs-string">'test.string'</span>, <span class="hljs-string">'Hi '</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">5</span>, <span class="hljs-string">'login.changepassword'</span>, <span class="hljs-string">'1'</span>, <span class="hljs-string">'Bool'</span>),
+(<span class="hljs-number">6</span>, <span class="hljs-string">'site.name'</span>, <span class="hljs-string">'Insert Site name here'</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">7</span>, <span class="hljs-string">'site.author'</span>, <span class="hljs-string">'Insert author here'</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">8</span>, <span class="hljs-string">'site.description'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">9</span>, <span class="hljs-string">'site.keywords'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">10</span>, <span class="hljs-string">'site.lang'</span>, <span class="hljs-string">'en-en'</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">11</span>, <span class="hljs-string">'site.robots'</span>, <span class="hljs-string">'index, follow'</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">12</span>, <span class="hljs-string">'2fa.name'</span>, <span class="hljs-string">'Insert site name here'</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">14</span>, <span class="hljs-string">'style.light.filename'</span>, <span class="hljs-string">'css.php'</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">15</span>, <span class="hljs-string">'style.dark.filename'</span>, <span class="hljs-string">'cssblack.php'</span>, <span class="hljs-string">'Text'</span>),
+(<span class="hljs-number">16</span>, <span class="hljs-string">'oAuth.google.client_id'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">''</span>),
+(<span class="hljs-number">17</span>, <span class="hljs-string">'oAuth.google.client_id'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">''</span>);</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`sites`</span> (
+  <span class="hljs-string">`ID`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Name`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">33</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Date`</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Author`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Code`</span> longtext <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Online`</span> tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4;</span>
+
+
+
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`sites`</span> (<span class="hljs-string">`ID`</span>, <span class="hljs-string">`Name`</span>, <span class="hljs-string">`Date`</span>, <span class="hljs-string">`Author`</span>, <span class="hljs-string">`Code`</span>, <span class="hljs-string">`Online`</span>) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">'index'</span>, <span class="hljs-string">'0000-00-00'</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'&lt;h2&gt;Welcome to USOC&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Edit this Page on /admin&lt;/p&gt;'</span>, <span class="hljs-number">1</span>);</span>
+
+
+
+<span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user`</span> (
+  <span class="hljs-string">`Id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Username`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Mail`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">99</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Password`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">70</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Type`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`Change_password`</span> tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`google_token`</span> <span class="hljs-built_in">text</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`google_2fa`</span> mediumtext <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`blocked`</span> tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mb4;</span>
+
+
+
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`user`</span> (<span class="hljs-string">`Id`</span>, <span class="hljs-string">`Username`</span>, <span class="hljs-string">`Mail`</span>, <span class="hljs-string">`Password`</span>, <span class="hljs-string">`Type`</span>, <span class="hljs-string">`Change_password`</span>, <span class="hljs-string">`google_token`</span>, <span class="hljs-string">`google_2fa`</span>, <span class="hljs-string">`blocked`</span>) <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">2</span>, <span class="hljs-string">'Admin'</span>, <span class="hljs-string">'webmaster@localhost'</span>, <span class="hljs-string">'$2y$10$lt9VgR4Zcp2hUolCrIFwLe3/vjuAYfvkn3enLEFYIAZ/6gVqz3ucK'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">''</span>, <span class="hljs-string">''</span>, <span class="hljs-number">0</span>);</span>
+
+
+
+
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`blog`</span>
+  <span class="hljs-keyword">ADD</span> PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`ID`</span>);</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`settings`</span>
+  <span class="hljs-keyword">ADD</span> PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`Id`</span>);</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`sites`</span>
+  <span class="hljs-keyword">ADD</span> PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`ID`</span>);</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user`</span>
+  <span class="hljs-keyword">ADD</span> PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`Id`</span>),
+  <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`Id`</span> (<span class="hljs-string">`Id`</span>);</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`blog`</span>
+  <span class="hljs-keyword">MODIFY</span> <span class="hljs-string">`ID`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="hljs-number">2</span>;</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`settings`</span>
+  <span class="hljs-keyword">MODIFY</span> <span class="hljs-string">`Id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="hljs-number">18</span>;</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`sites`</span>
+  <span class="hljs-keyword">MODIFY</span> <span class="hljs-string">`ID`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="hljs-number">3</span>;</span>
+
+
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user`</span>
+  <span class="hljs-keyword">MODIFY</span> <span class="hljs-string">`Id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT, AUTO_INCREMENT=<span class="hljs-number">4</span>;</span>
+<span class="hljs-operator"><span class="hljs-keyword">COMMIT</span>;</span>
+
+<span class="hljs-comment">/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */</span>;
+<span class="hljs-comment">/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */</span>;
+<span class="hljs-comment">/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */</span>;
+
+</code></pre>
+<ol start="6">
+<li class="has-line-data" data-line-start="136" data-line-end="137">Delete the install Folder</li>
+<li class="has-line-data" data-line-start="137" data-line-end="138">Login with:</li>
+</ol>
+<ul>
+<li class="has-line-data" data-line-start="138" data-line-end="139">Username: Admin</li>
+<li class="has-line-data" data-line-start="139" data-line-end="140">Password: USOC</li>
+</ul>
+</body>
+</html>

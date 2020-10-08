@@ -1,4 +1,10 @@
 <?php
+  /**
+  * This document checks if the use is logged in and a admin.
+  * If logged in but no admin the HTTP-ERROR 403 is thrown.
+  * If not logged in a login interface will be shown.
+  * If yes the pages/mainpage.php will be included.
+  */
   session_start();
   include_once "configuration.php";
   include_once $USOC["SITE_PATH"]."/includes/class.inc.php";
@@ -33,7 +39,6 @@
         <input name="P" type="password" />
         <input type="submit" />
       </form>
-
 <?php
   }
  ?>

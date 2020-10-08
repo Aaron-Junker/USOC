@@ -32,13 +32,13 @@
       * @since Pb2.0Bfx0RCA
       * @var string
       */
-      public $version = "Pb2.1Bfx0";
+      public $version = "Pb2.2Bfx0";
       /**
       * Version code
       * @since Pb2.0Bfx0RCA
       * @var int
       */
-      public $version_code = 20210900;
+      public $version_code = 20220900;
       /**
       * True when USOC is modded.
       * @since Pb2.0Bfx0RCA

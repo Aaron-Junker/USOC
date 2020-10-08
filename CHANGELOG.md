@@ -1,3 +1,11 @@
+#Pb2.2Bfx0
+## Additions
+* Restrict access to admin/ckeditor
+## Changes
+* Changed install.md to intstall.html for better read experience
+## Fixed bugs
+* Google logout doesn't work
+* Fixed typo in install.html
 # Pb2.1Bfx0
 ## Additions
 * Added more documentation in login folder
@@ -11,7 +19,7 @@
 * Changed some misplaced session_start() #51
 * No traslated back on admin/pages/about.php
 * Fixed bugs in admin/login.php and admin/2fa.php
-* Some include_once "konfiguration.php" existed 
+* Some include_once "konfiguration.php" existed
 # Pb2.0Bfx1
 ## Fixed bugs
 * Version named Pb2.0Bfx0 instead of Pb2.0Bfx0RCA
