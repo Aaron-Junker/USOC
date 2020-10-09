@@ -6,6 +6,7 @@
 ## Fixed bugs
 * Google logout doesn't work
 * Fixed typo in install.html
+* The client id isn't flexible in profile.php (#53)
 # Pb2.1Bfx0
 ## Additions
 * Added more documentation in login folder
