@@ -7,6 +7,13 @@
 ## Fixed bugs
 * _ (#)
 -->
+# Pb2.3Bfx0
+## Additions
+*
+## Changes
+*
+## Fixed bugs
+* Syntax error in logout.php
 # Pb2.2Bfx0
 ## Additions
 * Restrict access to admin/ckeditor
