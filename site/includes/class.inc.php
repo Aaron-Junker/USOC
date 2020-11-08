@@ -38,13 +38,19 @@
       * @since Pb2.0Bfx0RCA
       * @var int
       */
-      public $version_code = 20220900;
+      public $version_code = 20230900;
       /**
       * True when USOC is modded.
       * @since Pb2.0Bfx0RCA
       * @var boolean
       */
       public $modded = false;
+      /**
+      * The database connection
+      * @since Pb2.3Bfx0
+      * @var object
+      */
+      public $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
       /**
       * @ignore
       */

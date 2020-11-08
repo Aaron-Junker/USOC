@@ -12,27 +12,24 @@
         <form action="%a">
         <select name="N">
         CODE;
-          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
-
-          $sql = "SELECT * FROM Settings";
-          $db_erg = mysqli_query( $db_link, $sql );
-          while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
-          {
-            $text = $text."<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
-          }
-          $text = $text.<<<'CODE'
-          </select>
-          <input type="hidden" name="URL" value="settingseditor" />
-          <button type="submit">%b</button>
-          </form>
-          CODE;
+        $sql = "SELECT * FROM Settings";
+        $db_erg = mysqli_query( $U->$db_link, $sql );
+        while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+        {
+          $text = $text."<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
+        }
+        $text = $text.<<<'CODE'
+        </select>
+        <input type="hidden" name="URL" value="settingseditor" />
+        <button type="submit">%b</button>
+        </form>
+        CODE;
         $text = str_replace('%a',$_SERVER['PHP_SELF'],$text);
         $text = str_replace('%b',$U->getLang("admin.settings.edit.p"),$text);
         echo $text;
       }else{
-        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "SELECT * FROM Settings;";
-        $db_erg = mysqli_query( $db_link, $sql );
+        $db_erg = mysqli_query( $U->$db_link, $sql );
         while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
           if ($zeile["Name"] == $_GET["N"]){
             $type = $zeile["Type"];

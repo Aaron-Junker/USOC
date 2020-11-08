@@ -18,10 +18,9 @@
       <?php
         $sitehere = False;
         if(isset($_GET["URL"])){
-          if(strpos($_GET["URL"], '/blog/') !== false){
-            $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+          if(strpos($_GET["URL"], '/blog/') !== false){
             $sql = "SELECT * FROM Blog";
-            $db_erg = mysqli_query( $db_link, $sql );
+            $db_erg = mysqli_query( $U->$db_link, $sql );
             while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
               if($zeile["Name"] == $_GET["URL"]){
                 $sitehere = True;
@@ -33,9 +32,8 @@
               }
             }
           }else{
-            $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
             $sql = "SELECT * FROM Sites";
-            $db_erg = mysqli_query( $db_link, $sql );
+            $db_erg = mysqli_query( $U->$db_link, $sql );
             while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
               if($zeile["Name"] == $_GET["URL"]){
                 $sitehere = True;
@@ -48,9 +46,8 @@
             }
           }
         }elseif(strtolower($_SERVER["REQUEST_URI"]) == "/index.php" || strtolower($_SERVER["REQUEST_URI"]) == "/index.html"|| strtolower($_SERVER["REQUEST_URI"]) == "/"){
-          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
           $sql = "SELECT * FROM Sites WHERE Name='index'";
-          $db_erg = mysqli_query( $db_link, $sql );
+          $db_erg = mysqli_query( $U->$db_link, $sql );
           while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
             $site = $zeile["Code"];
             $sitehere = True;
@@ -68,9 +65,8 @@
           $sitehere = True;
         }elseif(strtolower($_SERVER["REQUEST_URI"]) == "/blogsite" || strtolower($_SERVER["REQUEST_URI"]) == "/blogsite.php"){
           $site = "<h1>".$U->getLang("blog.overwiew")."</h1>";
-          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
           $sql = "SELECT * FROM Blog ORDER BY ID DESC;";
-          $db_erg = mysqli_query( $db_link, $sql );
+          $db_erg = mysqli_query( $U->$db_link, $sql );
           while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
             if($zeile["Online"]==1){
               $site .= "<h2 style='color:black;border-top: 1px;border-top-style:solid;border-top-color:black;'><a style='color:black;' href='/blog/".$zeile["Name"]."'>".$zeile["Name"]."</a></h2>";
@@ -84,9 +80,8 @@
           $URL = str_replace("/Blog/", "", $URL);
           $URL = str_replace("/BLOG/", "", $URL);
           $URL = str_replace("%20", " ", $URL);
-          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
           $sql = "SELECT * FROM Blog";
-          $db_erg = mysqli_query( $db_link, $sql );
+          $db_erg = mysqli_query( $U->$db_link, $sql );
           while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
             if($zeile["Name"] == $URL){
               $sitehere = True;
@@ -98,9 +93,8 @@
             }
           }
         }else{
-          $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
           $sql = "SELECT * FROM Sites";
-          $db_erg = mysqli_query( $db_link, $sql );
+          $db_erg = mysqli_query( $U->$db_link, $sql );
           while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
             if($zeile["Name"] == str_replace('/', "", $_SERVER["REQUEST_URI"])){
               $sitehere = True;

@@ -7,14 +7,13 @@
   $login = False;
   if(file_exists("client_string.json")){
     if(isset($_POST["token"])){
-      $client = new Google_Client(['client_id' => $U->getSetting("oAuth.google.client_id").".apps.googleusercontent.com"]);  // Specify the CLIENT_ID of the app that accesses the backend
+      $client = new Google_Client(['client_id' => $U->getSetting("oAuth.google.client_id").".apps.googleusercontent.com"]);
       $client->setAuthConfigFile('client_string.JSON');
       $token_data = $client->verifyIdToken($_POST["token"])->getAttributes();
       $user_id = $token_data['payload']['sub'];
       if(!isset($_SESSION["User_ID"])){
-        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "SELECT * FROM User";
-        $db_erg = mysqli_query( $db_link, $sql );
+        $db_erg = mysqli_query( $U->$db_link, $sql );
         while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
         {
           if($zeile["google_token"]==$user_id){

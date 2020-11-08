@@ -12,9 +12,8 @@
   if(isset($_SESSION["User_ID"])){
     //Check login
     $logina = 0;
-    $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
     $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
-    $db_erg = mysqli_query( $db_link, $sql );
+    $db_erg = mysqli_query( $U->$db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
       if (md5($zeile["Id"]) == $_SESSION["User_ID"] && $zeile["Type"] == 1){
         $logina = 1;

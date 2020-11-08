@@ -15,9 +15,8 @@
   function getProfilePicture($Username){
     global $USOC;
     global $U;
-    $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
     $sql = "SELECT * FROM User WHERE Username='".$Username."'";
-    $db_erg = mysqli_query( $db_link, $sql );
+    $db_erg = mysqli_query( $U->$db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
       $mail = $zeile["Mail"];
     }

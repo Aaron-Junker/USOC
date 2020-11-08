@@ -29,9 +29,8 @@
         }else{
           $b = 0;
         }
-        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
         $sql = "UPDATE User SET Type='".$admin."', blocked ='".$b."' WHERE Id='".$_POST["N"]."';";
-        $db_erg = mysqli_query( $db_link, $sql );
+        $db_erg = mysqli_query( $U->$db_link, $sql );
       }else{
         $text = <<<'HEREDOC'
         <form action="$_SERVER["PHP_SELF"]?URL=useredit" method="post">

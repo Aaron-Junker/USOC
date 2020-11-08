@@ -12,28 +12,26 @@
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=blogeditor"><?php echo $U->getLang("admin.edit.new.blogsite") ?></a><br />
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <select name="SiteName">
-      <?php
-      $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
-      $sql = "SELECT * FROM Sites";
-      $db_erg = mysqli_query( $db_link, $sql );
-      while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
-      {
-        echo "<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
-      }
-       ?>
+        <?php
+          $sql = "SELECT * FROM Sites";
+          $db_erg = mysqli_query( $U->$db_link, $sql );
+          while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+          {
+            echo "<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
+          }
+        ?>
      </select>
     <input type="hidden" name="URL" value="editor" />
       <button type="submit"><?php echo $U->getLang("admin.edit.site") ?></button></form>
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <select name="SiteName">
-        <?php
-        $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
-        $sql = "SELECT * FROM Blog";
-        $db_erg = mysqli_query( $db_link, $sql );
-        while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
-        {
-          echo "<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
-        }
+          <?php
+            $sql = "SELECT * FROM Blog";
+            $db_erg = mysqli_query( $U->$db_link, $sql );
+            while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+            {
+              echo "<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
+            }
          ?>
        </select>
         <input type="hidden" name="URL" value="blogeditor" />

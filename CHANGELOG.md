@@ -9,9 +9,9 @@
 -->
 # Pb2.3Bfx0
 ## Additions
-*
+* You can access the database connection from $U->$db_link
 ## Changes
-*
+* Removed install files
 ## Fixed bugs
 * Syntax error in logout.php
 # Pb2.2Bfx0
