@@ -6,7 +6,7 @@
   if(isset($_GET["SiteName"])){
     $edit = false;
     $sql = "SELECT * FROM Sites Where Name = '".$_GET["SiteName"]."'";
-    $db_erg = mysqli_query( $U->$db_link, $sql );
+    $db_erg = mysqli_query( $U->db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
     {
       if($zeile["Name"] == $_GET["SiteName"]){

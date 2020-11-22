@@ -25,7 +25,7 @@
           if(preg_match('/^[a-z0-9A-Z.:,;]{8,25}$/',$_POST["P"])){
             $register = True;
             $sql = "SELECT * FROM User";
-            $db_erg = mysqli_query( $U->$db_link, $sql );
+            $db_erg = mysqli_query( $U->db_link, $sql );
             while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
             {
               //Checks if username or mail are in use
@@ -58,13 +58,13 @@
     //Register succeeded:
     //Register user
     $sql = 'INSERT INTO User (Username, Mail, Password, Type) VALUES ('."'".$_POST["U"]."'".','."'".$_POST["M"]."'".','."'".password_hash($_POST["P"],PASSWORD_DEFAULT)."'".',0);';
-    if($db_erg = mysqli_query( $U->$db_link, $sql )){
+    if($db_erg = mysqli_query( $U->db_link, $sql )){
       //Database register is succeeded
       echo $U->getLang("register.succeed");
       header("Location: ".$USOC["DOMAIN"]);
     }else{
       //Database register is failed
-      echo mysqli_error($U->$db_link);
+      echo mysqli_error($U->db_link);
     }
   }
   if($in_use){

@@ -14,7 +14,7 @@
       <select name="SiteName">
         <?php
           $sql = "SELECT * FROM Sites";
-          $db_erg = mysqli_query( $U->$db_link, $sql );
+          $db_erg = mysqli_query( $U->db_link, $sql );
           while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
           {
             echo "<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
@@ -27,7 +27,7 @@
         <select name="SiteName">
           <?php
             $sql = "SELECT * FROM Blog";
-            $db_erg = mysqli_query( $U->$db_link, $sql );
+            $db_erg = mysqli_query( $U->db_link, $sql );
             while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
             {
               echo "<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";

@@ -14,12 +14,12 @@
    </url>
   <?php
     $sql = "SELECT * FROM Sites";
-    $db_erg = mysqli_query( $U->$db_link, $sql );
+    $db_erg = mysqli_query( $U->db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
       echo "<url><loc>".$USOC["DOMAIN"]."/".$zeile["Name"]."</loc><changefreq>weekly</changefreq></url>";
     }
     $sql = "SELECT * FROM Blog";
-    $db_erg = mysqli_query( $U->$db_link, $sql );
+    $db_erg = mysqli_query( $U->db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
       echo "<url><loc>".$USOC["DOMAIN"]."/blog/".$zeile["Name"]."</loc><changefreq>weekly</changefreq></url>";
     }

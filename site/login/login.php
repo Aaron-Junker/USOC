@@ -21,7 +21,7 @@
   $fa = false;
   //Make a mysql query to database User
   $sql = "SELECT * FROM User";
-  $db_erg = mysqli_query( $U->$db_link, $sql );
+  $db_erg = mysqli_query( $U->db_link, $sql );
   //True when the query comes from 2fa.php where the code is set
   if(isset($_SESSION["code"])){
     //Sets username to the username from 2fa.php

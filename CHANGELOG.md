@@ -9,7 +9,7 @@
 -->
 # Pb2.3Bfx0
 ## Additions
-* You can access the database connection from $U->$db_link
+* You can access the database connection from $U->db_link
 ## Changes
 * Removed install files
 * Adjusted the CSS files to the new Code Conventions

@@ -48,7 +48,7 @@
         <br><a target="_blank" href="https://gravatar.com"><button><?php echo $U->getLang("profile.changePP"); ?></button></a><br />
         <?php
         $sql = "SELECT * FROM User WHERE Username='".$_SESSION["User_Name"]."'";
-        $db_erg = mysqli_query( $U->$db_link, $sql );
+        $db_erg = mysqli_query( $U->db_link, $sql );
         while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
           if($zeile["google_token"] =="" && file_exists("login/client_string.json")){
         ?>

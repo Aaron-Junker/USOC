@@ -39,14 +39,16 @@
         }
         if(isset($_SESSION["User_ID"])){
           echo '<li class="menuitem dropdown" style="float:right;"><a class="dropbtn" href="javascript:void(0)">'.$_SESSION["User_Name"].'</a><div style="right:0.5%;" class="dropdown-content"><a href="'.$USOC["DOMAIN"].'/changepassword.php" onmouseover="menuhover()" class="dropdownlink">'.$U->getLang("login.changepass").'</a><br /><a href="'.$USOC["DOMAIN"].'/profile.php" onmouseover="menuhover()" class="dropdownlink">'.$U->getLang("profile.settings").'</a><br /><a href="'.$USOC["DOMAIN"].'/logout.php" onmouseover="menuhover()" class="dropdownlink">'.$U->getLang("login.logout.action").'</a></div></li>';
-          if($_SESSION["Admin"] == True){
-            echo '<li class="menuitem dropdown" style="float:right;"><a class="dropbtn" href="'.$USOC["ADMIN_PATH"].'">'.$U->getLang("admin").'</a>';
-            if(isset($_GET["URL"])&&preg_match('/(page)/i',$_SERVER["PHP_SELF"])){
-                echo '<div class="dropdown-content"><a onmouseover="menuhover()" class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=editor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
-              }elseif(isset($_GET["URL"])&&preg_match('/(blog)/i',$_SERVER["PHP_SELF"])){
-                echo '<div class="dropdown-content"><a onmouseover="menuhover()" class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=blogeditor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
-              }
-              echo "</li>";
+          if(isset($_SESSION["Admin"])){
+            if($_SESSION["Admin"] == True){
+              echo '<li class="menuitem dropdown" style="float:right;"><a class="dropbtn" href="'.$USOC["ADMIN_PATH"].'">'.$U->getLang("admin").'</a>';
+              if(isset($_GET["URL"])&&preg_match('/(page)/i',$_SERVER["PHP_SELF"])){
+                  echo '<div class="dropdown-content"><a onmouseover="menuhover()" class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=editor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
+                }elseif(isset($_GET["URL"])&&preg_match('/(blog)/i',$_SERVER["PHP_SELF"])){
+                  echo '<div class="dropdown-content"><a onmouseover="menuhover()" class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=blogeditor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
+                }
+                echo "</li>";
+            }
           }
         }else{
           echo '<li class="menuitem" style="float:right;"><a href="'.$USOC["DOMAIN"].'/login.php">'.$U->getLang("login.g").'</a></li>';

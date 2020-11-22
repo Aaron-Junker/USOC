@@ -13,7 +13,7 @@
     //Check login
     $logina = 0;
     $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
-    $db_erg = mysqli_query( $U->$db_link, $sql );
+    $db_erg = mysqli_query( $U->db_link, $sql );
     while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
       if (md5($zeile["Id"]) == $_SESSION["User_ID"] && $zeile["Type"] == 1){
         $logina = 1;

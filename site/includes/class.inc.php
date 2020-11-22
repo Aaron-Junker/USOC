@@ -50,7 +50,13 @@
       * @since Pb2.3Bfx0
       * @var object
       */
-      public $db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+      public $db_link;
+      /** 
+      * @ignore 
+      */
+      function __construct(){
+        $this->db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+      }
       /**
       * @ignore
       */

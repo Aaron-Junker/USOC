@@ -10,8 +10,8 @@
       $user_id = $token_data['payload']['sub'];
       if(isset($_SESSION["User_ID"])){
         require_once ('configuration.php');
-        $sql = "SELECT * FROM User WHERE Username='".mysqli_real_escape_string ($U->$db_link,$_SESSION["User_Name"])."'";
-        $db_erg = mysqli_query( $U->$db_link, $sql );
+        $sql = "SELECT * FROM User WHERE Username='".mysqli_real_escape_string ($U->db_link,$_SESSION["User_Name"])."'";
+        $db_erg = mysqli_query( $U->db_link, $sql );
         while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
         {
           if(md5($zeile["Id"])==$_SESSION["User_ID"]){
@@ -26,8 +26,8 @@
 
         }
         if($change){
-          $sql = "UPDATE User SET google_token='".mysqli_real_escape_string ($U->$db_link,$user_id)."' WHERE Id='".mysqli_real_escape_string ($U->$db_link,$_SESSION["User_ID"])."';";
-          mysqli_query( $U->$db_link, $sql );
+          $sql = "UPDATE User SET google_token='".mysqli_real_escape_string ($U->db_link,$user_id)."' WHERE Id='".mysqli_real_escape_string ($U->db_link,$_SESSION["User_ID"])."';";
+          mysqli_query( $U->db_link, $sql );
         }
       }else{
       echo $U->getLang("login.not_logged_in");

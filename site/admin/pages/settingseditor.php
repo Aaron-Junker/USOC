@@ -13,7 +13,7 @@
         <select name="N">
         CODE;
         $sql = "SELECT * FROM Settings";
-        $db_erg = mysqli_query( $U->$db_link, $sql );
+        $db_erg = mysqli_query( $U->db_link, $sql );
         while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
         {
           $text = $text."<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
@@ -29,7 +29,7 @@
         echo $text;
       }else{
         $sql = "SELECT * FROM Settings;";
-        $db_erg = mysqli_query( $U->$db_link, $sql );
+        $db_erg = mysqli_query( $U->db_link, $sql );
         while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
           if ($zeile["Name"] == $_GET["N"]){
             $type = $zeile["Type"];

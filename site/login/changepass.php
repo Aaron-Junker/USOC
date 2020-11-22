@@ -8,7 +8,7 @@
     if($_POST["newpass1"]==$_POST["newpass2"]&&preg_match('/^[a-z0-9A-Z.:,;]{8,25}$/',$_POST["newpass1"])){
       $passc = False;
       $sql = "SELECT * FROM User WHERE Username='".$_SESSION['User_Name']."';";
-      $db_erg = mysqli_query( $U->$db_link, $sql );
+      $db_erg = mysqli_query( $U->db_link, $sql );
       while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
         {
           if(md5($zeile["Id"]) == $_SESSION['User_ID']&&password_verify($_POST["oldpass"],$zeile["Password"])){
@@ -28,7 +28,7 @@
   if($passc){
     $sql = "UPDATE User SET password='".password_hash($_POST["newpass1"],PASSWORD_DEFAULT)."' WHERE Username='".$_SESSION['User_Name']."';";
     echo $sql;
-    $db_erg = mysqli_query( $U->$db_link, $sql );
+    $db_erg = mysqli_query( $U->db_link, $sql );
   }else{
     header("Location: ".$USOC["DOMAIN"]."/error");
   }
