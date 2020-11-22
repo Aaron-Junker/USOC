@@ -1,5 +1,5 @@
 <!--
-# Pb__.__Bfx__
+# Pb__.__Bfx__ 
 ## Additions
 *
 ## Changes
@@ -12,6 +12,7 @@
 * You can access the database connection from $U->$db_link
 ## Changes
 * Removed install files
+* Adjusted the CSS files to the new Code Conventions
 ## Fixed bugs
 * Syntax error in logout.php
 # Pb2.2Bfx0

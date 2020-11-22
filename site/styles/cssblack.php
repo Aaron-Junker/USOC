@@ -1,53 +1,62 @@
 <?php
-  header('Content-Type: text/css'); 
+  header('Content-Type: text/css');
 ?>
 * {
   font-family: sans-serif;
   color: white;
 }
+
 html {
   background-color: #000000;
 }
-header{
+
+header {
   background-color: #000000;
   border-color: white;
   border-width: 1px;
   border-style: solid;
-
 }
-.abcRioButtonContents span{
+
+.abcRioButtonContents span {
   color:black!important;
 }
-header div{
+
+header div {
   border-top-color: white!important;
 }
+
 header a h1 {
   display: inline;
 }
-#headerlink{
+
+#headerlink {
 	text-decoration:none;
 }
+
 header a img {
   display: inline;
 }
+
 footer {
   border-top-color: white;
   border-top-width: 1px;
   border-top-style: solid;
-    position: fixed;
-    left: 1px;
-    bottom: 0;
-    width: 100%;
-    color: black;
-    text-align: left;
-    background-color: #000000;
+  position: fixed;
+  left: 1px;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: left;
+  background-color: #000000;
 }
+
 article {
   background-color:#000000;
   height: 100%;
   margin-bottom: 100px;
 }
-input[type=text],input[type=password],input[type=mail], select, textarea{
+
+input[type=text], input[type=password], input[type=mail], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #fff;
@@ -56,15 +65,18 @@ input[type=text],input[type=password],input[type=mail], select, textarea{
   resize: vertical;
   background-color: #000000;
 }
+
 input[type=submit], button {
   background-color: #000000;
   color: white;
   border: 1px solid #fff;
   cursor: pointer;
 }
-#headerlink{
+
+#headerlink {
   color: white;
 }
+
 ul#menu {
   list-style-type: none;
   margin: 0;
@@ -89,8 +101,9 @@ li.menuitem a {
 /* Change the link color to #111 (black) on hover */
 li.menuitem a:hover {
   background-color: black;
-color: white;
+  color: white;
 }
+
 .active_menu {
   background-color: #4CAF50;
 }
@@ -122,14 +135,18 @@ li.dropdown {
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;color:white}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;color:white
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.dropbtn:hover{
+
+.dropbtn:hover {
 color:white;
 }
+
 li.menuitem a, .dropbtn {
   display: inline-block;
   color: black;
@@ -137,40 +154,47 @@ li.menuitem a, .dropbtn {
   padding: 14px 16px;
   text-decoration: none;
 }
-.dropdownlink{
+
+.dropdownlink {
   color:black!important;
 
 }
-.dropdownlink:hover{
-  color:white!important;
 
-}
-ul#menu li a{
-  color:white!important;
-}
-ul#menu li a:hover{
-  color:white!important;
-}
-ul#menu li.dropdown:hover a{
-  color:white!important;
-}
-ul#menu li.dropdown:hover div a{
-  color:white!important;
-}
-ul#menu li.dropdown:hover div a:hover{
+.dropdownlink:hover {
   color:white!important;
 }
 
-#skipnavigation{
+ul#menu li a {
+  color:white!important;
+}
+
+ul#menu li a:hover {
+  color:white!important;
+}
+
+ul#menu li.dropdown:hover a {
+  color:white!important;
+}
+
+ul#menu li.dropdown:hover div a {
+  color:white!important;
+}
+
+ul#menu li.dropdown:hover div a:hover {
+  color:white!important;
+}
+
+#skipnavigation {
   left:-999px;
-position:absolute;
-top:auto;
-width:1px;
-height:1px;
-overflow:hidden;
-z-index:-999;
+  position:absolute;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  z-index:-999;
 }
-#skipnavigation:focus{
+
+#skipnavigation:focus {
   color: #fff;
   left: auto;
   top: auto;
@@ -184,16 +208,18 @@ z-index:-999;
   z-index:999;
 }
 
-.readmore{
-background-color: #0000000;
+.readmore {
+  background-color: #0000000;
   color: white;
   border: 1px solid #fff;
   cursor: pointer;
-  }
-a,a:visited,a:hover{
+}
+
+a,a:visited,a:hover {
   color: blue;
 }
-#error{
+
+#error {
   position: relative;
   width: 96%;
   right: 2%;
@@ -202,42 +228,54 @@ a,a:visited,a:hover{
   background-color: red;
   color: orange;
 }
+
 h2 a {
   color: white!important;
 }
 @media screen and (max-width: 600px) {
-  ul#menu li{
-  float: none;
+  ul#menu li {
+    float: none;
   }
-  article p, article div, article a{
+
+  article p, article div, article a {
   	font-size:20pt;
   }
-  article h3{
-  font-size:26pt;
+
+  article h3 {
+    font-size:26pt;
   }
-  article h2{
-  font-size:28pt;
+
+  article h2 {
+    font-size:28pt;
   }
-  article h1{
-  font-size:30pt;
+
+  article h1 {
+    font-size:30pt;
   }
+
   footer {
     position: relative;
   }
-  footer a,footer p,footer div{
-  font-size:18pt;
-  text-align:left!important;
+
+  footer a, footer p, footer div {
+    font-size:18pt;
+    text-align:left!important;
   }
-  article{
-  margin-bottom: 200px;
+
+  article {
+    margin-bottom: 200px;
   }
-  header a{
-  font-size:20pt;
+
+  header a {
+    font-size:20pt;
   }
-  header img{
-  display:none!important;
+
+  header img {
+    display:none!important;
   }
-  article{
+
+  article {
     overflow: scroll;
   }
+
 }
