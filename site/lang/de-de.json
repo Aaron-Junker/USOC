@@ -95,5 +95,11 @@
     "profile": "Profil",
     "profile.settings": "Profileinstellungen",
     "profile.changePP": "Wechsle Profilbild auf gravatar.com",
-    "accessibility.skipnavigation": "Navigation überspringen"
+    "accessibility.skipnavigation": "Navigation überspringen",
+    "errors.unknown": "Unbekannter Fehler",
+    "login.2fa.google_authenticator.scanned": "Ich habe den Code gescannt",
+    "login.2fa.disconnect": "Entkopple",
+    "login.oAuth.login": "Einloggen mit %a",
+    "login.mail.g": "Mailadresse",
+    "register.in_use": "Benutzername oder Mailadresse bereits in Gebrauch"
 }
