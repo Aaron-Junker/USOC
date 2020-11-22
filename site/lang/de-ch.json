@@ -95,5 +95,11 @@
     "profile": "",
     "profile.settings": "",
     "profile.changePP": "",
-    "accessibility.skipnavigation": ""
+    "accessibility.skipnavigation": "",
+    "errors.unknown": "",
+    "login.2fa.google_authenticator.scanned": "",
+    "login.2fa.disconnect": "",
+    "login.oAuth.login": "",
+    "login.mail.g": "",
+    "register.in_use": ""
 }
