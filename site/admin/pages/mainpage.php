@@ -10,6 +10,7 @@
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=useredit"><?php echo $U->getLang("admin.user.edit") ?></a><br />
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=editor"><?php echo $U->getLang("admin.edit.new.site") ?></a><br />
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=blogeditor"><?php echo $U->getLang("admin.edit.new.blogsite") ?></a><br />
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=about"><?php echo $U->getLang("admin.about") ?></a><br />
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <select name="SiteName">
         <?php

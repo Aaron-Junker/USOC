@@ -15,7 +15,7 @@
 
 Useful simple open-source CMS
 
-![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.2Bfx0-blue)
+![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.3Bfx0-blue)
 # Is it ready to use
 No. In the moment you shouldn't use it
 # How can I help

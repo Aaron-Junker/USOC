@@ -32,7 +32,7 @@
       * @since Pb2.0Bfx0RCA
       * @var string
       */
-      public $version = "Pb2.2Bfx0";
+      public $version = "Pb2.3Bfx0";
       /**
       * Version code
       * @since Pb2.0Bfx0RCA

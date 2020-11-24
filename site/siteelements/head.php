@@ -13,7 +13,7 @@
   newClass();
 ?>
 <meta charset="<?php echo $U->getLang("lang.charset"); ?>">
-<title><?php echo $U->getSetting("site.name") ?></title>
+<title><?php echo $U->getSetting("site.name"); ?></title>
 <?php
   if(isset($_COOKIE["css"])){
     if($_COOKIE["css"] == "l"){
@@ -33,10 +33,26 @@
     document.cookie = "css=" + c;
     location.reload();
   }
+  document.addEventListener("DOMContentLoaded", function(event) {
+  document.getElementsByClassName("noscript")[0].style ="display:none;"
+  document.getElementsByTagName("header")[0].style ="display:block;"
+  document.getElementsByTagName("footer")[0].style ="display:block;"
+  document.getElementsByTagName("article")[0].style ="display:block;"
+  })
 </script>
-<meta name="author" content="<?php echo $U->getSetting("site.author") ?>">
-<meta name="description" content="<?php echo $U->getSetting("site.description") ?>">
-<meta name="keywords" content="<?php echo $U->getSetting("site.keywords") ?>">
-<meta http-equiv="content-language" content="<?php echo $U->getSetting("site.lang") ?>">
-<meta name="robots" content="<?php echo $U->getSetting("site.robots") ?>">
+
+<style type="text/css">
+  header, footer, article {
+    display: none;
+  }
+  .noscript {
+    display: block;
+  }
+</style>
+
+<meta name="author" content="<?php echo $U->getSetting("site.author"); ?>">
+<meta name="description" content="<?php echo $U->getSetting("site.description"); ?>">
+<meta name="keywords" content="<?php echo $U->getSetting("site.keywords"); ?>">
+<meta http-equiv="content-language" content="<?php echo $U->getSetting("site.lang"); ?>">
+<meta name="robots" content="<?php echo $U->getSetting("site.robots"); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

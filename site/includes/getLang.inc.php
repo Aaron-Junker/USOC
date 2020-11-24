@@ -17,9 +17,9 @@
     global $USOC;
     global $U;
     $translate = json_decode(file_get_contents($USOC["DOMAIN"]."/lang/".$U->getSetting("site.lang").".json"));
-    try {
+    if(isset($translate->{$string})){
       return $translate->{$string};
-    } catch (Exception $e) {
+    }else{
       $translate = json_decode(file_get_contents($USOC["DOMAIN"]."/lang/en-en.json"));
       return $translate->{$string};
     }

@@ -60,4 +60,9 @@
     </ul>
   </div>
 </header>
+<!-- body if JavaScript is disabled -->
+<div class="noscript">
+  <h1>Please activate JavaScript</h1>
+  <p>This website don't work without JavaScript</p>
+</div>
 <div id="maincontent"></div>
