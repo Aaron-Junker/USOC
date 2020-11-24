@@ -1,5 +1,7 @@
 <?php
-
+  /** 
+  * This file includes sites and blogpages.
+  */
   include_once "configuration.php";
   include_once "includes/class.inc.php";
   newClass();
@@ -13,8 +15,7 @@
 
       <?php
 
-        include_once "siteelements/head.php"
-;
+        include_once "siteelements/head.php";
       ?>
 
   </head>
@@ -23,8 +24,7 @@
 
     <?php
 
-      include_once "siteelements/header.php"
-;
+      include_once "siteelements/header.php";
     ?>
 
     <article>
@@ -54,8 +54,7 @@
 
                 }else{
 
-                  $site = $U->getLang("error.offline")
-;
+                  $site = $U->getLang("error.offline");
                 }
 
               }
@@ -78,8 +77,7 @@
 
                 }else{
 
-                  $site = $U->getLang("error.offline")
-;
+                  $site = $U->getLang("error.offline");
                 }
 
               }
@@ -94,8 +92,7 @@
 
             $site = $zeile["Code"];
 
-            $sitehere = True
-;
+            $sitehere = True;
           }
 
         }

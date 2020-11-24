@@ -11,6 +11,7 @@
 ## Additions
 * You can access the database connection from $U->db_link
 * Added link in the admin area to the about page
+* Added link to register.php in sitemap
 ## Changes
 * Removed install files
 * Adjusted the CSS files to the new Code Conventions
@@ -19,6 +20,7 @@
 * Fixed bug in getLang.inc.php that don't let you see the english translation if no other is available
 * Removed .htaccess in admin/ckeditor because the editor couldn't load anymore
 * Fixed too big logo in admin/pages/about.php
+* Wrong link to login.php in sitemap.php
 # Pb2.2Bfx0
 ## Additions
 * Restrict access to admin/ckeditor

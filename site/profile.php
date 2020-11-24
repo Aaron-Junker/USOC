@@ -1,4 +1,7 @@
 <?php
+  /**
+  * Page that contains profile settings and information.
+  */
   session_start();
   include_once "configuration.php";
   include_once "includes/class.inc.php";
@@ -32,7 +35,7 @@
       include_once "siteelements/header.php"
     ?>
     <article>
-      <h3><?php echo $U->getLang("profile.settings") ?></h3>
+      <h3><?php echo $U->getLang("profile.settings"); ?></h3>
       <?php
         include_once 'login/src/FixedBitNotation.php';
         include_once 'login/src/GoogleAuthenticatorInterface.php';

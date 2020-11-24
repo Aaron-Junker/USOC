@@ -1,7 +1,14 @@
 <?php
+  /**
+  * Page where you can register a new account. Deactivated if login.register_open is 0.
+  */
   include_once "configuration.php";
   include_once "includes/class.inc.php";
   newClass();
+  /**
+  * Returns true if login.register_open is 1 otherwise it returns false.
+  * @return bool
+  */
   function register_open(){
     if(getSetting("login.register_open")=="1"){
       return True;

@@ -1,4 +1,7 @@
 <?php
+  /** 
+  * This file logs you out from google and from the page.
+  */
   session_start();
   session_destroy();
   include "configuration.php";
@@ -38,8 +41,8 @@
         signOut();})
       </script>
       <?php
-    }
-        ?>
+        }
+      ?>
     <!-- >>>>>>>>>>>>>>>>>>> -->
   </head>
   <body>
