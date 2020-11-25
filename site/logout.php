@@ -1,6 +1,6 @@
 <?php
   /** 
-  * This file logs you out from google and from the page.
+  * This file logs you out from Google and from the page.
   */
   session_start();
   session_destroy();

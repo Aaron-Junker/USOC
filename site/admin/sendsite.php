@@ -1,7 +1,8 @@
 <?php
   session_start();
-  include_once "configuration.php";
-  include_once $USOC["SITE_PATH"]."/includes/class.inc.php";
+  require_once "configuration.php";
+  require_once $USOC["SITE_PATH"]."/includes/class.inc.php";
+  newclass();
   $logina = 0;
   $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
   $db_erg = mysqli_query( $U->db_link, $sql );

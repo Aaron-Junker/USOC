@@ -232,6 +232,7 @@ a,a:visited,a:hover {
 h2 a {
   color: white!important;
 }
+
 @media screen and (max-width: 600px) {
   ul#menu li {
     float: none;
@@ -278,4 +279,13 @@ h2 a {
     overflow: scroll;
   }
 
+}
+
+@media print {
+  header, footer{
+    display:none!important;
+  }
+  a, a:hover, a:visited{
+    color:white!important;
+  }
 }

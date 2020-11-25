@@ -263,3 +263,12 @@ a, a:visited, a:hover {
     overflow: scroll;
   }
 }
+
+@media print {
+  header, footer{
+    display: none!important;
+  }
+  a, a:hover, a:visited{
+    color:black!important;
+  }
+}
