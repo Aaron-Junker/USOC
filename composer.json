@@ -1,6 +1,6 @@
 
 {
-	"name": "USOC",
+	"name": "case-games/usoc",
 	"description": "Useful Simple Open-Source CMS",
 	"type": "project",
 	"keywords": ["USOC", "cms"],
@@ -11,5 +11,7 @@
 		}
 	],
 	"license": "CGS0003",
-	"require": {}
+	"require-dev": {
+		"tools/php-cs-fixer": "v2.15.10"
+	}
  }
