@@ -69,6 +69,15 @@ private static $installed = array (
       ),
       'reference' => 'e864bbf5904cb8f5bb334f99209b48018522f042',
     ),
+    'friendsofphp/php-cs-fixer' => 
+    array (
+      'pretty_version' => 'v2.16.7',
+      'version' => '2.16.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4e35806a6d7d8510d6842ae932e8832363d22c87',
+    ),
     'php-cs-fixer/diff' => 
     array (
       'pretty_version' => 'v1.3.1',
