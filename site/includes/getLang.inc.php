@@ -22,6 +22,7 @@
     }else{
       $translate = json_decode(file_get_contents($USOC["DOMAIN"]."/lang/en-en.json"));
       return $translate->{$string};
+      throw new Exception("Untranslated string: " + $string);
     }
   }
 ?>

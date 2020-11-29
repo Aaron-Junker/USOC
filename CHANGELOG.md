@@ -13,6 +13,7 @@
 * Added link in the admin area to the about page
 * Added link to register.php in sitemap
 * Added simple style for printing
+* Error reporting to sentry
 ## Changes
 * Removed install files
 * Adjusted the CSS files to the new Code Conventions

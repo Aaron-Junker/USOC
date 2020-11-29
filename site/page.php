@@ -2,6 +2,7 @@
   /** 
   * This file includes sites and blogpages.
   */
+  include_once "../vendor/autoload.php";
   include_once "configuration.php";
   include_once "includes/class.inc.php";
   newClass();
