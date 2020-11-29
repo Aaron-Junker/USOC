@@ -84,7 +84,7 @@
     include_once "../vendor/autoload.php";
     Sentry\init(['dsn' => 'https://760bee7e3961426eb05b86717c31dccb@o479127.ingest.sentry.io/5523155' ]);
     Sentry\configureScope(function (Sentry\State\Scope $scope): void {
-      global $U;
+      $U = newClass();
       $scope->setExtra('site.lang', $U->getSetting("site.lang"));
     });
   }else{
