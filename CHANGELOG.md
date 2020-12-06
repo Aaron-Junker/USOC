@@ -13,7 +13,10 @@
 * Added link in the admin area to the about page
 * Added link to register.php in sitemap
 * Added simple style for printing
-* Error reporting to sentry
+* You can now delete pages in the adminarea
+* New function `bool $U->deletePage(string $table, string $name)`
+* * $table: The table the page is stored ("Blog" or "Sites")
+* * $name: The name of the page
 ## Changes
 * Removed install files
 * Adjusted the CSS files to the new Code Conventions
@@ -23,6 +26,9 @@
 * Removed .htaccess in admin/ckeditor because the editor couldn't load anymore
 * Fixed too big logo in admin/pages/about.php
 * Wrong link to login.php in sitemap.php
+* Wrote licence instead of license
+* Wrong translations in blogeditor
+* No fallback on blogsites if no blog article is saved
 # Pb2.2Bfx0
 ## Additions
 * Restrict access to admin/ckeditor

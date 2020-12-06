@@ -1,7 +1,7 @@
 <?php
   /**
   * This file contains the header for all files.
-  * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
+  * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
   */
 ?>
 <header>

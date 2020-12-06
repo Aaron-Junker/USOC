@@ -1,7 +1,7 @@
 <?php
   /**
   * This file conatins the class U. This class is used on every page.
-  * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
+  * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
   */
   /**
   * This if statement checks the including of configuration.php
@@ -81,6 +81,7 @@
         }
       }
     }
+  }else{
     echo "You can't access API from class.php";
   }
 ?>

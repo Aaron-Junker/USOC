@@ -1,7 +1,7 @@
 <?php
   /**
   * File with function getSetting()
-  * @licence https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source licence
+  * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
   */
   /**
   * This is a function for the class U.
