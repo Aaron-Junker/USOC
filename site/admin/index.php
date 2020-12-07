@@ -4,6 +4,7 @@
   * If logged in but no admin the HTTP-ERROR 403 is thrown.
   * If not logged in a login interface will be shown.
   * If yes the pages/mainpage.php will be included.
+  * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license 
   */
   session_start();
   include_once "configuration.php";
@@ -40,4 +41,4 @@
       </form>
 <?php
   }
- ?>
+?>

@@ -6,11 +6,11 @@
   include_once "includes/class.inc.php";
   newClass();
   /**
-  * Returns true if login.register_open is 1 otherwise it returns false.
+  * Returns true if login.register_open is 1 and user is logged out otherwise it returns false.
   * @return bool
   */
-  function register_open(){
-    if(getSetting("login.register_open")=="1"){
+  function isRegisterOpen(){
+    if(getSetting("login.isRegisterOpen")=="1" || !isset($_SESSION["User_ID"])){
       return True;
     }
     return False;
@@ -30,7 +30,7 @@
     <article>
       <h3><?php echo $U->getLang("register.g"); ?></h3>
       <?php
-        if(register_open()){
+        if(isRegisterOpen()){
           $HTML =<<<HEREDOC
           <form action="login/register.php" method="post">
             <label for="U">
@@ -53,7 +53,7 @@
           $HTML = str_replace("%c",$U->getLang("login.password.repeat.g"),$HTML);
           echo $HTML;
       }else{
-        echo $U->getLang("register.succeed");
+        echo $U->getLang("register.closed");
       }
       ?>
     </article>

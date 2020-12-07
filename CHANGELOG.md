@@ -7,6 +7,16 @@
 ## Fixed bugs
 * _ (#)
 -->
+# Pb2.4Bfx0
+## Additions
+* ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
+## Changes
+* Renamed `register_open()` to `isRegisterOpen()`
+* `isRegisterOpen()` checks now if user is logged in
+## Fixed bugs
+* Changepassword.php can be accessed even when not logged in.
+* Wrong string when registration is closed
+* You can register a new account when you're logged in
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

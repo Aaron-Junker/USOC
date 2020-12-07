@@ -31,8 +31,7 @@
           <?php
             $sql = "SELECT * FROM Blog";
             $db_erg = mysqli_query( $U->db_link, $sql );
-            while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
-            {
+            while($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
               echo "<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
             }
          ?>

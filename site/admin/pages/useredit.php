@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title><?php echo $U->getLang("admin") ?> - <?php echo $U->getLang("admin.user.edit") ?></title>
+    <title><?php echo $U->getLang("admin") ?> - <?php echo $U->getLang("admin.user.edit"); ?></title>
   </head>
   <body>
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back") ?></a>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back"); ?></a>
     <?php
       if(isset($_POST["N"])&& !isset($_POST["Submit"])){
         $text = <<<'HEREDOC'
@@ -30,15 +30,31 @@
           $b = 0;
         }
         $sql = "UPDATE User SET Type='".$admin."', blocked ='".$b."' WHERE Id='".$_POST["N"]."';";
-        $db_erg = mysqli_query( $U->db_link, $sql );
+        $db_erg = mysqli_query($U->db_link, $sql);
       }else{
+        $sql = "SELECT * FROM User;";
+        $db_erg = mysqli_query($U->db_link, $sql);
+        // Allow only values in the range from the lowest Id to the highest id
+        $highestId = 0;
+        // BUG: #54 Lowest ID don't work if over 10000000000000000000000000 accounts are created
+        $lowestId = 10000000000000000000000000;
+        while($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+          if($zeile["Id"] > $highestId){
+            $highestId = $zeile["Id"];
+          }
+          if($zeile["Id"] < $lowestId){
+            $lowestId = $zeile["Id"];
+          }
+        }
         $text = <<<'HEREDOC'
         <form action="$_SERVER["PHP_SELF"]?URL=useredit" method="post">
-          <label for="N">ID:</label><input name="N" type="number" />
+          <label for="N">ID:</label><input name="N" type="number" min="%b" max="%a" />
           <input type="submit" />
         </form>
         HEREDOC;
-        echo str_replace('$_SERVER["PHP_SELF"]',$_SERVER['PHP_SELF'],$text);
+        $text =  str_replace('$_SERVER["PHP_SELF"]', $_SERVER['PHP_SELF'], $text);
+        $text = str_replace('%a', $highestId, $text);
+        echo str_replace('%b', $lowestId, $text);
       }
     ?>
   </body>

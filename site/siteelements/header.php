@@ -25,10 +25,10 @@
       </li>
       <?php
 
-        if(!function_exists("register_open")){
-          function register_open(){
+        if(!function_exists("isRegisterOpen")){
+          function isRegisterOpen(){
             global $U;
-            if($U->getSetting("login.register_open")=="1"){
+            if($U->getSetting("login.register_open")=="1" || !isset($_SESSION["User_ID"])){
               return True;
             }
             return False;
@@ -52,7 +52,7 @@
           }
         }else{
           echo '<li class="menuitem" style="float:right;"><a href="'.$USOC["DOMAIN"].'/login.php">'.$U->getLang("login.g").'</a></li>';
-          if(register_open()){
+          if(isRegisterOpen()){
             echo '<li class="menuitem" style="float:right;"><a href="'.$USOC["DOMAIN"].'/register.php">'.$U->getLang("register.g").'</a></li>';
           }
         }

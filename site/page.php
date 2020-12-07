@@ -1,6 +1,8 @@
 <?php
   /** 
-  * This file includes sites and blogpages.
+  * This file includes pages, error pages, blog overview page and blogpages.
+  * This is the fallback page if the page don't exists.
+  * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
   */
   include_once "configuration.php";
   include_once "includes/class.inc.php";
@@ -95,8 +97,8 @@
           $URL = str_replace("/BLOG/", "", $URL);
           $URL = str_replace("%20", " ", $URL);
           $sql = "SELECT * FROM Blog";
-          $db_erg = mysqli_query( $U->db_link, $sql );
-          while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+          $db_erg = mysqli_query($U->db_link, $sql);
+          while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
             if($zeile["Name"] == $URL){
               $sitehere = True;
               if($zeile["Online"]==1){
@@ -109,7 +111,7 @@
         }else{
           $sql = "SELECT * FROM Sites";
           $db_erg = mysqli_query( $U->db_link, $sql );
-          while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+          while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
             if($zeile["Name"] == str_replace('/', "", $_SERVER["REQUEST_URI"])){
               $sitehere = True;
               if($zeile["Online"]==1){
