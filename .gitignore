@@ -1,3 +1,4 @@
 *.log
 /site/admin/configuration.php
 /site/configuration.php
+*.lock
