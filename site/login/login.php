@@ -27,30 +27,30 @@
     //Sets username to the username from 2fa.php
     $_POST["B"] = $_SESSION['temp_User_Name'];
   }
-  while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+  while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
     //Checks if a user exits
-    if((strtolower($_POST["B"])==strtolower($zeile["Username"])||strtolower($_POST["B"])==strtolower($zeile["Mail"]))&&(password_verify($_POST["P"],$zeile["Password"])||isset($_SESSION["code"])) ){
+    if((strtolower($_POST["B"])==strtolower($row["Username"])||strtolower($_POST["B"])==strtolower($row["Mail"]))&&(password_verify($_POST["P"],$row["Password"])||isset($_SESSION["code"])) ){
       $login = True;
       /**
       * Contains user id
       * @var int
       */
-      $user_id = $zeile["Id"];
+      $user_id = $row["Id"];
       /**
       * Contains username
       * @var string
       */
-      $user_name = $zeile["Username"];
+      $user_name = $row["Username"];
       //Checks if user is a admin
-      if($zeile["Type"] == 1){
+      if($row["Type"] == 1){
         $_SESSION["Admin"] = True;
       }
       // Checks if user has 2fa with Google Authnticator
-      if($zeile["google_2fa"] != ""){
+      if($row["google_2fa"] != ""){
         $fa = True;
       }
       // Checks if user is blocked
-      if($zeile["blocked"] == 1){
+      if($row["blocked"] == 1){
         $login = False;
         echo sprintf($U->getLang("login.locked"),$U->getLang("login.account"));
         $blocked = True;

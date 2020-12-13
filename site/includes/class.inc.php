@@ -51,11 +51,16 @@
       * @var object
       */
       public $db_link;
+      public $contentHandlers = [];
       /** 
       * @ignore 
       */
       function __construct(){
+        // Set db_link
         $this->db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+        // Set default content handlers
+        $this->contentHandlers["Sites"] = ["Name" => "Sites", "URL" => "/", "AddHandler" => function (int $Id, date $data){}, "DeleteHandler" => function (int $Id){if($Id==0){return False;}}, "ShowHandler" => function ($Code, $data){return $code;}, "EditHandler" => function (int $Id, $data){}];
+        $this->contentHandlers["Blog"] = ["Name" => "Blog", "URL" => "/blog/", "AddHandler" => function (int $Id, date $data){}, "DeleteHandler" => function (int $Id){}, "ShowHandler" => function ($Code, $data){return $code;}, "EditHandler" => function (int $Id, $data){}];
       }
       /**
       * @ignore

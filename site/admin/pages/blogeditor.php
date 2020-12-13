@@ -7,12 +7,12 @@
     $edit = false;
     $sql = "SELECT * FROM Blog Where Name = '".$_GET["SiteName"]."'";
     $db_erg = mysqli_query( $U->db_link, $sql );
-    while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
     {
-      if($zeile["Name"] == $_GET["SiteName"]){
+      if($row["Name"] == $_GET["SiteName"]){
         $edit = true;
-        $html = $zeile["Code"];
-        $online = $zeile["Online"];
+        $html = $row["Code"];
+        $online = $row["Online"];
       }
     }
   }

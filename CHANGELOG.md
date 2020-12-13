@@ -13,6 +13,7 @@
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
 * `isRegisterOpen()` checks now if user is logged in
+* Renamed placeholder variables `$zeile` to `$row`
 ## Fixed bugs
 * Changepassword.php can be accessed even when not logged in.
 * Wrong string when registration is closed

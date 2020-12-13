@@ -9,17 +9,22 @@
   * @see U For more informations about U.
   * @version Pb2.3Bfx0
   * @since Pb2.3Bfx0
-  * @param string $table The name of the table where the page is stored. Default values: "Sites", "Blog"
-  * @param string $name Name of the page
+  * @param string $content Name of the content
+  * @param string $name Name of the content page
   * @return bool True if succeeded, false if not
   */
-  function deletePage(string $table, string $name){
+  function deletePage(string $content, string $name){
     global $U, $USOC;
     // Checks if the page is index
-    if($table=="Sites" && $name=="index"){
-      return false;
+    $sql = "SELECT * FROM". $USOC->contentHandlers[$content]["Name"] . "WHERE name='" . $name . "';";
+    $db_erg = mysqli_query($U->db_link, $sql);
+    if($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+      $id = $row["Id"];
     }
-    $sql = "DELETE FROM ".$table." WHERE Name='".$name."'";
+    if(!$USOC->contentHandlers[$content]["DeleteHandler"]($id)){
+      return False;
+    }
+    $sql = "DELETE FROM " . $USOC->contentHandlers[$content]["Name"] . " WHERE Name='" . $name . "';";
     return mysqli_query($U->db_link, $sql);
   }
 ?>

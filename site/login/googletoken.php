@@ -12,10 +12,10 @@
         require_once ('configuration.php');
         $sql = "SELECT * FROM User WHERE Username='".mysqli_real_escape_string ($U->db_link,$_SESSION["User_Name"])."'";
         $db_erg = mysqli_query( $U->db_link, $sql );
-        while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+        while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
         {
-          if(md5($zeile["Id"])==$_SESSION["User_ID"]){
-            if($zeile["google_token"] == ""){
+          if(md5($row["Id"])==$_SESSION["User_ID"]){
+            if($row["google_token"] == ""){
             $change = True;
           }else{
             echo str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.fail"));

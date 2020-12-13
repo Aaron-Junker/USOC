@@ -26,10 +26,10 @@
             $register = True;
             $sql = "SELECT * FROM User";
             $db_erg = mysqli_query( $U->db_link, $sql );
-            while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+            while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
             {
               //Checks if username or mail are in use
-              if(strtolower($zeile["Username"]) == strtolower($_POST["U"])||strtolower($zeile["Mail"])==strtolower($_POST["M"])){
+              if(strtolower($row["Username"]) == strtolower($_POST["U"])||strtolower($row["Mail"])==strtolower($_POST["M"])){
                 $register = False;
                 $in_use = True;
               }

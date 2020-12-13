@@ -20,9 +20,9 @@
     $code = $_POST["code"];
     $sql = "SELECT * FROM User WHERE Username='".$_SESSION['temp_User_Name']."';";
     $db_erg = mysqli_query( $U->db_link, $sql );
-    while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
       {
-        if($g->checkCode($zeile["google_2fa"], $code)){
+        if($g->checkCode($row["google_2fa"], $code)){
           $_SESSION["code"] = True;
           header("Location: login.php");
         }else{

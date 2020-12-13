@@ -14,9 +14,9 @@
         CODE;
         $sql = "SELECT * FROM Settings";
         $db_erg = mysqli_query( $U->db_link, $sql );
-        while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+        while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
         {
-          $text = $text."<option value='".$zeile["Name"]."'>".$zeile["Name"]."</option>";
+          $text = $text."<option value='".$row["Name"]."'>".$row["Name"]."</option>";
         }
         $text = $text.<<<'CODE'
         </select>
@@ -30,10 +30,10 @@
       }else{
         $sql = "SELECT * FROM Settings;";
         $db_erg = mysqli_query( $U->db_link, $sql );
-        while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-          if ($zeile["Name"] == $_GET["N"]){
-            $type = $zeile["Type"];
-            $value = $zeile["Value"];
+        while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+          if ($row["Name"] == $_GET["N"]){
+            $type = $row["Type"];
+            $value = $row["Value"];
           }
         }
       }

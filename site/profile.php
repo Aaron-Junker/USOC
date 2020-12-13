@@ -52,8 +52,8 @@
         <?php
         $sql = "SELECT * FROM User WHERE Username='".$_SESSION["User_Name"]."'";
         $db_erg = mysqli_query( $U->db_link, $sql );
-        while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-          if($zeile["google_token"] =="" && file_exists("login/client_string.json")){
+        while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+          if($row["google_token"] =="" && file_exists("login/client_string.json")){
         ?>
         <b><?php echo str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.connect")); ?></b>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -63,7 +63,7 @@
         <p><?php echo str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.fail")); ?></p>
         <?php
           }
-          if($zeile["google_2fa"] == ""){
+          if($row["google_2fa"] == ""){
             $secret = $g->generateSecret();
             echo $U->getLang("login.2fa.google_authenticator.manual");
         ?>

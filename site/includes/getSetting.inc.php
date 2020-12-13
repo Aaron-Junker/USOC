@@ -16,8 +16,8 @@
     global $U, $USOC;
     $sql = "SELECT * FROM Settings WHERE Name='".$name."'";
     $db_erg = mysqli_query( $U->db_link, $sql );
-    while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-      return $zeile["Value"];
+    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+      return $row["Value"];
     }
   }
 ?>

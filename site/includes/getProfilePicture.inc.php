@@ -17,8 +17,8 @@
     global $U;
     $sql = "SELECT * FROM User WHERE Username='".$Username."'";
     $db_erg = mysqli_query( $U->db_link, $sql );
-    while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-      $mail = $zeile["Mail"];
+    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+      $mail = $row["Mail"];
     }
     $code = md5(strtolower( trim($mail) ) );
     return "<img src='https://www.gravatar.com/avatar/".$code."' />";

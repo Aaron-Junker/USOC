@@ -14,13 +14,13 @@
       if(!isset($_SESSION["User_ID"])){
         $sql = "SELECT * FROM User";
         $db_erg = mysqli_query( $U->db_link, $sql );
-        while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+        while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
         {
-          if($zeile["google_token"]==$user_id){
+          if($row["google_token"]==$user_id){
             $login = True;
-            $user_id = $zeile["Id"];
-            $user_name = $zeile["Username"];
-            if($zeile["Type"] == 1){
+            $user_id = $row["Id"];
+            $user_name = $row["Username"];
+            if($row["Type"] == 1){
               $_SESSION["Admin"] = True;
             }
           }

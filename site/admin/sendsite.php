@@ -6,9 +6,9 @@
   $logina = 0;
   $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
   $db_erg = mysqli_query($U->db_link, $sql);
-  while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+  while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
   {
-    if (md5($zeile["Id"]) == $_SESSION["User_ID"] && $zeile["Type"] == 1){
+    if (md5($row["Id"]) == $_SESSION["User_ID"] && $row["Type"] == 1){
       $logina = 1;
     }
   }
@@ -17,6 +17,7 @@
     $edit = True;
   }
   if(isset($_POST["N"])&&isset($_POST["C"])&&$logina==1&&(!$edit)){
+    // date("Y-m-d")
     $sql = "INSERT INTO Sites (Name, Code, Author, Date, Online) VALUES ('".$_POST["N"]."','".addslashes($_POST["C"])."','".$_SESSION["User_Name"]."','".date("Y-m-d")."','".$_POST["online"]."');";
     $db_erg = mysqli_query($U->db_link, $sql);
     header("Location: /".$_POST["N"]);

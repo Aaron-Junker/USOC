@@ -38,12 +38,12 @@
         $highestId = 0;
         // BUG: #54 Lowest ID don't work if over 10000000000000000000000000 accounts are created
         $lowestId = 10000000000000000000000000;
-        while($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
-          if($zeile["Id"] > $highestId){
-            $highestId = $zeile["Id"];
+        while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+          if($row["Id"] > $highestId){
+            $highestId = $row["Id"];
           }
-          if($zeile["Id"] < $lowestId){
-            $lowestId = $zeile["Id"];
+          if($row["Id"] < $lowestId){
+            $lowestId = $row["Id"];
           }
         }
         $text = <<<'HEREDOC'

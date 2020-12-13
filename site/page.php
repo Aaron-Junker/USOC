@@ -26,11 +26,11 @@
           if(strpos($_GET["URL"], '/blog/') !== false){
             $sql = "SELECT * FROM Blog";
             $db_erg = mysqli_query( $U->db_link, $sql );
-            while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-              if($zeile["Name"] == $_GET["URL"]){
+            while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+              if($row["Name"] == $_GET["URL"]){
                 $sitehere = True;
-                if($zeile["Online"]==1){
-                  $site = $zeile["Code"];
+                if($row["Online"] == 1){
+                  $site = $row["Code"];
                 }else{
                   $site = $U->getLang("error.offline");
                 }
@@ -39,11 +39,11 @@
           }else{
             $sql = "SELECT * FROM Sites";
             $db_erg = mysqli_query( $U->db_link, $sql );
-            while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-              if($zeile["Name"] == $_GET["URL"]){
+            while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+              if($row["Name"] == $_GET["URL"]){
                 $sitehere = True;
-                if($zeile["Online"]==1){
-                  $site = $zeile["Code"];
+                if($row["Online"] == 1){
+                  $site = $row["Code"];
                 }else{
                   $site = $U->getLang("error.offline");
                 }
@@ -53,8 +53,8 @@
         }elseif(strtolower($_SERVER["REQUEST_URI"]) == "/index.php" || strtolower($_SERVER["REQUEST_URI"]) == "/index.html"|| strtolower($_SERVER["REQUEST_URI"]) == "/"){
           $sql = "SELECT * FROM Sites WHERE Name='index'";
           $db_erg = mysqli_query( $U->db_link, $sql );
-          while ($zeile = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-            $site = $zeile["Code"];
+          while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+            $site = $row["Code"];
             $sitehere = True;
           }
         }elseif(strpos(strtolower($_SERVER["REQUEST_URI"]),"/error") !== false){
@@ -78,11 +78,11 @@
           * @var int
           */
           $blogarticles = 0;
-          while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
-            if($zeile["Online"]==1){
-              $site .= "<h2 style='color:black;border-top: 1px;border-top-style:solid;border-top-color:black;'><a style='color:black;' href='/blog/".$zeile["Name"]."'>".$zeile["Name"]."</a></h2>";
-              $site .= substr($zeile["Code"],0,100)."...";
-              $site .= "<br /><br /><a href='/blog/".$zeile["Name"]."'><button class='readmore'>".$U->getLang("blog.readmore")."</button></a>";
+          while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+            if($row["Online"]==1){
+              $site .= "<h2 style='color:black;border-top: 1px;border-top-style:solid;border-top-color:black;'><a style='color:black;' href='/blog/".$row["Name"]."'>".$row["Name"]."</a></h2>";
+              $site .= substr($row["Code"],0,100)."...";
+              $site .= "<br /><br /><a href='/blog/".$row["Name"]."'><button class='readmore'>".$U->getLang("blog.readmore")."</button></a>";
               $blogarticles += 1;
             }
           }
@@ -98,11 +98,11 @@
           $URL = str_replace("%20", " ", $URL);
           $sql = "SELECT * FROM Blog";
           $db_erg = mysqli_query($U->db_link, $sql);
-          while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
-            if($zeile["Name"] == $URL){
+          while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+            if($row["Name"] == $URL){
               $sitehere = True;
-              if($zeile["Online"]==1){
-                $site = $zeile["Code"];
+              if($row["Online"]==1){
+                $site = $row["Code"];
               }else{
                 $site = $U->getLang("error.offline");
               }
@@ -111,11 +111,11 @@
         }else{
           $sql = "SELECT * FROM Sites";
           $db_erg = mysqli_query( $U->db_link, $sql );
-          while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
-            if($zeile["Name"] == str_replace('/', "", $_SERVER["REQUEST_URI"])){
+          while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+            if($row["Name"] == str_replace('/', "", $_SERVER["REQUEST_URI"])){
               $sitehere = True;
-              if($zeile["Online"]==1){
-                $site = $zeile["Code"];
+              if($row["Online"]==1){
+                $site = $row["Code"];
               }else{
                 $site = $U->getLang("error.offline");
               }
