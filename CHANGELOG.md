@@ -17,6 +17,7 @@
 * Changepassword.php can be accessed even when not logged in.
 * Wrong string when registration is closed
 * You can register a new account when you're logged in
+* You can save a page even when it already exists,
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link
@@ -41,7 +42,7 @@
 * No fallback on blogsites if no blog article is saved
 # Pb2.2Bfx0
 ## Additions
-* Restrict access to admin/ckeditor
+* Restrict access to admin/ckeditor 
 ## Changes
 * Changed install.md to intstall.html for better read experience
 ## Fixed bugs
