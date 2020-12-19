@@ -23,7 +23,7 @@
       <?php
         $sitehere = False;
         if(isset($_GET["URL"])){
-          if(strpos($_GET["URL"], '/blog/') !== false){
+          if(str_starts_with($_GET["URL"], '/blog/')){
             $sql = "SELECT * FROM Blog";
             $db_erg = mysqli_query( $U->db_link, $sql );
             while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
@@ -57,7 +57,7 @@
             $site = $row["Code"];
             $sitehere = True;
           }
-        }elseif(strpos(strtolower($_SERVER["REQUEST_URI"]),"/error") !== false){
+        }elseif(str_starts_with(strtolower($_SERVER["REQUEST_URI"]),"/error")){
           if(isset($_GET["E"])){
             if(!($_GET["E"] == "400" || $_GET["E"] == "403" || $_GET["E"] == "404" || $_GET["E"] == "405" || $_GET["E"] == "410" || $_GET["E"] == "414" || $_GET["E"] == "418" || $_GET["E"] == "423")){
               $site = "<p>".$U->getLang("errors.unknown")."</p>";
@@ -91,7 +91,7 @@
             $site .= "<p><b>".$U->getLang("blog.no_saved")."</b></p>";
           }
           $sitehere = True;
-        }elseif(strpos(strtolower($_SERVER["REQUEST_URI"]),"/blog/") !== false){
+        }elseif(str_starts_with(strtolower($_SERVER["REQUEST_URI"]),"/blog/")){
           $URL = str_replace('/blog/', "", $_SERVER["REQUEST_URI"]);
           $URL = str_replace("/Blog/", "", $URL);
           $URL = str_replace("/BLOG/", "", $URL);

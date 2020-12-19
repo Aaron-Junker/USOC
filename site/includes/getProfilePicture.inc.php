@@ -10,9 +10,9 @@
   * @version Pb2.0Bfx0
   * @since Pb2.0Bfx0RCA
   * @param string $name The name of the setting. (For example: login.name)
-  * @return mixed The value from the database.
+  * @return string The value from the database.
   */
-  function getProfilePicture($Username){
+  function getProfilePicture($Username):string{
     global $USOC;
     global $U;
     $sql = "SELECT * FROM User WHERE Username='".$Username."'";

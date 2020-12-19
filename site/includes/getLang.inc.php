@@ -13,7 +13,7 @@
   * @param string $string The name of the string. (For example: login.name)
   * @return string The translated string
   */
-  function getLang($string){
+  function getLang($string):string{
     global $USOC;
     global $U;
     $translate = json_decode(file_get_contents($USOC["DOMAIN"]."/lang/".$U->getSetting("site.lang").".json"));

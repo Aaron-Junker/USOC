@@ -10,13 +10,13 @@
   * @version Pb2.0Bfx0RCA
   * @since Pb2.0Bfx0RCA
   * @param string $name The name of the setting. (For example: login.name)
-  * @return mixed The value from the database.
+  * @return string The value from the database.
   */
-  function getSetting($name){
+  function getSetting($name):string{
     global $U, $USOC;
     $sql = "SELECT * FROM Settings WHERE Name='".$name."'";
     $db_erg = mysqli_query( $U->db_link, $sql );
-    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+    while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
       return $row["Value"];
     }
   }

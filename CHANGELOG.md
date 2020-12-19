@@ -8,17 +8,29 @@
 * _ (#)
 -->
 # Pb2.4Bfx0
+> USOC now supports PHP8. Through a backwards compatibity script it still supports PHP7.4.
+> The PHP7.4 support ends in the summer of 2020
+
 ## Additions
 * ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
+* Added return declarations to functions
+* Added a backwards compatibility script
+* Added new content system for plugins
+* Added a new plugin system
+### Plugin system
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
 * `isRegisterOpen()` checks now if user is logged in
-* Renamed placeholder variables `$zeile` to `$row`
+* Renamed placeholder variable `$zeile` to `$row`
+* Changed older PHP7.4 functions to PHP8.0
+* Renamed `$U->version_code` to `$U->versionCode`
 ## Fixed bugs
 * Changepassword.php can be accessed even when not logged in.
 * Wrong string when registration is closed
 * You can register a new account when you're logged in
-* You can save a page even when it already exists,
+* You can save a page even when it already existed
+* Some functions were declared they give back mixed but they have a type.
+* URLS parsed by page.php could contain false URL's
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

@@ -13,10 +13,10 @@
   * @param string $name Name of the content page
   * @return bool True if succeeded, false if not
   */
-  function deletePage(string $content, string $name){
+  function deletePage(string $content, string $name):bool{
     global $U, $USOC;
     // Checks if the page is index
-    $sql = "SELECT * FROM". $USOC->contentHandlers[$content]["Name"] . "WHERE name='" . $name . "';";
+    $sql = "SELECT * FROM ". $USOC->contentHandlers[$content]["Name"] . " WHERE name='" . $name . "';";
     $db_erg = mysqli_query($U->db_link, $sql);
     if($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
       $id = $row["Id"];

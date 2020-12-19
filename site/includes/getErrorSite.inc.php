@@ -13,7 +13,7 @@
   * @param string $error String with the error (example: "404")
   * @return string The code
   */
-  function getErrorSite($error){
+  function getErrorSite($error):string{
     global $U;
     $code = "<h1>".$U->getLang("errors.".$error)."</h1><a href='/index.php'>".str_replace("%d",$U->getLang("page.mainpage"),$U->getLang("errors.mainpage"))."</a>";
     return $code;
