@@ -24,6 +24,7 @@
 * Renamed placeholder variable `$zeile` to `$row`
 * Changed older PHP7.4 functions to PHP8.0
 * Renamed `$U->version_code` to `$U->versionCode`
+* Content page names are now all stored lowercase
 ## Fixed bugs
 * Changepassword.php can be accessed even when not logged in.
 * Wrong string when registration is closed
