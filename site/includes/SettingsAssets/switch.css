@@ -1,0 +1,71 @@
+@keyframes checkbox_fade_off {
+    0% {
+        background-color: #00C600;
+        width:50px;
+    }
+    50% {
+        background-color: red;
+        width:35px
+    }
+    100% {
+        background-color: red;
+        width:50px;
+    }
+}
+@keyframes checkbox_fade_on {
+    0% {
+        background-color: red;
+        width:50px;
+    }
+    50% {
+        background-color: #00C600;
+        width:35px
+    }
+    100% {
+        background-color: #00C600;
+        width:50px;
+    }
+}
+input[type=checkbox]{
+    display:none;  
+}
+.Checkbox{
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;   
+    width: 50px;
+    border: 1px solid grey;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Checkbox-on{
+    background: #00C600;
+    animation-name: checkbox_fade_on;
+    animation-duration: 0.9s;
+}
+.Checkbox-on:hover{
+    background: #009200;
+}
+.Checkbox-off:hover{
+    background: #B20000;
+}
+.Checkbox-off{
+    background: red;
+    animation-name: checkbox_fade_off;
+    animation-duration: 1s;
+}
+table, th{
+    padding: 5px;
+    text-align: left;
+}
+tbody > tr > th {
+    font-weight: normal;
+}

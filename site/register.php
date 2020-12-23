@@ -10,10 +10,11 @@
   * @return bool
   */
   function isRegisterOpen(){
-    if(getSetting("login.isRegisterOpen")=="1" || !isset($_SESSION["User_ID"])){
-      return True;
+    global $U;
+    if($U->getSetting("login.register_open")=="0"  || isset($_SESSION["User_ID"])){
+      return False;
     }
-    return False;
+    return True;
   }
 ?>
 <!DOCTYPE html>

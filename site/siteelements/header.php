@@ -28,10 +28,10 @@
         if(!function_exists("isRegisterOpen")){
           function isRegisterOpen(){
             global $U;
-            if($U->getSetting("login.register_open")=="1" || !isset($_SESSION["User_ID"])){
-              return True;
+            if($U->getSetting("login.register_open")=="0"  || isset($_SESSION["User_ID"])){
+              return False;
             }
-            return False;
+            return True;
           }
         }
         if(session_status() == PHP_SESSION_NONE){

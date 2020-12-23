@@ -64,6 +64,7 @@
     "admin.site": "page",
     "admin.blog": "blog page",
     "admin.welcome": "Welcome!",
+    "admin.settingsoverview": "Settings overview",
     "login.username": "username",
     "login.password": "password",
     "lang.charset": "UTF-8",

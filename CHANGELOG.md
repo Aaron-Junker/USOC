@@ -15,8 +15,14 @@
 * ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
 * Added return declarations to functions
 * Added a backwards compatibility script
+  * Backward compatibility functions: `string_starts_with();` `string_ends_with();` string_contains();
+  * PHP8.0 <-> PHP 7.4
 * Added new content system for plugins
 * Added a new plugin system
+* New function `$U->editSetting(string $name, string $value):bool`
+* Added image folder
+  * Added Case Games logo
+  * Added load image
 ### Plugin system
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
@@ -25,13 +31,17 @@
 * Changed older PHP7.4 functions to PHP8.0
 * Renamed `$U->version_code` to `$U->versionCode`
 * Content page names are now all stored lowercase
+* Changed logo source from data URL to fix URL.
 ## Fixed bugs
 * Changepassword.php can be accessed even when not logged in.
 * Wrong string when registration is closed
 * You can register a new account when you're logged in
 * You can save a page even when it already existed
 * Some functions were declared they give back mixed but they have a type.
-* URLS parsed by page.php could contain false URL's
+* URL'S parsed by page.php could contain false URL's
+* False setting search in register.php
+* register.php can't be displayed
+* Javascript info banner always on log off screen
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link
@@ -39,9 +49,9 @@
 * Added link to register.php in sitemap
 * Added simple style for printing
 * You can now delete pages in the adminarea
-* New function `bool $U->deletePage(string $table, string $name)`
-* * $table: The table the page is stored ("Blog" or "Sites")
-* * $name: The name of the page
+* New function `$U->deletePage(string $table, string $name):bool`
+  * $table: The table the page is stored ("Blog" or "Sites")
+  * $name: The name of the page
 ## Changes
 * Removed install files
 * Adjusted the CSS files to the new Code Conventions

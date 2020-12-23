@@ -18,14 +18,14 @@
   }
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title><?php echo $U->getLang("admin") ?> - <?php echo $U->getLang("admin.edit.blogsite") ?></title>
+    <title><?php echo $U->getLang("admin"); ?> - <?php echo $U->getLang("admin.edit.blogsite"); ?></title>
     <script src="ckeditor/ckeditor.js"></script>
   </head>
   <body>
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back") ?></a>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back"); ?></a>
     <form action="sendsiteblog.php" method="post">
     <?php echo $U->getLang("admin.edit.name") ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";}?>/><br />
     <?php echo $U->getLang("admin.edit.content") ?>

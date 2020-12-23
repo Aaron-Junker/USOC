@@ -36,13 +36,21 @@
         }
         document.addEventListener("DOMContentLoaded", function(){
         setTimeout(function() {
-          signOut();
+            signOut();
           },1500);
         signOut();})
       </script>
       <?php
         }
       ?>
+      <script>
+          document.addEventListener("DOMContentLoaded", function(event) {
+          document.getElementsByClassName("noscript")[0].style ="display:none;"
+          document.getElementsByTagName("header")[0].style ="display:block;"
+          document.getElementsByTagName("footer")[0].style ="display:block;"
+          document.getElementsByTagName("article")[0].style ="display:block;"
+        })
+      </script>
     <!-- >>>>>>>>>>>>>>>>>>> -->
   </head>
   <body>

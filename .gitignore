@@ -3,3 +3,4 @@
 /site/configuration.php
 *.lock
 /.VSCodeCounter
+test.*
