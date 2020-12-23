@@ -39,7 +39,7 @@
   * You can change settings now better
   * The old settings menu is now in an other order on the overview page
 * Added icons to the Admin area main page 
-![](https://ibb.co/H7Bnn94)
+![alt](https://ibb.co/H7Bnn94)
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
 * `isRegisterOpen()` checks now if user is logged in
