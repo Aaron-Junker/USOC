@@ -39,7 +39,7 @@
   * You can change settings now better
   * The old settings menu is now in an other order on the overview page
 * Added icons to the Admin area main page 
-![alt](https://ibb.co/H7Bnn94)
+![Example image](https://i.ibb.co/p2bJJkw/Bild-2020-12-23-175448.png)
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
 * `isRegisterOpen()` checks now if user is logged in
