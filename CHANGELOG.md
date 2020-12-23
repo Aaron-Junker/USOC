@@ -11,10 +11,10 @@
 > USOC now supports PHP8. Through a backwards compatibity script it still supports PHP7.4.
 > The PHP7.4 support ends in the summer of 2020
 
-## Additions
 * ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
 * Added return declarations to functions
-* Added a backwards compatibility script
+* Added a backwards compatibility scr
+## Additionsipt
   * Backward compatibility functions: 
     * `string_starts_with();`
     * `string_ends_with();`
@@ -39,6 +39,7 @@
   * You can change settings now better
   * The old settings menu is now in an other order on the overview page
 * Added icons to the Admin area main page 
+
 ![Example image](https://i.ibb.co/p2bJJkw/Bild-2020-12-23-175448.png)
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
