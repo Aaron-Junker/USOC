@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title><?php echo $U->getLang("admin") ?> - <?php echo $U->getLang("admin.settings") ?></title>
+    <title><?php echo $U->getLang("admin") ?> - <?php echo $U->getLang("admin.settings"); ?></title>
   </head>
   <body>
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back") ?></a>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back"); ?></a>
     <?php
       if(!isset($_GET["N"])){
         $text = <<<'CODE'
