@@ -15,7 +15,10 @@
 * ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
 * Added return declarations to functions
 * Added a backwards compatibility script
-  * Backward compatibility functions: `string_starts_with();` `string_ends_with();` string_contains();
+  * Backward compatibility functions: 
+    * `string_starts_with();`
+    * `string_ends_with();`
+    * `string_contains();`
   * PHP8.0 <-> PHP 7.4
 * Added new content system for plugins
 * Added a new plugin system
