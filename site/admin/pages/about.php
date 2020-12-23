@@ -17,6 +17,7 @@
     <p><?php echo $U->getLang("admin.about.license"); ?></p>
     <p>By Case Games 2020</p>
     <img src="<?php echo $USOC["SITE_PATH"]."/images/caselogo.png"; ?>" height="250"/>
+    <p>Icons by Icofont. <a href="https://icofont.com/icons">Website from Icofont</a></p>
     <p><?php echo $U->getLang("admin.about.developed_by"); ?></p>
     <ul>
       <li>Aaron Junker</li>

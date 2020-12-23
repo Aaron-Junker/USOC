@@ -22,21 +22,34 @@
   * PHP8.0 <-> PHP 7.4
 * Added new content system for plugins
 * Added a new plugin system
+  * More Information: [Wiki](https://github.com/Case-Games/USOC/wiki/reference:Plugin-API)
 * New function `$U->editSetting(string $name, string $value):bool`
 * Added image folder
   * Added Case Games logo
   * Added load image
-### Plugin system
+  * Added icofont folder
+* Added Subfolders to the includes folder
+  * In the `JS` folder are various JavaScript scripts
+    * Added a Script that displays information in the JavaScript console
+      * Gets implemented in a further version
+  * In the `SettingsAssets` folder are the assets for the new settingseditor page in the Admin area
+    * The files get splited up in a further version
+  * Please note, that you can't include these files through HTML, you must include them through PHP
+* Added a settings overview page in admin area
+  * You can change settings now better
+  * The old settings menu is now in an other order on the overview page
+* Added icons to the Admin area main page 
+![](https://ibb.co/H7Bnn94)
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
 * `isRegisterOpen()` checks now if user is logged in
 * Renamed placeholder variable `$zeile` to `$row`
-* Changed older PHP7.4 functions to PHP8.0
+* Changed older PHP7.4 functions to PHP8.0 functions
 * Renamed `$U->version_code` to `$U->versionCode`
 * Content page names are now all stored lowercase
 * Changed logo source from data URL to fix URL.
 ## Fixed bugs
-* Changepassword.php can be accessed even when not logged in.
+* Changepassword.php can be accessed even when not logged in
 * Wrong string when registration is closed
 * You can register a new account when you're logged in
 * You can save a page even when it already existed
@@ -45,6 +58,7 @@
 * False setting search in register.php
 * register.php can't be displayed
 * Javascript info banner always on log off screen
+* Back link doesn't work in `admin/pages/settingseditorsend.php`
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

@@ -1,19 +1,23 @@
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-function toggle_checkbox(Id){
+function toggle_checkbox(Id, change = true){
     var checkbox = document.getElementById(Id);
     var div = document.getElementById(Id+"_div");
     if(checkbox.checked){
         checkbox.checked = false;
         div.innerHTML = "Off"
         div.className=div.className.replace("Checkbox-on", "Checkbox-off");
-        checkbox_change(Id)
+        if(change == true){
+            checkbox_change(Id)
+        }
     }else{
         checkbox.checked = true;
         div.innerHTML = "On"
         div.className=div.className.replace("Checkbox-off", "Checkbox-on");
-        checkbox_change(Id)
+        if(change == true){
+            checkbox_change(Id)
+        }
     }
 }
 function checkbox_change(Id){
@@ -65,9 +69,32 @@ function onLoad(Id){
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("Name="+Id);
 }
+function onLoadCheckbox(Id){
+    var input = document.getElementById(Id);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseText == 1){
+                input.checked = false;
+            }else{
+                input.checked = true;
+            }
+        }
+        toggle_checkbox(Id, false);
+      };
+    xhttp.open("POST", "settingschangehandler.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("Name=" + Id);
+}
 async function suceed(){
     var suceedheader = document.getElementById("suceedheader");
     suceedheader.style = "display:block; background:green;";
     await sleep(2000);
     suceedheader.style = "background:green; display:none;";
 }
+document.addEventListener("DOMContentLoaded", function(event) {
+    onLoad("site.name");
+    onLoad("test.int");
+    onLoadCheckbox("login.register_open");
+});
+

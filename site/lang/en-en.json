@@ -48,6 +48,7 @@
     "admin.edit.new": "new",
     "admin.settings": "Settings editor",
     "admin.settings.edit": "Edit settings",
+    "admin.settings.editadvanced": "Edit settings (Advanced)",
     "admin.settings.edit.p": "Edit setting",
     "admin.settings.edit.end": "Setting changed",
     "admin.user": "User",

@@ -14,6 +14,7 @@
     <script><?php echo file_get_contents($USOC["SITE_PATH"]."/includes/SettingsAssets/switch.js"); ?></script>
 </head>
 <body>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back"); ?></a>
     <h3 id="suceedheader" style="background:green; display:none;">Saved!</h6>
     <table>
         <thead>
@@ -32,7 +33,7 @@
                     <label for="site.name" title="site.name">Name of the website:</label>
                 </th>
                 <th>
-                    <input type="text" id="site.name" onChange="input_change('site.name')" onChange="onLoad('site.name')" />
+                    <input type="text" id="site.name" onChange="input_change('site.name')" onLoad="onLoad('site.name')" />
                 </th>
                 <th>
                     <img id="site.name_load" style="opacity: 0;" src="../images/load.gif"/>
@@ -47,6 +48,17 @@
                 </th>
                 <th>
                     <img id="login.register_open_load" style="opacity: 0;" src="../images/load.gif"/>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label for="test.int" title="test.int">Register open for users:</label>
+                </th>
+                <th>
+                    <input type="number" id="test.int" onChange="input_change('test.int')" onLoad="onLoad('test.int')" />
+                </th>
+                <th>
+                    <img id="test.int_load" style="opacity: 0;" src="../images/load.gif"/>
                 </th>
             </tr>
         </tbody>
