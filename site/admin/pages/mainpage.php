@@ -13,7 +13,7 @@
     <i class="icofont-page"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=blogeditor"><?php echo $U->getLang("admin.edit.new.blogsite"); ?></a><br />
     <i class="icofont-ui-delete"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=deletepage"><?php echo $U->getLang("admin.delete"); ?></a><br />
     <i class="icofont-card"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=about"><?php echo $U->getLang("admin.about"); ?></a><br />
-    <i class="icofont-ui-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor"><?php echo $U->getLang("admin.settings.editadvanced"); ?></a><br />
+    <i class="icofont-ui-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor"><?php echo $U->getLang("admin.settingsadvanced.edit"); ?></a><br />
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <select name="SiteName">
         <?php

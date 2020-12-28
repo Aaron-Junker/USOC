@@ -28,7 +28,7 @@
         if(!function_exists("isRegisterOpen")){
           function isRegisterOpen(){
             global $U;
-            if($U->getSetting("login.register_open")=="0"  || isset($_SESSION["User_ID"])){
+            if($U->getSetting("login.register_open")=="0"  || isset($_SESSION["User_ID"]) || $U->getSetting("login.login_open") == "0"){
               return False;
             }
             return True;
@@ -51,7 +51,9 @@
             }
           }
         }else{
-          echo '<li class="menuitem" style="float:right;"><a href="'.$USOC["DOMAIN"].'/login.php">'.$U->getLang("login.g").'</a></li>';
+          if($U->getSetting("login.login_open") == "1"){
+            echo '<li class="menuitem" style="float:right;"><a href="'.$USOC["DOMAIN"].'/login.php">'.$U->getLang("login.g").'</a></li>';
+          }
           if(isRegisterOpen()){
             echo '<li class="menuitem" style="float:right;"><a href="'.$USOC["DOMAIN"].'/register.php">'.$U->getLang("register.g").'</a></li>';
           }

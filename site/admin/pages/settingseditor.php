@@ -25,12 +25,12 @@
         </form>
         CODE;
         $text = str_replace('%a',$_SERVER['PHP_SELF'],$text);
-        $text = str_replace('%b',$U->getLang("admin.settings.edit.p"),$text);
+        $text = str_replace('%b',$U->getLang("admin.settingsadvanced.edit.p"),$text);
         echo $text;
       }else{
         $sql = "SELECT * FROM Settings;";
-        $db_erg = mysqli_query( $U->db_link, $sql );
-        while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+        $db_erg = mysqli_query($U->db_link, $sql);
+        while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
           if ($row["Name"] == $_GET["N"]){
             $type = $row["Type"];
             $value = $row["Value"];
@@ -50,7 +50,7 @@
           CODE;
           $text = str_replace('%b',$_GET["N"],$text);
           $text = str_replace('%a',$_SERVER['PHP_SELF'],$text);
-          $text = str_replace('%c',$U->getLang("admin.settings.edit.p"),$text);
+          $text = str_replace('%c',$U->getLang("admin.settingsadvanced.edit.p"),$text);
         }elseif($type == "Int"){
           $text = <<<'CODE'
           <form action="%a">
@@ -63,7 +63,7 @@
           $text = str_replace('%c',$value,$text);
           $text = str_replace('%b',$_GET["N"],$text);
           $text = str_replace('%a',$_SERVER['PHP_SELF'],$text);
-          $text = str_replace('%d',$U->getLang("admin.settings.edit.p"),$text);
+          $text = str_replace('%d',$U->getLang("admin.settingsadvanced.edit.p"),$text);
         }elseif($type == "Text"){
           $text = <<<'CODE'
           <form action="%a">
@@ -76,7 +76,7 @@
           $text = str_replace('%c',$value,$text);
           $text = str_replace('%b',$_GET["N"],$text);
           $text = str_replace('%a',$_SERVER['PHP_SELF'],$text);
-          $text = str_replace('%d',$U->getLang("admin.settings.edit.p"),$text);
+          $text = str_replace('%d',$U->getLang("admin.settingsadvanced.edit.p"),$text);
         }
         echo $text;
       }

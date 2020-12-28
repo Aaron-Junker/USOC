@@ -15,15 +15,15 @@
 </head>
 <body>
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back"); ?></a>
-    <h3 id="suceedheader" style="background:green; display:none;">Saved!</h6>
+    <h3 id="suceedheader" style="background:green; display:none;"><?php echo $U->getLang("admin.settings.saved"); ?></h6>
     <table>
         <thead>
             <tr>
                 <th style="width:45%">
-                    <label for="r">Name:</label>
+                    <label for="r"><?php echo $U->getLang("admin.settings.name"); ?></label>
                 </th>
                 <th style="width:45%">
-                    <p>Value:</p>
+                    <p><?php echo $U->getLang("admin.settings.value"); ?></p>
                 </th>
             </tr>
         </thead>

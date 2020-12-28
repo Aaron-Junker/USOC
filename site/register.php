@@ -11,7 +11,7 @@
   */
   function isRegisterOpen(){
     global $U;
-    if($U->getSetting("login.register_open")=="0"  || isset($_SESSION["User_ID"])){
+    if($U->getSetting("login.register_open")=="0"  || isset($_SESSION["User_ID"]) || $U->getSetting("login.login_open") == "0"){
       return False;
     }
     return True;

@@ -21,7 +21,7 @@
   $fa = false;
   //Make a mysql query to database User
   $sql = "SELECT * FROM User";
-  $db_erg = mysqli_query( $U->db_link, $sql );
+  $db_erg = mysqli_query($U->db_link, $sql);
   //True when the query comes from 2fa.php where the code is set
   if(isset($_SESSION["code"])){
     //Sets username to the username from 2fa.php
@@ -44,6 +44,8 @@
       //Checks if user is a admin
       if($row["Type"] == 1){
         $_SESSION["Admin"] = True;
+      }else{
+        $login = False;
       }
       // Checks if user has 2fa with Google Authnticator
       if($row["google_2fa"] != ""){
@@ -56,11 +58,6 @@
         $blocked = True;
       }
     }
-  }
-  //Checks if login is closed
-  if($U->getSetting("login.login_open")=="0"){
-    echo $U->getLang("login.login_closed")."<br>";
-    $login = False;
   }
   //Checks if user has 2fa and was at 2fa.php
   if($fa && isset($_SESSION["code"])){
@@ -95,7 +92,7 @@
     }elseif($login == False && $blocked == False) {
       //If login has failed
       echo $U->getLang("login.fail");
-      header('Location: '.$USOC["DOMAIN"].'/login.php?ERROR=0x000000');
+      header('Location: '.$USOC["DOMAIN"].'/login.php');
     }
   }
 ?>

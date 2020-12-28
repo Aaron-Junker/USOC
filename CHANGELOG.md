@@ -11,10 +11,10 @@
 > USOC now supports PHP8. Through a backwards compatibity script it still supports PHP7.4.
 > The PHP7.4 support ends in the summer of 2020
 
+## Additions
 * ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
 * Added return declarations to functions
-* Added a backwards compatibility scr
-## Additionsipt
+* Added a backwards compatibility script
   * Backward compatibility functions: 
     * `string_starts_with();`
     * `string_ends_with();`
@@ -34,12 +34,11 @@
       * Gets implemented in a further version
   * In the `SettingsAssets` folder are the assets for the new settingseditor page in the Admin area
     * The files get splited up in a further version
-  * Please note, that you can't include these files through HTML, you must include them through PHP
+  * Please note, that you can't include files, which aren't in th JS folder, with HTML, you must include them with PHP
 * Added a settings overview page in admin area
   * You can change settings now better
-  * The old settings menu is now in an other order on the overview page
+  * The  old settings menu is now in an other order on the overview page
 * Added icons to the Admin area main page 
-
 ![Example image](https://i.ibb.co/p2bJJkw/Bild-2020-12-23-175448.png)
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
@@ -48,7 +47,12 @@
 * Changed older PHP7.4 functions to PHP8.0 functions
 * Renamed `$U->version_code` to `$U->versionCode`
 * Content page names are now all stored lowercase
-* Changed logo source from data URL to fix URL.
+* Changed logo source from data URL to fix URL
+* Changed behavior of register and login system
+  * If setting "login.login_open" is 0
+    * You can now login if you are an administrator in the admin area
+    * You also can't register new users now
+  * 
 ## Fixed bugs
 * Changepassword.php can be accessed even when not logged in
 * Wrong string when registration is closed
@@ -59,7 +63,7 @@
 * False setting search in register.php
 * register.php can't be displayed
 * Javascript info banner always on log off screen
-* Back link doesn't work in `admin/pages/settingseditorsend.php`
+* "Back" link doesn't work in `admin/pages/settingseditorsend.php`
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

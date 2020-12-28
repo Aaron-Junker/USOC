@@ -50,7 +50,7 @@
     echo $U->getLang("login.fillout");
   }
   //Checks if register is cloded
-  if($U->getSetting("login.register_open")=="0"){
+  if($U->getSetting("login.register_open")=="0"  || $U->getSetting("login.login_open") == "0"){
     echo $U->getLang("register.closed");
     $register = False;
   }
