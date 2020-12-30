@@ -4,3 +4,4 @@
 *.lock
 /.VSCodeCounter
 test.*
+/.vscode
