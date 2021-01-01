@@ -1,8 +1,8 @@
 *.log
-/site/admin/configuration.php
-/site/configuration.php
+/admin/configuration.php
+configuration.php
 *.lock
 /.VSCodeCounter
 test.*
 /.vscode
-/site/login/client_string.json
+/login/client_string.json
