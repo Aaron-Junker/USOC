@@ -48,7 +48,7 @@
         $login = False;
       }
       // Checks if user has 2fa with Google Authnticator
-      if($row["google_2fa"] != ""){
+      if($row["google_2fa"] != "" && $U->getSetting("2fa.enabled") == "1"){
         $fa = True;
       }
       // Checks if user is blocked
@@ -88,7 +88,7 @@
       echo $U->getLang("login.succeed");
       $_SESSION['User_ID'] = md5($user_id);
       $_SESSION['User_Name'] = $user_name;
-      header('Location: '.$USOC["DOMAIN"]);
+      header('Location: '.$USOC["ADMIN_PATH"]."/index.php");
     }elseif($login == False && $blocked == False) {
       //If login has failed
       echo $U->getLang("login.fail");

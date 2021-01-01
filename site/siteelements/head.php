@@ -50,6 +50,14 @@
   }
 </style>
 
+<script>
+  window.addEventListener('storage', () => {
+    if(localStorage.getItem('LogOut') == "1"){
+      location.href = "<?php echo $USOC["DOMAIN"]; ?>/logout.php";
+    }
+  });
+</script>
+
 <meta name="author" content="<?php echo $U->getSetting("site.author"); ?>">
 <meta name="description" content="<?php echo $U->getSetting("site.description"); ?>">
 <meta name="keywords" content="<?php echo $U->getSetting("site.keywords"); ?>">

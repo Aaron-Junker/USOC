@@ -17,12 +17,12 @@
     global $USOC;
     global $U;
     $translate = json_decode(file_get_contents($USOC["DOMAIN"]."/lang/".$U->getSetting("site.lang").".json"));
-    if(isset($translate->{$string})){
+    if(isset($translate->{$string}) && $translate->{$string} != ""){
       return $translate->{$string};
     }else{
       $translate = json_decode(file_get_contents($USOC["DOMAIN"]."/lang/en-en.json"));
       return $translate->{$string};
-      throw new Exception("Untranslated string: " + $string);
+      throw new Exception("Couldn't find string: " + $string);
     }
   }
 ?>

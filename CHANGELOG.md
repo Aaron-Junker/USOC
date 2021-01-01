@@ -40,6 +40,11 @@
   * The  old settings menu is now in an other order on the overview page
 * Added icons to the Admin area main page 
 ![Example image](https://i.ibb.co/p2bJJkw/Bild-2020-12-23-175448.png)
+* New option: `2fa.enabled`
+  * Sets if users can use 2fa or not
+  * If you turn off users also don't get asked for the authenticator code
+* `/login` folder has now as fallback resource `/login/login.php`
+* Added vendor folder and the composer file works now
 ## Changes
 * Renamed `register_open()` to `isRegisterOpen()`
 * `isRegisterOpen()` checks now if user is logged in
@@ -52,8 +57,17 @@
   * If setting "login.login_open" is 0
     * You can now login if you are an administrator in the admin area
     * You also can't register new users now
-  * 
+  * In the admin area you can now only login with an admin account
+* New admin area login style
+![Example image](https://i.ibb.co/tKKPP9v/Bild-2020-12-31-142930.png)
+* The "Change password" button in the menu is now hidden if `login.changepassword` is off
+* `$U->getLang()` returns now also the english string if the translated string is ""
+* Removed ability on `admin/2fa.php` to delete or add secret keys
+* Better styled install.html
+* When you add an Google Account you get now redirected to the main page
 ## Fixed bugs
+> Fixex the whole oAuth system
+
 * Changepassword.php can be accessed even when not logged in
 * Wrong string when registration is closed
 * You can register a new account when you're logged in
@@ -64,6 +78,12 @@
 * register.php can't be displayed
 * Javascript info banner always on log off screen
 * "Back" link doesn't work in `admin/pages/settingseditorsend.php`
+* Mobile view doesn't look good on some browsers because it has forced scrollbars
+* `oAuth.google.client_id` setting didn't have a type
+* `oAuth.google.client_id` is doubled
+* Headers in profile settings aren't in the right size
+* Google oAuth client id wasn't variable in `login.php`
+* `login.php` checks for the wrong oAuth google file
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

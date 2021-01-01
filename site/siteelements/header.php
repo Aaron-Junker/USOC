@@ -38,7 +38,20 @@
           session_start();
         }
         if(isset($_SESSION["User_ID"])){
-          echo '<li class="menuitem dropdown" style="float:right;"><a class="dropbtn" href="javascript:void(0)">'.$_SESSION["User_Name"].'</a><div style="right:0.5%;" class="dropdown-content"><a href="'.$USOC["DOMAIN"].'/changepassword.php" onmouseover="menuhover()" class="dropdownlink">'.$U->getLang("login.changepass").'</a><br /><a href="'.$USOC["DOMAIN"].'/profile.php" onmouseover="menuhover()" class="dropdownlink">'.$U->getLang("profile.settings").'</a><br /><a href="'.$USOC["DOMAIN"].'/logout.php" onmouseover="menuhover()" class="dropdownlink">'.$U->getLang("login.logout.action").'</a></div></li>';
+          ?>
+          <li class="menuitem dropdown" style="float:right;">
+          <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION["User_Name"]; ?></a>
+          <div style="right:0.5%;" class="dropdown-content">
+          <?php
+            if($U->getSetting("login.changepassword") == "1"){
+          ?>
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/changepassword.php" onmouseover="menuhover()" class="dropdownlink"><?php echo $U->getLang("login.changepass"); ?></a><br />
+          <?php
+            }
+          ?>
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/profile.php" onmouseover="menuhover()" class="dropdownlink"><?php echo $U->getLang("profile.settings"); ?></a><br />
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/logout.php" onmouseover="menuhover()" class="dropdownlink"><?php echo $U->getLang("login.logout.action"); ?></a></div></li>'
+          <?php
           if(isset($_SESSION["Admin"])){
             if($_SESSION["Admin"] == True){
               echo '<li class="menuitem dropdown" style="float:right;"><a class="dropbtn" href="'.$USOC["ADMIN_PATH"].'">'.$U->getLang("admin").'</a>';

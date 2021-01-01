@@ -2,3 +2,4 @@
 Order Allow,Deny
 Deny from all
 </Files>
+FallbackResource /login.php

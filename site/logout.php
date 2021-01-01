@@ -43,15 +43,21 @@
       <?php
         }
       ?>
-      <script>
-          document.addEventListener("DOMContentLoaded", function(event) {
-          document.getElementsByClassName("noscript")[0].style ="display:none;"
-          document.getElementsByTagName("header")[0].style ="display:block;"
-          document.getElementsByTagName("footer")[0].style ="display:block;"
-          document.getElementsByTagName("article")[0].style ="display:block;"
-        })
-      </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+        document.getElementsByClassName("noscript")[0].style ="display:none;"
+        document.getElementsByTagName("header")[0].style ="display:block;"
+        document.getElementsByTagName("footer")[0].style ="display:block;"
+        document.getElementsByTagName("article")[0].style ="display:block;"
+      })
+    </script>
     <!-- >>>>>>>>>>>>>>>>>>> -->
+    <script>
+      localStorage.setItem('LogOut', '1');
+      setTimeout(function(){
+        localStorage.setItem('LogOut', '0');
+      }, 1000);
+    </script>
   </head>
   <body>
     <?php

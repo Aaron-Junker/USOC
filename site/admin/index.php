@@ -32,13 +32,27 @@
     }
   }else{
     ?>
-      <form action="login.php" method="post">
-        <label for="B"><?php echo $U->getLang("login.username.g") ?></label>
-        <input name="B" type="text" />
-        <label for="P"><?php echo $U->getLang("login.password.g") ?></label>
-        <input name="P" type="password" />
-        <input type="submit" />
-      </form>
+    <!DOCTYPE html>
+    <html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
+      <body>
+        <h1>USOC - <?php echo $U->getLang("admin"); ?></h1>
+        <h3><?php echo $U->getLang("login.onlyAdmin"); ?></h3>
+        <a href="<?php echo $USOC["DOMAIN"]; ?>"><?php echo $U->getLang("admin.toFrontend"); ?></a><br />
+        <?php
+          if($U->getSetting("login.login_open") == "1"){
+        ?>
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/login.php"><?php echo $U->getLang("login.onlyAdmin.toNormal"); ?></a><br />
+        <?php
+          }
+        ?>
+        <form action="login.php" method="post">
+          <label for="B"><?php echo $U->getLang("login.username.g"); ?>:</label><br />
+          <input name="B" type="text" /><br />
+          <label for="P"><?php echo $U->getLang("login.password.g"); ?>:</label><br />
+          <input name="P" type="password" /><br />
+          <input type="submit" />
+        </form>
+      </body>
 <?php
   }
 ?>

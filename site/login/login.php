@@ -21,13 +21,13 @@
   $fa = false;
   //Make a mysql query to database User
   $sql = "SELECT * FROM User";
-  $db_erg = mysqli_query( $U->db_link, $sql );
+  $db_erg = mysqli_query($U->db_link, $sql);
   //True when the query comes from 2fa.php where the code is set
   if(isset($_SESSION["code"])){
     //Sets username to the username from 2fa.php
     $_POST["B"] = $_SESSION['temp_User_Name'];
   }
-  while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+  while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
     //Checks if a user exits
     if((strtolower($_POST["B"])==strtolower($row["Username"])||strtolower($_POST["B"])==strtolower($row["Mail"]))&&(password_verify($_POST["P"],$row["Password"])||isset($_SESSION["code"])) ){
       $login = True;
@@ -46,7 +46,7 @@
         $_SESSION["Admin"] = True;
       }
       // Checks if user has 2fa with Google Authnticator
-      if($row["google_2fa"] != ""){
+      if($row["google_2fa"] != "" && $U->getSetting("2fa.enabled") == "1"){
         $fa = True;
       }
       // Checks if user is blocked

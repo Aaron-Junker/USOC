@@ -62,13 +62,14 @@ function onLoad(Id){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var value = this.responseText;
-            input.value=value;
+            input.value = value;
         }
       };
     xhttp.open("POST", "settingschangehandler.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("Name="+Id);
 }
+
 function onLoadCheckbox(Id){
     var input = document.getElementById(Id);
     var xhttp = new XMLHttpRequest();
@@ -86,15 +87,25 @@ function onLoadCheckbox(Id){
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("Name=" + Id);
 }
+
 async function suceed(){
     var suceedheader = document.getElementById("suceedheader");
     suceedheader.style = "display:block; background:green;";
     await sleep(2000);
     suceedheader.style = "background:green; display:none;";
 }
+
 document.addEventListener("DOMContentLoaded", function(event) {
     onLoad("site.name");
-    onLoad("test.int");
+    onLoad("site.lang");
     onLoadCheckbox("login.register_open");
+    onLoadCheckbox("login.login_open");
+    onLoadCheckbox("login.changepassword");
+    onLoad("site.description");
+    onLoad("site.keywords");
+    onLoad("site.robots");
+    onLoadCheckbox("2fa.enabled");
+    onLoad("2fa.name");
+    onLoad("oAuth.google.client_id");
 });
 

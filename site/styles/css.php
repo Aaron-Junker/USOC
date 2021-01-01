@@ -238,10 +238,6 @@ a, a:visited, a:hover {
     font-size:30pt;
   }
 
-  footer {
-    position: relative;
-  }
-
   footer a, footer p, footer div {
     font-size:18pt;
     text-align:left!important;
@@ -249,6 +245,7 @@ a, a:visited, a:hover {
 
   article {
     margin-bottom: 200px;
+    overflow: auto;
   }
 
   header a {
@@ -257,10 +254,6 @@ a, a:visited, a:hover {
 
   header img {
     display:none!important;
-  }
-
-  article {
-    overflow: scroll;
   }
 }
 

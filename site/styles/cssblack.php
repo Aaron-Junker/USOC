@@ -254,10 +254,6 @@ h2 a {
     font-size:30pt;
   }
 
-  footer {
-    position: relative;
-  }
-
   footer a, footer p, footer div {
     font-size:18pt;
     text-align:left!important;
@@ -265,6 +261,7 @@ h2 a {
 
   article {
     margin-bottom: 200px;
+    overflow: auto;
   }
 
   header a {
@@ -274,11 +271,6 @@ h2 a {
   header img {
     display:none!important;
   }
-
-  article {
-    overflow: scroll;
-  }
-
 }
 
 @media print {

@@ -8,7 +8,7 @@
   newClass();
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
+<html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
   <head>
     <?php
       include_once "siteelements/head.php"
@@ -35,7 +35,7 @@
       include_once "siteelements/header.php"
     ?>
     <article>
-      <h3><?php echo $U->getLang("profile.settings"); ?></h3>
+      <h1><?php echo $U->getLang("profile.settings"); ?></h1>
       <?php
         include_once 'login/src/FixedBitNotation.php';
         include_once 'login/src/GoogleAuthenticatorInterface.php';
@@ -43,19 +43,23 @@
         include_once 'login/src/GoogleQrUrl.php';
         $g = new \Sonata\GoogleAuthenticator\GoogleAuthenticator();
         if(isset($_SESSION["User_ID"])){
-        ?>
-        <h1><?php echo $_SESSION["User_Name"];?></h1>
+      ?>
+        <h3><?php echo $_SESSION["User_Name"];?></h3>
         <?php
           echo $U->getProfilePicture($_SESSION["User_Name"]);
         ?>
         <br><a target="_blank" href="https://gravatar.com"><button><?php echo $U->getLang("profile.changePP"); ?></button></a><br />
         <?php
         $sql = "SELECT * FROM User WHERE Username='".$_SESSION["User_Name"]."'";
-        $db_erg = mysqli_query( $U->db_link, $sql );
-        while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-          if($row["google_token"] =="" && file_exists("login/client_string.json")){
+        $db_erg = mysqli_query($U->db_link, $sql);
+        while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+          if($row["google_token"] == "" && file_exists("login/client_string.json")){
         ?>
         <b><?php echo str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.connect")); ?></b>
+        <form action="login/googletoken.php" method="post" style="display:none;">
+          <input type="hidden" name="token" />
+          <input type="submit" name="bsubmit" />
+        </form>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <?php
       }elseif(file_exists("login/client_string.json")){
@@ -63,7 +67,7 @@
         <p><?php echo str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.fail")); ?></p>
         <?php
           }
-          if($row["google_2fa"] == ""){
+          if($row["google_2fa"] == "" && $U->getSetting("2fa.enabled") == 1){
             $secret = $g->generateSecret();
             echo $U->getLang("login.2fa.google_authenticator.manual");
         ?>
@@ -73,7 +77,7 @@
           <input name="register" type="submit" value="<?php echo $U->getLang("login.2fa.google_authenticator.scanned");?>" />
         </form>
         <?php
-          }else{
+          }elseif($U->getSetting("2fa.enabled") == 1){
         ?>
         <b><?php echo str_replace("%a",$U->getLang("login.2fa.google_authenticator"),$U->getLang("login.2fa.with")); ?></b>
         <p><?php echo $U->getLang("login.2fa.already"); ?></p>
