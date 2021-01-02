@@ -21,7 +21,7 @@
       }
     }
     if ($logina == 1){
-      if(isset($_GET["URL"])&&file_exists("pages/".$_GET["URL"].".php")){
+      if(isset($_GET["URL"]) && file_exists("pages/".$_GET["URL"].".php") && !str_contains($_GET["URL"], "..") && !str_contains($_GET["URL"], ".")){
         include_once "pages/".$_GET["URL"].".php";
       }else{
         include_once "pages/mainpage.php";

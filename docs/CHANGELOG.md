@@ -11,6 +11,8 @@
 > USOC now supports PHP8. Through a backwards compatibity script it still supports PHP7.4.
 > The PHP7.4 support ends in the summer of 2020
 
+> We moved all files from the root folder to `docs` and all from the `site` folder to the root folder!
+
 ## Additions
 * ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
 * Added return declarations to functions
@@ -39,6 +41,7 @@
   * You can change settings now better
   * The  old settings menu is now in an other order on the overview page
 * Added icons to the Admin area main page 
+
 ![Example image](https://i.ibb.co/p2bJJkw/Bild-2020-12-23-175448.png)
 * New option: `2fa.enabled`
   * Sets if users can use 2fa or not
@@ -59,6 +62,7 @@
     * You also can't register new users now
   * In the admin area you can now only login with an admin account
 * New admin area login style
+
 ![Example image](https://i.ibb.co/tKKPP9v/Bild-2020-12-31-142930.png)
 * The "Change password" button in the menu is now hidden if `login.changepassword` is off
 * `$U->getLang()` returns now also the english string if the translated string is ""
@@ -66,6 +70,9 @@
 * Better styled install.html
 * When you add an Google Account you get now redirected to the main page
 ## Fixed bugs
+### **Fixed security bugs**
+* You can access wrong files from admin area
+### Other bugs
 > Fixex the whole oAuth system
 
 * Changepassword.php can be accessed even when not logged in
@@ -84,6 +91,7 @@
 * Headers in profile settings aren't in the right size
 * Google oAuth client id wasn't variable in `login.php`
 * `login.php` checks for the wrong oAuth google file
+
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

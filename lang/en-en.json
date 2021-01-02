@@ -46,6 +46,8 @@
     "admin.edit.new.site": "Create new site",
     "admin.edit.new.blogsite": "Create new blogsite",
     "admin.edit.new": "new",
+    "admin.edit.new.create": "Create/Upload new",
+    "admin.edit.new.create.action": "Create!",
     "admin.settings": "Settings editor",
     "admin.settings.edit": "Edit settings",
     "admin.settingsadvanced.edit": "Edit settings (Advanced)",
