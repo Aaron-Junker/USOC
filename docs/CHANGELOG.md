@@ -28,6 +28,7 @@
     * Allows to add a new content page
   * New function: `$U->addPage(string $content, string $name, string $code, int $authorID, string $date, int $online):bool`
     * Allows to add a new content page
+  * Added a `plugin` folder
   * More Information: [Wiki](https://github.com/Case-Games/USOC/wiki/reference:Plugin-API)
 * New function `$U->editSetting(string $name, string $value):bool`
 * Added image folder

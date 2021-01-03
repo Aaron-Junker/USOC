@@ -14,6 +14,7 @@
   }
   /**
   * True if the contentpage was already created. False if not.
+  * @var bool
   */
   $edit = False;
   if(isset($_POST["edit"])){

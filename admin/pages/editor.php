@@ -2,14 +2,19 @@
   include_once "configuration.php";
   include_once $USOC["SITE_PATH"]."/includes/class.inc.php";
   newClass();
+  $upload = False;
   if(isset($_GET["Type"])){
     if(isset($_GET["SiteName"])){
-      if($U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] !== "Text"){
+      if($U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] !== "Text" && $U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] !== "Upload"){
         header("Location: " . $USOC["DOMAIN"] . "/" . $U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] . "?SiteName=" . $_GET["SiteName"]);
+      }elseif($U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] === "Upload"){
+        $upload = True;
       }
     }else{
-      if($U->contentHandlers[$_GET["Type"]]["ContentCreateHandler"] !== "Text"){
+      if($U->contentHandlers[$_GET["Type"]]["ContentCreateHandler"] !== "Text" && $U->contentHandlers[$_GET["Type"]]["ContentCreateHandler"] !== "Upload"){
         header("Location: " . $USOC["DOMAIN"] . "/" . $U->contentHandlers[$_GET["Type"]]["ContentCreateHandler"]);
+      }elseif($U->contentHandlers[$_GET["Type"]]["ContentCreateHandler"] === "Upload"){
+        $upload = True;
       }
     }
     $edit = false;
@@ -35,34 +40,37 @@
   </head>
   <body>
     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=mainpage"><?php echo $U->getLang("admin.back"); ?></a>
-    <form action="sendsite.php" method="post">
-    <?php echo $U->getLang("admin.edit.name") ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";} ?>/><br />
-    <?php echo $U->getLang("admin.edit.content") ?>
-    <textarea id="editor" name="C">
     <?php
-      if($edit){
-        echo htmlspecialchars_decode($html);
-      }
+      if(!$upload){
     ?>
-    </textarea>
-    <?php
-      if($edit){
-        echo '<input type="hidden" name="edit" value="1"/>';
-        if($online == 1){
-          echo 'Online:<input type="radio" name="online" value="1" checked/><br />';
-          echo 'Offline:<input type="radio" name="online" value="0" />';
-        }else{
-          echo 'Online:<input type="radio" name="online" value="1" /><br />';
-          echo 'Offline:<input type="radio" name="online" value="0" checked/>';
-        }
-      }else{
-        echo 'Online:<input type="radio" name="online" value="1" /><br />';
-        echo 'Offline:<input type="radio" name="online" value="0" checked/>';
-      }
-    ?>
-    <input type="hidden" name="Type" value="<?php echo $_GET["Type"]; ?>"/>
-    <br /><button type="submit" value="Absenden"><?php echo $U->getLang("admin.send"); ?></button>
-  </form>
+      <form action="sendsite.php" method="post">
+        <?php echo $U->getLang("admin.edit.name") ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";} ?>/><br />
+        <?php echo $U->getLang("admin.edit.content") ?>
+        <textarea id="editor" name="C">
+        <?php
+          if($edit){
+            echo htmlspecialchars_decode($html);
+          }
+        ?>
+        </textarea>
+        <?php
+          if($edit){
+            echo '<input type="hidden" name="edit" value="1"/>';
+            if($online == 1){
+              echo 'Online:<input type="radio" name="online" value="1" checked/><br />';
+              echo 'Offline:<input type="radio" name="online" value="0" />';
+            }else{
+              echo 'Online:<input type="radio" name="online" value="1" /><br />';
+              echo 'Offline:<input type="radio" name="online" value="0" checked/>';
+            }
+          }else{
+            echo 'Online:<input type="radio" name="online" value="1" /><br />';
+            echo 'Offline:<input type="radio" name="online" value="0" checked/>';
+          }
+        ?>
+        <input type="hidden" name="Type" value="<?php echo $_GET["Type"]; ?>"/>
+        <br /><button type="submit"><?php echo $U->getLang("admin.send"); ?></button>
+      </form>
       <script>
       ClassicEditor
         .create( document.querySelector( '#editor' ) )
@@ -73,6 +81,23 @@
         console.error( error );
         } );
       </script>
+    <?php
+      }elseif(!$edit){
+    ?>
+        <h1><?php echo $U->getLang("admin.edit.upload"); ?></h1>
+        <form action="uploadFile.php" type="post" enctype="multipart/form-data">
+          <input type="file" name="File" /><br />
+          Online:<input type="radio" name="online" value="1" /><br />
+          Offline:<input type="radio" name="online" value="0" checked/>
+          <br /><button type="submit"><?php echo $U->getLang("admin.send"); ?></button>
+        </form>
+    <?php
+      }else{
+    ?>
+        <h1><?php echo $U->getLang("admin.edit.upload.edit"); ?></h1>
+    <?php
+      }
+    ?>
     </body>
   </html>
 <?php

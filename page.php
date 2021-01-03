@@ -7,6 +7,11 @@
   include_once "configuration.php";
   include_once "includes/class.inc.php";
   newClass();
+  $raw = False;
+  if(str_starts_with($_SERVER["REQUEST_URI"], "/raw/")){
+    $raw = True;
+    $_SERVER["REQUEST_URI"] = str_replace("/raw", "", $_SERVER["REQUEST_URI"]);
+  }else{
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
@@ -21,6 +26,7 @@
     ?>
     <article>
       <?php
+        }
         $sitehere = False;
         if(isset($_GET["URL"])){
           // Fallback for old URL'S with `URL` parameter {
@@ -137,10 +143,11 @@
           // }
         }else{
           // If no content page is found it throws an HTTP 404 error {
-          header("HTTP/1.1 404 Not found");
-          header('Location: '.$USOC["DOMAIN"].'/error?E=404');
+          //header("HTTP/1.1 404 Not found");
+          //header('Location: '.$USOC["DOMAIN"].'/error?E=404');
           // }
         }
+        if(!$raw){
        ?>
     </article>
     <?php
@@ -148,3 +155,6 @@
     ?>
   </body>
 </html> 
+<?php 
+  }
+?>
