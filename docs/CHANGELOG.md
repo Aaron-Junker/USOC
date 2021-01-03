@@ -78,6 +78,10 @@
 * Removed ability on `admin/2fa.php` to delete or add secret keys
 * Better styled install.html
 * When you add an Google Account you get now redirected to the main page
+* User editor
+  * Added a user search function
+  * You can't edit yourself now
+  * Shows now an error if the user doesn't exists
 ## Fixed bugs
 ### **Fixed security bugs**
 * You can access wrong files from admin area
@@ -100,6 +104,7 @@
 * Headers in profile settings aren't in the right size
 * Google oAuth client id wasn't variable in `login.php`
 * `login.php` checks for the wrong oAuth google file
+* The user editor didn't show translations just "%a" and "%b"
 
 # Pb2.3Bfx0
 ## Additions

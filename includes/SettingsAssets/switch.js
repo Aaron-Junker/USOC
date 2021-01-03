@@ -62,6 +62,11 @@ function onLoad(Id){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var value = this.responseText;
+            if(value.startsWith("   ")){
+                while(value.charAt(0) === " "){
+                    value = value.substring(1);
+                }
+            }
             input.value = value;
         }
       };

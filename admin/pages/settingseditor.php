@@ -13,8 +13,8 @@
         <select name="N">
         CODE;
         $sql = "SELECT * FROM Settings";
-        $db_erg = mysqli_query( $U->db_link, $sql );
-        while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+        $db_erg = mysqli_query($U->db_link, $sql);
+        while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC))
         {
           $text = $text."<option value='".$row["Name"]."'>".$row["Name"]."</option>";
         }
