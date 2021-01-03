@@ -32,7 +32,7 @@
               if($row["Name"] == $_GET["URL"]){
                 $sitehere = True;
                 if($row["Online"] == 1){
-                  $site = $row["Code"];
+                  $site = htmlspecialchars_decode($row["Code"]);
                 }else{
                   $site = $U->getLang("error.offline");
                 }
@@ -47,7 +47,7 @@
               if($row["Name"] == $_GET["URL"]){
                 $sitehere = True;
                 if($row["Online"] == 1){
-                  $site = $row["Code"];
+                  $site = htmlspecialchars_decode($row["Code"]);
                 }else{
                   $site = $U->getLang("error.offline");
                 }
@@ -59,9 +59,9 @@
         }elseif(strtolower($_SERVER["REQUEST_URI"]) == "/index.php" || strtolower($_SERVER["REQUEST_URI"]) == "/index.html"|| strtolower($_SERVER["REQUEST_URI"]) == "/"){
           // Fallback for index pages
           $sql = "SELECT * FROM Sites WHERE Name='index'";
-          $db_erg = mysqli_query( $U->db_link, $sql );
+          $db_erg = mysqli_query($U->db_link, $sql);
           while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
-            $site = $row["Code"];
+            $site = htmlspecialchars_decode($row["Code"]);
             $sitehere = True;
           }
         }elseif(str_starts_with(strtolower($_SERVER["REQUEST_URI"]),"/error")){
@@ -120,7 +120,7 @@
                 $sitehere = True;
                 // Checks if the content page is online {
                 if($row["Online"] == 1){
-                  $site = $U->contentHandlers[$contenttype]["ShowHandler"]($row["Code"], ["Name" => $row["Name"], "Code" => $row["Code"], "Author" => $row["Author"], "Date" => $row["Date"], "Online" => $row["Online"], "Id" => $row["ID"]]);
+                  $site = htmlspecialchars_decode($U->contentHandlers[$contenttype]["ShowHandler"]($row["Code"], ["Name" => $row["Name"], "Code" => $row["Code"], "Author" => $row["Author"], "Date" => $row["Date"], "Online" => $row["Online"], "Id" => $row["ID"]]));
                 }else{
                   $site = $U->getLang("error.offline");
                 }

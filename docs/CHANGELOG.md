@@ -24,6 +24,10 @@
   * PHP8.0 <-> PHP 7.4
 * Added new content system for plugins
 * Added a new plugin system
+  * New function: `$U->addPage(string $content, string $name, string $code, int $authorID, string $date, int $online):bool`
+    * Allows to add a new content page
+  * New function: `$U->addPage(string $content, string $name, string $code, int $authorID, string $date, int $online):bool`
+    * Allows to add a new content page
   * More Information: [Wiki](https://github.com/Case-Games/USOC/wiki/reference:Plugin-API)
 * New function `$U->editSetting(string $name, string $value):bool`
 * Added image folder
@@ -49,6 +53,11 @@
 * `/login` folder has now as fallback resource `/login/login.php`
 * Added vendor folder and the composer file works now
 ## Changes
+> Code in the database is now saved encoded with `html_special_chairs()`. This doesn't get done by `$U->addPage()` or `$U->editPage()`. To repair your pages just open them in the editor and save them again
+* Plugin System
+  * Deleted `/admin/pages/blogeditor.php` and `/admin/sendsiteblog`
+  * You must now choose the contetn type on the adminarea mainpage to delete a page
+  * Plugin system in all editors implemented
 * Renamed `register_open()` to `isRegisterOpen()`
 * `isRegisterOpen()` checks now if user is logged in
 * Renamed placeholder variable `$zeile` to `$row`

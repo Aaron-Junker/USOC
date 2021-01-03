@@ -93,7 +93,7 @@
     newClass();
     // Set default content handlers
     $U->contentHandlers["Sites"] = ["Name" => "sites", "DisplayName" => $U->getLang("admin.site"), "URL" => "/", "AddHandler" => function (int $Id, array $data){}, "DeleteHandler" => function (int $Id){if($Id==0){return False;}}, "ShowHandler" => function ($code, $data){return $code;}, "EditHandler" => function (int $Id, $data){}, "CreateNewContent" => True, "ContentCreateHandler" => "Text", "ContentEditHandler" => "Text"];
-    $U->contentHandlers["Blog"] = ["Name" => "blog", "DisplayName" => $U->getLang("admin.blog"), "URL" => "/blog/", "AddHandler" => function (int $Id, array $data){}, "DeleteHandler" => function (int $Id){}, "ShowHandler" => function ($code, $data){return $code;}, "EditHandler" => function (int $Id, $data){}, "CreateNewContent" => True, "ContentCreateHandler" => "Text", "ContentEditHandler" => "index.php"];
+    $U->contentHandlers["Blog"] = ["Name" => "blog", "DisplayName" => $U->getLang("admin.blog"), "URL" => "/blog/", "AddHandler" => function (int $Id, array $data){}, "DeleteHandler" => function (int $Id){}, "ShowHandler" => function ($code, $data){return $code;}, "EditHandler" => function (int $Id, $data){}, "CreateNewContent" => True, "ContentCreateHandler" => "Text", "ContentEditHandler" => "Text"];
     // Import the plugin overview file if it exists
     if(file_exists($USOC["SITE_PATH"]."/plugins/plugins.php")){
       include_once $USOC["SITE_PATH"]."/plugins/plugins.php";

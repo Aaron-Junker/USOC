@@ -3,16 +3,21 @@
   include_once $USOC["SITE_PATH"]."/includes/class.inc.php";
   newClass();
   if(isset($_GET["Type"])){
-    if($U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] !== "Text"){
-      header("Location: " . $USOC["DOMAIN"] . "/" . $U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] (isset($_GET["SiteName"])?echo "":echo "";));
+    if(isset($_GET["SiteName"])){
+      if($U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] !== "Text"){
+        header("Location: " . $USOC["DOMAIN"] . "/" . $U->contentHandlers[$_GET["Type"]]["ContentEditHandler"] . "?SiteName=" . $_GET["SiteName"]);
+      }
+    }else{
+      if($U->contentHandlers[$_GET["Type"]]["ContentCreateHandler"] !== "Text"){
+        header("Location: " . $USOC["DOMAIN"] . "/" . $U->contentHandlers[$_GET["Type"]]["ContentCreateHandler"]);
+      }
     }
     $edit = false;
     if(isset($_GET["SiteName"])){
       $edit = false;
       $sql = "SELECT * FROM ".$U->contentHandlers[$_GET["Type"]]["Name"]." Where Name = '".$_GET["SiteName"]."'";
       $db_erg = mysqli_query($U->db_link, $sql);
-      while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC))
-      {
+      while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
         if($row["Name"] == $_GET["SiteName"]){
           $edit = true;
           $html = $row["Code"];
@@ -36,7 +41,7 @@
     <textarea id="editor" name="C">
     <?php
       if($edit){
-        echo $html;
+        echo htmlspecialchars_decode($html);
       }
     ?>
     </textarea>

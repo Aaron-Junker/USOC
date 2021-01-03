@@ -22,38 +22,42 @@
           }
         ?>
       </select>
-      <input type="hidden" name="URL" value="editor2">
+      <input type="hidden" name="URL" value="editor">
       <button><?php echo $U->getLang("admin.edit.new.create.action"); ?></button>
     </form>
-    <i class="icofont-ui-delete"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=deletepage"><?php echo $U->getLang("admin.delete"); ?></a><br />
-    <i class="icofont-card"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=about"><?php echo $U->getLang("admin.about"); ?></a><br />
-    <i class="icofont-ui-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor"><?php echo $U->getLang("admin.settingsadvanced.edit"); ?></a><br />
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
-      <select name="SiteName">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+      <i class="icofont-ui-delete"></i><span><?php echo $U->getLang("admin.delete.content"); ?></span>
+      <select name="Type">
         <?php
-          $sql = "SELECT * FROM Sites";
-          $db_erg = mysqli_query($U->db_link, $sql);
-          while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC))
-          {
-            echo "<option value='".$row["Name"]."'>".$row["Name"]."</option>";
+          foreach($U->contentHandlers as $mainkey => $mainvalue){
+            foreach($mainvalue as $key => $value){
+              if($key == "DisplayName"){
+                echo "<option value='".$mainkey."'>".$value."</option>";
+              }
+            }
           }
         ?>
       </select>
-      <input type="hidden" name="URL" value="editor" />
-      <button type="submit"><?php echo $U->getLang("admin.edit.site") ?></button>
+      <input type="hidden" name="URL" value="deletepage">
+      <button><?php echo $U->getLang("admin.delete.content.action"); ?></button>
     </form>
-      <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <select name="SiteName">
-          <?php
-            $sql = "SELECT * FROM Blog";
-            $db_erg = mysqli_query($U->db_link, $sql);
-            while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
-              echo "<option value='".$row["Name"]."'>".$row["Name"]."</option>";
-            }
-         ?>
-       </select>
-        <input type="hidden" name="URL" value="blogeditor" />
-        <button type="submit"><?php echo $U->getLang("admin.edit.blogsite"); ?></button>
-    </form>
+    <i class="icofont-card"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=about"><?php echo $U->getLang("admin.about"); ?></a><br />
+    <i class="icofont-ui-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor"><?php echo $U->getLang("admin.settingsadvanced.edit"); ?></a><br />
+    <?php
+      foreach($U->contentHandlers as $mainkey => $mainvalue){
+          echo "<form action='".$_SERVER['PHP_SELF']."'>";
+          echo "<select name='SiteName'>";
+          $sql = "SELECT * FROM ".$mainvalue["Name"];
+          $db_erg = mysqli_query($U->db_link, $sql);
+          while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+            echo "<option value='".$row["Name"]."'>".$row["Name"]."</option>";
+          }
+          echo "</select>";
+          echo "<input type='hidden' name=Type value='".$mainkey."' />";
+          echo "<input type='hidden' name='URL' value='editor' />";
+          echo "<button type='submit'>".str_replace("%a",$mainvalue["DisplayName"],$U->getLang("admin.edit"))."</button>";
+          echo "</form>";
+      }
+    ?>
   </body>
 </html>
