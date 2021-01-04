@@ -1,5 +1,4 @@
-site_name: MkLorum
+site_name: USOC
 nav:
-    - Home: index.md
-    - About: about.md
+    - Home: readme.md
 theme: readthedocs
