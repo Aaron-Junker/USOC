@@ -39,40 +39,52 @@
     ?>
     <article>
       <?php
-        if(isset($_GET["ERROR"])){
-          echo "<p id='error'>False Password or Username</p>";
-        }
-        if (isset($_SESSION["User_ID"])) {
-          echo $U->getLang("login.already");
-        }elseif($U->getSetting("login.login_open")==0){
-          echo "<h3>".$U->getLang("login.login_closed")."</h3>";
-        }else{
-          $HTML = <<<HEREDOC
-          <form action="login/login.php" method="post">
-            <label for="B">%a</label>
-            <input type="text" name="B" />
-            <label for="P">%b</label>
-            <input type="password" name="P" />
-            <input type="submit" name="button"/>
+        if(isset($_SESSION['temp_User_ID'])){
+      ?>
+          <form action="login/2fa.php" method="post">
+          <label for="code"><?php echo $U->getLang("login.2fa.google_authenticator.code"); ?></label>
+            <input name="code" />
+            <input type="submit" name="login"/>
           </form>
-          HEREDOC;
-          if(file_exists("login/client_string.json")){
-            $HTML .= <<<HEREDOC
-            <h5>%c</h5>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            HEREDOC;
+      <?php
+        }else{
+          if(isset($_GET["ERROR"])){
+            echo "<p id='error'>False Password or Username</p>";
           }
-          $HTML = str_replace("%a",$U->getLang("login.username.g"),$HTML);
-          $HTML = str_replace("%b",$U->getLang("login.password.g"),$HTML);
-          $HTML = str_replace("%c",$U->getLang("login.oAuth.login"),$HTML);
-          $HTML = str_replace("%a",$U->getLang("login.oAuth.google"),$HTML);
-          echo $HTML;
+          if(isset($_SESSION["User_ID"])) {
+            echo $U->getLang("login.already");
+          }elseif($U->getSetting("login.login_open")==0){
+            echo "<h3>".$U->getLang("login.login_closed")."</h3>";
+          }else{
+            $HTML = <<<HEREDOC
+            <form action="login/login.php" method="post">
+              <label for="B">%a</label>
+              <input type="text" name="B" />
+              <label for="P">%b</label>
+              <input type="password" name="P" />
+              <input type="submit" name="button"/>
+            </form>
+            HEREDOC;
+            if(file_exists("login/client_string.json")){
+              $HTML .= <<<HEREDOC
+              <h5>%c</h5>
+              <div class="g-signin2" data-onsuccess="onSignIn"></div>
+              HEREDOC;
+            }
+            $HTML = str_replace("%a",$U->getLang("login.username.g"),$HTML);
+            $HTML = str_replace("%b",$U->getLang("login.password.g"),$HTML);
+            $HTML = str_replace("%c",$U->getLang("login.oAuth.login"),$HTML);
+            $HTML = str_replace("%a",$U->getLang("login.oAuth.google"),$HTML);
+            echo $HTML;
+          }
+        ?>
+        <form style="display:none;" action="login/googlelogintoken.php" method="post">
+          <input type="text" name="token" />
+          <input type="submit" name="bsubmit"/>
+        </form>
+      <?php
         }
       ?>
-      <form style="display:none;" action="login/googlelogintoken.php" method="post">
-        <input type="text" name="token" />
-        <input type="submit" name="bsubmit"/>
-      </form>
     </article>
       <?php
         include_once "siteelements/footer.php"
