@@ -73,14 +73,19 @@
     $_SESSION['temp_User_ID'] = md5($user_id);
     $_SESSION['temp_User_Name'] = $user_name;
     //Outputs a form for the 2fa code
-    $htmlcode = <<<HEREDOC
-      <form action="2fa.php" method="post">
-      <label for="code">%d</label>
-        <input name="code" />
-        <input type="submit" name="login"/>
-      </form>
-    HEREDOC;
-    echo str_replace("%d",$U->getLang("login.2fa.google_authenticator.code"),$htmlcode);
+?>
+    <!DOCTYPE html>
+    <html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
+      <body>
+        <h1>USOC - <?php echo $U->getLang("admin"); ?></h1>
+        <form action="2fa.php" method="post"><br />
+          <label for="code"><?php echo $U->getLang("login.2fa.google_authenticator.code"); ?></label><br />
+          <input name="code" /><br />
+          <input type="submit" name="login" value="<?php echo $U->getLang("login.action"); ?>" />
+        </form>
+      </body>
+    </html>
+<?php
   }
   if(isset($login)){
     if($login == True){

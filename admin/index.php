@@ -50,9 +50,10 @@
           <input name="B" type="text" /><br />
           <label for="P"><?php echo $U->getLang("login.password.g"); ?>:</label><br />
           <input name="P" type="password" /><br />
-          <input type="submit" />
+          <input type="submit" value="<?php echo $U->getLang("login.action"); ?>" />
         </form>
       </body>
+    </html>
 <?php
   }
 ?>

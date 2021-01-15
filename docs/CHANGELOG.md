@@ -83,6 +83,10 @@
   * Added a user search function
   * You can't edit yourself now
   * Shows now an error if the user doesn't exists
+* 2fa
+  * Code input is now styled and in `login.php`
+  * You can now cancel code input
+  * You can not login with a other account if you haven't finished login yet
 ## Fixed bugs
 ### **Fixed security bugs**
 * You can access wrong files from admin area
@@ -106,7 +110,11 @@
 * Google oAuth client id wasn't variable in `login.php`
 * `login.php` checks for the wrong oAuth google file
 * The user editor didn't show translations just "%a" and "%b"
-
+* Useless string replace in `login.php`
+* String for wrong login is not translated
+* Error messages have a wrong margin
+* No real dark mode for error messages
+* Buttons had no margin
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

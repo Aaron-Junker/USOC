@@ -5,4 +5,4 @@ configuration.php
 /.VSCodeCounter
 test.*
 /.vscode
-/login/client_string.json
+/login/*client_string*.json

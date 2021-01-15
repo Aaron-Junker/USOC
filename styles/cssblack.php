@@ -71,6 +71,7 @@ input[type=submit], button {
   color: white;
   border: 1px solid #fff;
   cursor: pointer;
+  margin: 2px 0 0 0;
 }
 
 #headerlink {
@@ -221,12 +222,14 @@ a,a:visited,a:hover {
 
 #error {
   position: relative;
-  width: 96%;
-  right: 2%;
-  left: 2%;
-  border: 2px solid black;
+  right: -1px;
+  left: 0px;
+  margin: 2px 0 4px 0;
+  top: 2px;
+  border: 2px solid orange;
   background-color: red;
-  color: orange;
+  color: Black;
+  font-weight: bold;
 }
 
 h2 a {

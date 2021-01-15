@@ -20,31 +20,27 @@
       if(file_exists("login/client_string.json")){
     ?>
       <meta name="google-signin-client_id" content="<?php echo $U->getSetting("oAuth.google.client_id"); ?>.apps.googleusercontent.com">
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
       <script async>
-        function signOut() {
-            onLoad();
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-              console.log('User signed out.');
+        function signOut(gapi) {
+          var auth2 = gapi.auth2.getAuthInstance();
+          auth2.signOut().then(function () {
+            console.log('User signed out.');
           });
         }
-        function onLoad() {
-          gapi.load('auth2', function() {
-            gapi.auth2.init();
-          });
+        
+        window.onLoadCallback = function (){
+          gapi.load('auth2')
+          console.log(gapi);
+          gapi.auth2.signOut().then(function () {
+          console.log('User signed out.')});
         }
-        document.addEventListener("DOMContentLoaded", function(){
-        setTimeout(function() {
-            signOut();
-          },1500);
-        signOut();})
       </script>
       <?php
         }
       ?>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
+      document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementsByClassName("noscript")[0].style ="display:none;"
         document.getElementsByTagName("header")[0].style ="display:block;"
         document.getElementsByTagName("footer")[0].style ="display:block;"

@@ -124,6 +124,7 @@
     "login.oAuth.error_fail": "Error",
     "login.invalid": "Invalid %a",
     "login.mail": "mailadress",
+    "login.incorrect": "Incorrect %a or %b",
     "login.fail_same_password": "Not the same password",
     "login.fillout": "Please fill out everything",
     "admin.fillout": "Please fill out everything",
@@ -153,5 +154,7 @@
     "login.2fa.disconnect": "Disconnect",
     "login.oAuth.login": "Login with %a",
     "login.mail.g": "Mailaddress",
+    "login.action": "Login!",
+    "login.abort.action": "Abort!",
     "register.in_use": "Username or mail already in use"
 }

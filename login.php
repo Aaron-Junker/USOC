@@ -40,16 +40,22 @@
     <article>
       <?php
         if(isset($_SESSION['temp_User_ID'])){
+          if(isset($_GET["ERROR"])){
+      ?>
+            <p id='error'><?php echo $U->getLang("login.2fa.false_code"); ?></p>
+      <?php
+          }
       ?>
           <form action="login/2fa.php" method="post">
-          <label for="code"><?php echo $U->getLang("login.2fa.google_authenticator.code"); ?></label>
-            <input name="code" />
-            <input type="submit" name="login"/>
+          <label for="code"><?php echo $U->getLang("login.2fa.google_authenticator.code"); ?></label><br />
+            <input type="text" name="code" />
+            <input type="submit" name="login" value="<?php echo $U->getLang("login.action"); ?>" />
+            <input type="submit" name="abort" value="<?php echo $U->getLang("login.abort.action"); ?>" />
           </form>
       <?php
         }else{
           if(isset($_GET["ERROR"])){
-            echo "<p id='error'>False Password or Username</p>";
+            echo str_replace("%a", str_replace("%a", $U->getLang("login.username"), str_replace("%b", $U->getLang("login.password"), $U->getLang("login.incorrect"))), "<p id='error'>%a</p>");
           }
           if(isset($_SESSION["User_ID"])) {
             echo $U->getLang("login.already");
@@ -62,7 +68,7 @@
               <input type="text" name="B" />
               <label for="P">%b</label>
               <input type="password" name="P" />
-              <input type="submit" name="button"/>
+              <input type="submit" name="button" value="%d" />
             </form>
             HEREDOC;
             if(file_exists("login/client_string.json")){
@@ -74,7 +80,7 @@
             $HTML = str_replace("%a",$U->getLang("login.username.g"),$HTML);
             $HTML = str_replace("%b",$U->getLang("login.password.g"),$HTML);
             $HTML = str_replace("%c",$U->getLang("login.oAuth.login"),$HTML);
-            $HTML = str_replace("%a",$U->getLang("login.oAuth.google"),$HTML);
+            $HTML = str_replace("%d",$U->getLang("login.action"),$HTML);
             echo $HTML;
           }
         ?>

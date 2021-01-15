@@ -76,7 +76,7 @@
     $_SESSION['temp_User_ID'] = md5($user_id);
     $_SESSION['temp_User_Name'] = $user_name;
     //redirects to "(root)/login.php"
-    header("Location: " + "../login.php");
+    header("Location: ../login.php");
   }
   if(isset($login)){
     if($login == True){

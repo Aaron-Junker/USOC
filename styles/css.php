@@ -63,6 +63,7 @@ input[type=submit], button {
   color: black;
   border: 1px solid #000;
   cursor: pointer;
+  margin: 2px 0 0 0;
 }
 
 #headerlink {
@@ -209,12 +210,14 @@ a, a:visited, a:hover {
 
 #error {
   position: relative;
-  width: 96%;
-  right: 2%;
-  left: 2%;
+  right: -1px;
+  left: 0px;
+  margin: 2px 0 4px 0;
+  top: 2px;
   border: 2px solid black;
   background-color: red;
-  color: orange;
+  color: Black;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
