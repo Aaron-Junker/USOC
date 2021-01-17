@@ -29,6 +29,7 @@
   * New function: `$U->addPage(string $content, string $name, string $code, int $authorID, string $date, int $online):bool`
     * Allows to add a new content page
   * Added a `plugin` folder
+  * Added infos about installed plugins on the about page
   * More Information: [Wiki](https://github.com/Case-Games/USOC/wiki/reference:Plugin-API)
 * New function `$U->editSetting(string $name, string $value):bool`
 * Added image folder
@@ -46,7 +47,7 @@
   * You can change settings now better
   * The  old settings menu is now in an other order on the overview page
 * Added icons to the Admin area main page 
-
+* You can add now `/raw/` to the beginning of an URL to get the raw page. For example: `localhost/raw/index`
 ![Example image](https://i.ibb.co/p2bJJkw/Bild-2020-12-23-175448.png)
 * New option: `2fa.enabled`
   * Sets if users can use 2fa or not
@@ -84,9 +85,10 @@
   * You can't edit yourself now
   * Shows now an error if the user doesn't exists
 * 2fa
-  * Code input is now styled and in `login.php`
+  * Code input is now styled and in `login  .php`
   * You can now cancel code input
   * You can not login with a other account if you haven't finished login yet
+* Chenged order of items on `about.php`
 ## Fixed bugs
 ### **Fixed security bugs**
 * You can access wrong files from admin area
@@ -115,6 +117,7 @@
 * Error messages have a wrong margin
 * No real dark mode for error messages
 * Buttons had no margin
+* Adminarea about page has no title
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

@@ -34,7 +34,7 @@
             // If it is a blog page {
             $sql = "SELECT * FROM Blog";
             $db_erg = mysqli_query($U->db_link, $sql);
-            while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+            while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
               if($row["Name"] == $_GET["URL"]){
                 $sitehere = True;
                 if($row["Online"] == 1){
@@ -49,7 +49,7 @@
             // If it's a normal page {
             $sql = "SELECT * FROM Sites";
             $db_erg = mysqli_query($U->db_link, $sql);
-            while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+            while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
               if($row["Name"] == $_GET["URL"]){
                 $sitehere = True;
                 if($row["Online"] == 1){

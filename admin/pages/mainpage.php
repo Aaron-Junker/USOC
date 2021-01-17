@@ -14,10 +14,8 @@
       <select name="Type">
         <?php
           foreach($U->contentHandlers as $mainkey => $mainvalue){
-            foreach($mainvalue as $key => $value){
-              if($key == "DisplayName"){
-                echo "<option value='".$mainkey."'>".$value."</option>";
-              }
+            if($mainvalue["CreateNewContent"]){
+              echo "<option value='".$mainkey."'>".$mainvalue["DisplayName"]."</option>";
             }
           }
         ?>
@@ -30,10 +28,8 @@
       <select name="Type">
         <?php
           foreach($U->contentHandlers as $mainkey => $mainvalue){
-            foreach($mainvalue as $key => $value){
-              if($key == "DisplayName"){
-                echo "<option value='".$mainkey."'>".$value."</option>";
-              }
+            if($mainvalue["CreateNewContent"]){
+              echo "<option value='".$mainkey."'>".$mainvalue["DisplayName"]."</option>";
             }
           }
         ?>
@@ -45,6 +41,7 @@
     <i class="icofont-ui-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor"><?php echo $U->getLang("admin.settingsadvanced.edit"); ?></a><br />
     <?php
       foreach($U->contentHandlers as $mainkey => $mainvalue){
+        if($mainvalue["CreateNewContent"]){
           echo "<form action='".$_SERVER['PHP_SELF']."'>";
           echo "<select name='SiteName'>";
           $sql = "SELECT * FROM ".$mainvalue["Name"];
@@ -57,6 +54,7 @@
           echo "<input type='hidden' name='URL' value='editor' />";
           echo "<button type='submit'>".str_replace("%a",$mainvalue["DisplayName"],$U->getLang("admin.edit"))."</button>";
           echo "</form>";
+        }
       }
     ?>
   </body>

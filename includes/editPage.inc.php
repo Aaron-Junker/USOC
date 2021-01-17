@@ -18,23 +18,27 @@
   function editPage(string $content, string $name, string $code, int $online):bool{
     global $U, $USOC;
     // Checks if the content page exists
-    $sql = "SELECT * FROM ". $U->contentHandlers[$content]["Name"] . " WHERE name='" . strtolower($name) . "';";
-    if(mysqli_num_rows(mysqli_query($U->db_link, $sql)) != 1){
+    if($U->contentHandlers[$content]){
+      $sql = "SELECT * FROM ". $U->contentHandlers[$content]["Name"] . " WHERE name='" . strtolower($name) . "';";
+      if(mysqli_num_rows(mysqli_query($U->db_link, $sql)) != 1){
+        return False;
+      }
+      $sql = "UPDATE " . $U->contentHandlers[$content]["Name"] . " SET Code='" . addslashes($code) . "', Online='" . $online . "' WHERE Name='" . $name . "';";
+      $db_erg = mysqli_query($U->db_link, $sql);
+      $sql = "SELECT * FROM ". $U->contentHandlers[$content]["Name"] . " WHERE name='" . $name . "';";
+      $db_erg2 = mysqli_query($U->db_link, $sql);
+      if($row = mysqli_fetch_array($db_erg2, MYSQLI_ASSOC)){
+        $id = $row["ID"];
+      }
+      if($U->contentHandlers[$content]["EditHandler"]($id, ["Name" => $name, "Code" => $code, "Author" => $authorID, "Date" => $date, "Online" => $online, "Id" => $id]) === False){
+        // Deletes the page if the EditHandler function returns false
+        $sql = "DELETE FROM ". $U->contentHandlers[$content]["Name"] . " WHERE name='" . $name . "';";
+        mysqli_query($U->db_link, $sql);
+        return False;
+      }
+      return $db_erg;
+    }else{
       return False;
     }
-    $sql = "UPDATE " . $U->contentHandlers[$content]["Name"] . " SET Code='" . addslashes($code) . "', Online='" . $online . "' WHERE Name='" . $name . "';";
-    $db_erg = mysqli_query($U->db_link, $sql);
-    $sql = "SELECT * FROM ". $U->contentHandlers[$content]["Name"] . " WHERE name='" . $name . "';";
-    $db_erg2 = mysqli_query($U->db_link, $sql);
-    if($row = mysqli_fetch_array($db_erg2, MYSQLI_ASSOC)){
-      $id = $row["ID"];
-    }
-    if($U->contentHandlers[$content]["EditHandler"]($id, ["Name" => $name, "Code" => $code, "Author" => $authorID, "Date" => $date, "Online" => $online, "Id" => $id]) === False){
-      // Deletes the page if the EditHandler function returns false
-      $sql = "DELETE FROM ". $U->contentHandlers[$content]["Name"] . " WHERE name='" . $name . "';";
-      mysqli_query($U->db_link, $sql);
-      return False;
-    }
-    return $db_erg;
   }
 ?>
