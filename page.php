@@ -8,6 +8,7 @@
   include_once "includes/class.inc.php";
   newClass();
   $raw = False;
+  $_SERVER["REQUEST_URI"] = parse_url($_SERVER["REQUEST_URI"])["path"];
   if(str_starts_with($_SERVER["REQUEST_URI"], "/raw/")){
     $raw = True;
     $_SERVER["REQUEST_URI"] = str_replace("/raw", "", $_SERVER["REQUEST_URI"]);
@@ -66,7 +67,7 @@
           // Fallback for index pages
           $sql = "SELECT * FROM Sites WHERE Name='index'";
           $db_erg = mysqli_query($U->db_link, $sql);
-          while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+          while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
             $site = htmlspecialchars_decode($row["Code"]);
             $sitehere = True;
           }
@@ -126,7 +127,11 @@
                 $sitehere = True;
                 // Checks if the content page is online {
                 if($row["Online"] == 1){
-                  $site = htmlspecialchars_decode($U->contentHandlers[$contenttype]["ShowHandler"]($row["Code"], ["Name" => $row["Name"], "Code" => $row["Code"], "Author" => $row["Author"], "Date" => $row["Date"], "Online" => $row["Online"], "Id" => $row["ID"]]));
+                  if(!isset($U->contentHandlers[$contenttype]["HTML"]) || $U->contentHandlers[$contenttype]["HTML"] == True){
+                    $site = htmlspecialchars_decode($U->contentHandlers[$contenttype]["ShowHandler"]($row["Code"], ["Name" => $row["Name"], "Code" => $row["Code"], "Author" => $row["Author"], "Date" => $row["Date"], "Online" => $row["Online"], "Id" => $row["ID"]]));
+                  }else{
+                    $site = $U->contentHandlers[$contenttype]["ShowHandler"]($row["Code"], ["Name" => $row["Name"], "Code" => $row["Code"], "Author" => $row["Author"], "Date" => $row["Date"], "Online" => $row["Online"], "Id" => $row["ID"]]);
+                  }
                 }else{
                   $site = $U->getLang("error.offline");
                 }
@@ -139,12 +144,18 @@
         }
         if($sitehere){
           // If the page is here it get's outputed {
+          $site = str_replace("%img src=", "<iframe onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+\"px\";}(this));' style=\"height:200px;width:100%;border:none;overflow:hidden;\" src=\"", $site);
+          $site = str_replace(" img%", "\" ></iframe>", $site);
+          $site = str_replace("%\img src=", "%img src=", $site);
+          $site = str_replace(" img\%", 'img%', $site);
+          $site = str_replace('%\\img src=', '\%img src=', $site);
+          $site = str_replace(' img\\%', 'img\%', $site);
           echo $site;
           // }
         }else{
           // If no content page is found it throws an HTTP 404 error {
-          //header("HTTP/1.1 404 Not found");
-          //header('Location: '.$USOC["DOMAIN"].'/error?E=404');
+          header("HTTP/1.1 404 Not found");
+          header('Location: '.$USOC["DOMAIN"].'/error?E=404');
           // }
         }
         if(!$raw){

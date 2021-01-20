@@ -99,10 +99,11 @@ li.menuitem a {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
+
 li.menuitem a:hover {
-  background-color: black;
+  background-color: black;;
   color: white;
+  outline: 1px solid white;
 }
 
 .active_menu {

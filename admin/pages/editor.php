@@ -49,7 +49,11 @@
         <textarea id="editor" name="C">
         <?php
           if($edit){
-            echo htmlspecialchars_decode($html);
+            if(!isset($U->contentHandlers[$_GET["Type"]]["HTML"]) || $U->contentHandlers[$_GET["Type"]]["HTML"] == True){
+              echo htmlspecialchars_decode($html);
+            }else{
+              echo $html;
+            }
           }
         ?>
         </textarea>
@@ -85,7 +89,8 @@
       }elseif(!$edit){
     ?>
         <h1><?php echo $U->getLang("admin.edit.upload"); ?></h1>
-        <form action="uploadFile.php" type="post" enctype="multipart/form-data">
+        <form action="uploadFile.php" method="post" enctype="multipart/form-data" enctype="multipart/form-data">
+          <input type="hidden" name="Type" value="<?php echo $_GET["Type"];?>" />
           <input type="file" name="File" /><br />
           Online:<input type="radio" name="online" value="1" /><br />
           Offline:<input type="radio" name="online" value="0" checked/>
@@ -101,5 +106,7 @@
     </body>
   </html>
 <?php
+  }else{
+    header("Location: ./index.php");
   }
 ?>

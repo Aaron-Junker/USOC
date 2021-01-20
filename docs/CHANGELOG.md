@@ -54,6 +54,13 @@
   * If you turn off users also don't get asked for the authenticator code
 * `/login` folder has now as fallback resource `/login/login.php`
 * Added vendor folder and the composer file works now
+* Added `robots.txt`
+* Added information about new versions in the about page
+  * New function `$U->getNewestVersion():array`
+    * Returns information about the newest version from GitHub
+  * New function `$U->versionNameToCode(string $name):int`
+    * Returns the version identifier code from version $name
+
 ## Changes
 > Code in the database is now saved encoded with `html_special_chairs()`. This doesn't get done by `$U->addPage()` or `$U->editPage()`. To repair your pages just open them in the editor and save them again
 * Plugin System
@@ -89,6 +96,7 @@
   * You can now cancel code input
   * You can not login with a other account if you haven't finished login yet
 * Chenged order of items on `about.php`
+* Better visible menu items in dark mode when hovered
 ## Fixed bugs
 ### **Fixed security bugs**
 * You can access wrong files from admin area
@@ -118,6 +126,7 @@
 * No real dark mode for error messages
 * Buttons had no margin
 * Adminarea about page has no title
+* You can see older codes on the 2fa code input
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

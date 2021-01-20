@@ -57,6 +57,8 @@
     "admin.edit.new.create.action": "Create!",
     "admin.edit.upload": "Upload new file",
     "admin.edit.upload.edit": "You can't edit an uploaded file",
+    "admin.edit.upload.not": "Not every field is filled out",
+    "admin.edit.upload.big": "File size is too big",
     "admin.settings": "Settings editor",
     "admin.settings.edit": "Edit settings",
     "admin.settingsadvanced.edit": "Edit settings (Advanced)",

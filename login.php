@@ -48,7 +48,7 @@
       ?>
           <form action="login/2fa.php" method="post">
           <label for="code"><?php echo $U->getLang("login.2fa.google_authenticator.code"); ?></label><br />
-            <input type="text" name="code" />
+            <input type="text" name="code" autocomplete="off" />
             <input type="submit" name="login" value="<?php echo $U->getLang("login.action"); ?>" />
             <input type="submit" name="abort" value="<?php echo $U->getLang("login.abort.action"); ?>" />
           </form>

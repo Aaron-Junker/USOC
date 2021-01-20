@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /docs/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /install/
+Disallow: /lang/
+Disallow: /login/
+Disallow: /plugins/
+Disallow: /siteelements/
+Disallow: /styles/
+Disallow: /vendor/
+Disallow: /.gitattribute
+Disallow: /.gitignore
+Disallow: /logout.php
+Disallow: /profile.php
+
+sitemap: /sitemap.php

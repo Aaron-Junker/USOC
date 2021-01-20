@@ -80,7 +80,7 @@
         <h1>USOC - <?php echo $U->getLang("admin"); ?></h1>
         <form action="2fa.php" method="post"><br />
           <label for="code"><?php echo $U->getLang("login.2fa.google_authenticator.code"); ?></label><br />
-          <input name="code" /><br />
+          <input name="code" autocomplete="off" /><br />
           <input type="submit" name="login" value="<?php echo $U->getLang("login.action"); ?>" />
         </form>
       </body>
