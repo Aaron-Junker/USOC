@@ -15,7 +15,7 @@
 
 Useful simple open-source CMS
 
-![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.4Bfx0-blue)
+![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.5Bfx0-blue)
 
 <img src="https://i.imgur.com/BLlWYYQ.png" height="200" /><img src="https://i.imgur.com/YPstj8L.png" height="200" />
 
