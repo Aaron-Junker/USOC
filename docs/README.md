@@ -15,9 +15,17 @@
 
 Useful simple open-source CMS
 
-![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.3Bfx0-blue)
+![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.4Bfx0-blue)
+# What is USOC
+USOC is a CMS for programmers, who don't always want to start from the beginning. Most of the code is documented and easy to adapt to your needs
 # Is it ready to use
-No. In the moment you shouldn't use it
+Yes! it is. But it still has some bugs.
+# How can I download USOC?
+Please read https://github.com/case-games/USOC/wiki/manual:Download-and-install-USOC
+# What do I need for using USOC
+* MySQL Database
+* PHP 7.4 or higher
+* Apache server
 # How can I help
 You can read our [Contibuting Document](https://github.com/Case-Games/USOC/blob/master/CONTRIBUTING.md) or our [Code of Conduct](https://github.com/Case-Games/USOC/blob/master/CODE_OF_CONDUCT.md)
 If you want you can add your name on the about page.
