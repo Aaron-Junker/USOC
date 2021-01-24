@@ -7,6 +7,9 @@
 ## Fixed bugs
 * _ (#)
 -->
+# Pb2.4Bfx1
+## Fixed bugs
+* Some debug function were still in the image plugin
 # Pb2.4Bfx0
 > USOC now supports PHP8. Through a backwards compatibity script it still supports PHP7.4.
 > The PHP7.4 support ends in the summer of 2020

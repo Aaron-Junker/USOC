@@ -25,18 +25,18 @@
         }
     }, "DeleteHandler" => function (int $Id){}, 
     "ShowHandler" => function ($code, $data){
-        // $fileExtension = strtolower(pathinfo($data["Name"], PATHINFO_EXTENSION));
-        // $width = (isset($_GET["width"]) ? $_GET["width"]."px" : "");
-        // if($fileExtension == "jpg"){
-        //     $code = "<img width=\"".$width."\" src=\"data:image/jpg;charset=utf8;base64,".base64_encode($code)."\" />";
-        // }elseif($fileExtension == "png"){
-        //     $code = "<img width=\"".$width."\" src=\"data:image/png;charset=utf8;base64,".base64_encode($code)."\" />";
-        // }elseif($fileExtension == "jpeg"){
-        //     $code = "<img width=\"".$width."\" src=\"data:image/jpeg;charset=utf8;base64,".base64_encode($code)."\" />";
-        // }elseif($fileExtension == "gif"){
-        //     $code = "<img width=\"".$width."\" src=\"data:image/gif;charset=utf8;base64,".base64_encode($code)."\" />";
-        // }
-        header("Content-Type: image/jpg");
+        $fileExtension = strtolower(pathinfo($data["Name"], PATHINFO_EXTENSION));
+        $width = (isset($_GET["width"]) ? $_GET["width"]."px" : "");
+        if($fileExtension == "jpg"){
+            $code = "<img width=\"".$width."\" src=\"data:image/jpg;charset=utf8;base64,".base64_encode($code)."\" />";
+        }elseif($fileExtension == "png"){
+            $code = "<img width=\"".$width."\" src=\"data:image/png;charset=utf8;base64,".base64_encode($code)."\" />";
+        }elseif($fileExtension == "jpeg"){
+            $code = "<img width=\"".$width."\" src=\"data:image/jpeg;charset=utf8;base64,".base64_encode($code)."\" />";
+        }elseif($fileExtension == "gif"){
+            $code = "<img width=\"".$width."\" src=\"data:image/gif;charset=utf8;base64,".base64_encode($code)."\" />";
+        }
+        //header("Content-Type: image/jpg");
         return $code;
     }, "HTML" => False, "EditHandler" => function (int $Id, $data){}, "CreateNewContent" => True, "ContentCreateHandler" => "Upload", "ContentEditHandler" => "Upload"];
 ?>
