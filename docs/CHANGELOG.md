@@ -133,7 +133,9 @@
 * No real dark mode for error messages
 * Buttons had no margin
 * Adminarea about page has no title
-* You can see older codes on the 2fa code input
+* You can see older codes on the 2fa code input¨
+* Working logout
+
 # Pb2.3Bfx0
 ## Additions
 * You can access the database connection from $U->db_link

@@ -5,26 +5,30 @@
   */
 ?>
 <header>
+  <!-- Skip navigation for accesibility -->
   <a id="skipnavigation" href="<?php echo $_SERVER["PHP_SELF"];
   if(isset($_GET["URL"])){
     echo "?URL=".$_GET["URL"];
   }?>#maincontent"><?php $U->getLang("accessibility.skipnavigation"); ?></a>
+
+  <!-- Logo -->
   <a href="<?php echo $USOC["DOMAIN"]; ?>/index.php" id="headerlink"><img src="<?php echo $USOC["DOMAIN"]; ?>/logo.png" height="100" alt="Logo" /><h1><?php echo $U->getSetting("site.name") ?></h1></a>
   <br />
   <div style="border-top: 1px;border-top-style:solid;border-top-color:black;">
+    <!-- Menu -->
     <ul id="menu">
       <li class="menuitem"><a href="<?php echo $USOC["DOMAIN"]; ?>/page.php?URL=index">Home</a></li>
       <li class="menuitem"><a href="<?php echo $USOC["DOMAIN"]; ?>/blogsite">Blog</a></li>
       <li class="menuitem dropdown">
         <a href="javascript:void(0)" class="dropbtn">Sites</a>
         <div class="dropdown-content">
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/page.php?URL=Site1"  class="dropdownlink">Site1</a><br />
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/page.php?URL=Site2" class="dropdownlink">Site2</a><br />
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/page.php?URL=Site3" class="dropdownlink">Site3</a>
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/Site1"  class="dropdownlink">Site1</a><br />
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/Site2" class="dropdownlink">Site2</a><br />
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/=Site3" class="dropdownlink">Site3</a>
         </div>
       </li>
+      <!-- Login links on the right side -->
       <?php
-
         if(!function_exists("isRegisterOpen")){
           function isRegisterOpen(){
             global $U;
@@ -45,20 +49,20 @@
           <?php
             if($U->getSetting("login.changepassword") == "1"){
           ?>
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/changepassword.php" onmouseover="menuhover()" class="dropdownlink"><?php echo $U->getLang("login.changepass"); ?></a><br />
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/changepassword.php" class="dropdownlink"><?php echo $U->getLang("login.changepass"); ?></a><br />
           <?php
             }
           ?>
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/profile.php" onmouseover="menuhover()" class="dropdownlink"><?php echo $U->getLang("profile.settings"); ?></a><br />
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/logout.php" onmouseover="menuhover()" class="dropdownlink"><?php echo $U->getLang("login.logout.action"); ?></a></div></li>'
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/profile.php" class="dropdownlink"><?php echo $U->getLang("profile.settings"); ?></a><br />
+          <a href="<?php echo $USOC["DOMAIN"]; ?>/logout.php" class="dropdownlink"><?php echo $U->getLang("login.logout.action"); ?></a></div></li>
           <?php
           if(isset($_SESSION["Admin"])){
             if($_SESSION["Admin"] == True){
               echo '<li class="menuitem dropdown" style="float:right;"><a class="dropbtn" href="'.$USOC["ADMIN_PATH"].'">'.$U->getLang("admin").'</a>';
               if(isset($_GET["URL"])&&preg_match('/(page)/i',$_SERVER["PHP_SELF"])){
-                  echo '<div class="dropdown-content"><a onmouseover="menuhover()" class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=editor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
+                  echo '<div class="dropdown-content"><a class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=editor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
                 }elseif(isset($_GET["URL"])&&preg_match('/(blog)/i',$_SERVER["PHP_SELF"])){
-                  echo '<div class="dropdown-content"><a onmouseover="menuhover()" class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=blogeditor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
+                  echo '<div class="dropdown-content"><a class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=blogeditor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
                 }
                 echo "</li>";
             }

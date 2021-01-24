@@ -14,31 +14,6 @@
     <meta charset="<?php echo $U->getLang("lang.charset"); ?>">
     <title><?php echo getSetting("site.name") ?></title>
     <link rel="stylesheet" href="styles/css.php" type="text/css" />
-    <!-- <<<<<<<<<<<<<<<<<<< -->
-    <!-- Log out from Google -->
-    <?php
-      if(file_exists("login/client_string.json")){
-    ?>
-      <meta name="google-signin-client_id" content="<?php echo $U->getSetting("oAuth.google.client_id"); ?>.apps.googleusercontent.com">
-      <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
-      <script async>
-        function signOut(gapi) {
-          var auth2 = gapi.auth2.getAuthInstance();
-          auth2.signOut().then(function () {
-            console.log('User signed out.');
-          });
-        }
-        
-        window.onLoadCallback = function (){
-          gapi.load('auth2')
-          console.log(gapi);
-          gapi.auth2.signOut().then(function () {
-          console.log('User signed out.')});
-        }
-      </script>
-      <?php
-        }
-      ?>
     <script>
       document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementsByClassName("noscript")[0].style ="display:none;"
@@ -47,12 +22,31 @@
         document.getElementsByTagName("article")[0].style ="display:block;"
       })
     </script>
-    <!-- >>>>>>>>>>>>>>>>>>> -->
     <script>
       localStorage.setItem('LogOut', '1');
       setTimeout(function(){
         localStorage.setItem('LogOut', '0');
       }, 1000);
+
+      function deleteAllCookies() {
+        var cookies = document.cookie.split(";");
+
+        (function () {
+    var cookies = document.cookie.split("; ");
+    for (var c = 0; c < cookies.length; c++) {
+        var d = window.location.hostname.split(".");
+        while (d.length > 0) {
+            var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
+            var p = location.pathname.split('/');
+            document.cookie = cookieBase + '/';
+            while (p.length > 0) {
+                document.cookie = cookieBase + p.join('/');
+                p.pop();
+            };
+            d.shift();
+        }
+    }
+})();
     </script>
   </head>
   <body>

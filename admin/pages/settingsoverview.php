@@ -172,7 +172,7 @@
             </tr>
             <tr>
                 <th>
-                    <a href="" target="_blank"><?php echo $U->getLang("admin.settings.oAuth.google.how"); ?></a>
+                    <a href="https://github.com/Case-Games/USOC/wiki/Manual:Set-up-oAuth-with-google" target="_blank"><?php echo $U->getLang("admin.settings.oAuth.google.how"); ?></a>
                 </th>
             </tr>
             <tr>

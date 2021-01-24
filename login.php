@@ -27,6 +27,7 @@
     var idfield=document.getElementsByName("token")[0];
     var idsubmit = document.getElementsByName("bsubmit")[0];
     idfield.value=id_token;
+    googleUser.disconnect()
     idsubmit.click()
 }
     </script>
@@ -79,7 +80,7 @@
             }
             $HTML = str_replace("%a",$U->getLang("login.username.g"),$HTML);
             $HTML = str_replace("%b",$U->getLang("login.password.g"),$HTML);
-            $HTML = str_replace("%c",$U->getLang("login.oAuth.login"),$HTML);
+            $HTML = str_replace("%c",str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.login")),$HTML);
             $HTML = str_replace("%d",$U->getLang("login.action"),$HTML);
             echo $HTML;
           }
