@@ -15,7 +15,9 @@
 
 Useful simple open-source CMS
 
-![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.5Bfx0-blue)
+![](https://img.shields.io/badge/Version%20in%20developement%20in%20this%20branch-Pb2.4Bfx0-blue)
+# What is USOC
+USOC is a CMS for programmers, who don't always want to start from the beginning. Most of the code is documented and easy to adapt to your needs
 # Is it ready to use
 Yes! it is. But it still has some bugs.
 # How can I download USOC?
