@@ -30,6 +30,7 @@
     * Allows to add a new content page
   * Added a `plugin` folder
   * Added infos about installed plugins on the about page
+  * You can now upload files with plugins
   * More Information: [Wiki](https://github.com/Case-Games/USOC/wiki/reference:Plugin-API)
 * New function `$U->editSetting(string $name, string $value):bool`
 * Added image folder
@@ -60,6 +61,8 @@
     * Returns information about the newest version from GitHub
   * New function `$U->versionNameToCode(string $name):int`
     * Returns the version identifier code from version $name
+* Added image plugin
+  * Read [readme.md](https://github.com/Case-Games/USOC/blob/9ded7e0ef46846c844c730e2b4bd39fcb84b380a/plugins/images/readme.md) for install and use instractions
 
 ## Changes
 > Code in the database is now saved encoded with `html_special_chairs()`. This doesn't get done by `$U->addPage()` or `$U->editPage()`. To repair your pages just open them in the editor and save them again

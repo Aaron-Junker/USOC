@@ -7,6 +7,13 @@
   </head>
   <body>
     <h1><?php echo $U->getLang("admin.welcome") ?></h1>
+    <?php
+      if(file_exists($USOC["SITE_PATH"]."")){
+    ?>
+        <p style="background-color:red"><?php echo $U->getLang("admin.installFolder") ?></p>
+    <?php
+      }
+    ?>
     <i class="icofont-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingsoverview"><?php echo $U->getLang("admin.settings.edit"); ?></a><br />    
     <i class="icofont-ui-user"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=useredit"><?php echo $U->getLang("admin.user.edit"); ?></a><br />
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">

@@ -100,6 +100,8 @@
     }elseif(file_exists("plugins/plugins.php")){
       include_once "plugins/plugins.php";
     }
+  }elseif(!file_exists("/configuration.php")){
+    header("Location: /install/index.php");
   }else{
     echo "You can't access API from class.php";
   }

@@ -1,6 +1,6 @@
 *.log
 /admin/configuration.php
-configuration.php
+configuration*.php
 *.lock
 /.VSCodeCounter
 test.*

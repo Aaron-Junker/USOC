@@ -1,10 +1,10 @@
 <?php
     $language = [
         "de-de" => [
-            "name" => "PNG-Bild"
+            "name" => "Bild"
         ],
         "en-en" => [
-            "name" => "PNG-Image"
+            "name" => "Image"
         ]
     ];
     function getLangImage($string){
