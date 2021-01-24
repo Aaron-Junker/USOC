@@ -7,6 +7,9 @@
 ## Fixed bugs
 * _ (#)
 -->
+# Pb2.4Bfx1
+## Fixed bugs
+* Some debug function were still in the image plugin
 # Pb2.4Bfx0
 > USOC now supports PHP8. Through a backwards compatibity script it still supports PHP7.4.
 > The PHP7.4 support ends in the summer of 2020
@@ -17,6 +20,8 @@
 * Added a beautiful installer
   * Removed install.html
   * Added a hint in the admin area if the install folder still exists
+
+![](https://i.imgur.com/SVr1Apj.png)
 * ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
 * Added return declarations to functions
 * Added a backwards compatibility script
@@ -99,7 +104,7 @@
   * You can't edit yourself now
   * Shows now an error if the user doesn't exists
 * 2fa
-  * Code input is now styled and in `login  .php`
+  * Code input is now styled and in `login.php`
   * You can now cancel code input
   * You can not login with a other account if you haven't finished login yet
 * Chenged order of items on `about.php`
