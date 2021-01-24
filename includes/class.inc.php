@@ -19,6 +19,7 @@
     /**
     * Includes backwards compatibilty functions 
     */
+    
     include_once "backwards compatibility.php";
     /**
     * This class contains all functions for USOC. When a function is needed, U includes it.
@@ -92,8 +93,11 @@
     }
     newClass();
     // Set default content handlers
+    echo "test";
     $U->contentHandlers["Sites"] = ["Name" => "sites", "DisplayName" => $U->getLang("admin.site"), "PackageVersion" => 1, "Author" => "Case Games", "InfoURL" => "https://github.com/case-games/USOC", "URL" => "/", "AddHandler" => function (int $Id, array $data){}, "DeleteHandler" => function (int $Id){if($Id==0){return False;}}, "ShowHandler" => function ($code, $data){return $code;}, "EditHandler" => function (int $Id, $data){}, "CreateNewContent" => True, "ContentCreateHandler" => "Text", "ContentEditHandler" => "Text"];
     $U->contentHandlers["Blog"] = ["Name" => "blog", "DisplayName" => $U->getLang("admin.blog"), "PackageVersion" => 1, "Author" => "Case Games", "InfoURL" => "https://github.com/case-games/USOC", "URL" => "/blog/", "AddHandler" => function (int $Id, array $data){}, "DeleteHandler" => function (int $Id){}, "ShowHandler" => function ($code, $data){return $code;}, "EditHandler" => function (int $Id, $data){}, "CreateNewContent" => True, "ContentCreateHandler" => "Text", "ContentEditHandler" => "Text"];
+    // Clears the output buffer because somewhere it's outputing some spaces and I can't find where
+    ob_clean();
     // Import the plugin overview file if it exists
     if(file_exists($USOC["SITE_PATH"]."/plugins/plugins.php")){
       include_once $USOC["SITE_PATH"]."/plugins/plugins.php";

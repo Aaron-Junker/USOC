@@ -8,9 +8,9 @@
   <body>
     <h1><?php echo $U->getLang("admin.welcome") ?></h1>
     <?php
-      if(file_exists($USOC["SITE_PATH"]."")){
+      if(file_exists($USOC["SITE_PATH"]."/install/index.php")){
     ?>
-        <p style="background-color:red"><?php echo $U->getLang("admin.installFolder") ?></p>
+        <p style="background-color:red"><?php echo $U->getLang("admin.installFolder"); ?></p>
     <?php
       }
     ?>

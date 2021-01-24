@@ -14,6 +14,9 @@
 > We moved all files from the root folder to `docs` and all from the `site` folder to the root folder!
 
 ## Additions
+* Added a beautiful installer
+  * Removed install.html
+  * Added a hint in the admin area if the install folder still exists
 * ID selection on admin/pages/useredit.php now only allows range from lowest id to highest id
 * Added return declarations to functions
 * Added a backwards compatibility script
@@ -49,6 +52,7 @@
   * The  old settings menu is now in an other order on the overview page
 * Added icons to the Admin area main page 
 * You can add now `/raw/` to the beginning of an URL to get the raw page. For example: `localhost/raw/index`
+
 ![Example image](https://i.ibb.co/p2bJJkw/Bild-2020-12-23-175448.png)
 * New option: `2fa.enabled`
   * Sets if users can use 2fa or not

@@ -6,3 +6,4 @@ configuration*.php
 test.*
 /.vscode
 /login/*client_string*.json
+/install/*

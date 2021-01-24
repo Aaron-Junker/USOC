@@ -112,6 +112,7 @@
     "admin.welcome": "Welcome!",
     "admin.settingsoverview": "Settings overview",
     "admin.toFrontend": "Back to the frontend",
+    "admin.installFolder": "The install folder is still here! Please delete it.",
     "login.username": "username",
     "login.password": "password",
     "lang.charset": "UTF-8",

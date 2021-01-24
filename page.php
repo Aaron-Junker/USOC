@@ -12,6 +12,7 @@
   if(str_starts_with($_SERVER["REQUEST_URI"], "/raw/")){
     $raw = True;
     $_SERVER["REQUEST_URI"] = str_replace("/raw", "", $_SERVER["REQUEST_URI"]);
+    
   }else{
 ?>
 <!DOCTYPE html>
