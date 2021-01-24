@@ -41,7 +41,7 @@
       * @since Pb2.4Bfx0
       * @var int
       */
-      public int $versionCode = 20240900;
+      public int $versionCode = 20240901;
       /**
       * True when USOC is modded
       * @since Pb2.0Bfx0RCA
