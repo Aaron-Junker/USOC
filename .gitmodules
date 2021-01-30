@@ -1,0 +1,3 @@
+[submodule "admin/src/svgedit"]
+	path = admin/src/svgedit
+	url = https://github.com/SVG-Edit/svgedit
