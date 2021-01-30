@@ -8,18 +8,26 @@
   include_once "includes/class.inc.php";
   newClass();
   $raw = False;
+  $amp = False;
   $_SERVER["REQUEST_URI"] = parse_url($_SERVER["REQUEST_URI"])["path"];
   if(str_starts_with($_SERVER["REQUEST_URI"], "/raw/")){
     $raw = True;
-    $_SERVER["REQUEST_URI"] = str_replace("/raw", "", $_SERVER["REQUEST_URI"]);
-    
+    $_SERVER["REQUEST_URI"] = str_replace("/raw", "", $_SERVER["REQUEST_URI"]); 
   }else{
+    if(str_starts_with($_SERVER["REQUEST_URI"], "/amp/")){
+      $amp = True;
+      $_SERVER["REQUEST_URI"] = str_replace("/amp", "", $_SERVER["REQUEST_URI"]); 
+    }
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
+<html <?php if($amp){echo "amp ";}?>lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
   <head>
       <?php
-        include_once "siteelements/head.php";
+        if($amp){
+          include_once "includes/amp/head.php";
+        }else{
+          include_once "siteelements/head.php";
+        }
       ?>
   </head>
   <body>
@@ -145,12 +153,21 @@
         }
         if($sitehere){
           // If the page is here it get's outputed {
-          $site = str_replace("%img src=", "<iframe onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+\"px\";}(this));' style=\"height:200px;width:100%;border:none;overflow:hidden;\" src=\"", $site);
-          $site = str_replace(" img%", "\" ></iframe>", $site);
-          $site = str_replace("%\img src=", "%img src=", $site);
-          $site = str_replace(" img\%", 'img%', $site);
-          $site = str_replace('%\\img src=', '\%img src=', $site);
-          $site = str_replace(' img\\%', 'img\%', $site);
+          if($amp){
+            $site = str_replace("%img src=", "<amp-iframe onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+\"px\";}(this));' style=\"height:200px;width:100%;border:none;overflow:hidden;\" src=\"", $site);
+            $site = str_replace(" img%", "\" ></amp-iframe>", $site);
+            $site = str_replace("%\img src=", "%img src=", $site);
+            $site = str_replace(" img\%", 'img%', $site);
+            $site = str_replace('%\\img src=', '\%img src=', $site);
+            $site = str_replace(' img\\%', 'img\%', $site);
+          }else{
+            $site = str_replace("%img src=", "<iframe onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+\"px\";}(this));' style=\"height:200px;width:100%;border:none;overflow:hidden;\" src=\"", $site);
+            $site = str_replace(" img%", "\" ></iframe>", $site);
+            $site = str_replace("%\img src=", "%img src=", $site);
+            $site = str_replace(" img\%", 'img%', $site);
+            $site = str_replace('%\\img src=', '\%img src=', $site);
+            $site = str_replace(' img\\%', 'img\%', $site);
+          }
           echo $site;
           // }
         }else{
@@ -159,7 +176,7 @@
           header('Location: '.$USOC["DOMAIN"].'/error?E=404');
           // }
         }
-        if(!$raw){
+        if(!$raw && !$amp){
        ?>
     </article>
     <?php

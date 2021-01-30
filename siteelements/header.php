@@ -12,7 +12,7 @@
   }?>#maincontent"><?php $U->getLang("accessibility.skipnavigation"); ?></a>
 
   <!-- Logo -->
-  <a href="<?php echo $USOC["DOMAIN"]; ?>/index.php" id="headerlink"><img src="<?php echo $USOC["DOMAIN"]; ?>/logo.png" height="100" alt="Logo" /><h1><?php echo $U->getSetting("site.name") ?></h1></a>
+  <a href="<?php echo $USOC["DOMAIN"]; ?>/index.php" id="headerlink"><<?php if($amp){echo"amp-";};?>img src="<?php echo $USOC["DOMAIN"]; ?>/logo.png" height="100" width="200" alt="Logo"></<?php if($amp){echo"amp-";};?>img><h1><?php echo $U->getSetting("site.name") ?></h1></a>
   <br />
   <div style="border-top: 1px;border-top-style:solid;border-top-color:black;">
     <!-- Menu -->
@@ -20,7 +20,7 @@
       <li class="menuitem"><a href="<?php echo $USOC["DOMAIN"]; ?>/page.php?URL=index">Home</a></li>
       <li class="menuitem"><a href="<?php echo $USOC["DOMAIN"]; ?>/blogsite">Blog</a></li>
       <li class="menuitem dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Sites</a>
+        <a class="dropbtn" href="">Sites</a>
         <div class="dropdown-content">
           <a href="<?php echo $USOC["DOMAIN"]; ?>/Site1"  class="dropdownlink">Site1</a><br />
           <a href="<?php echo $USOC["DOMAIN"]; ?>/Site2" class="dropdownlink">Site2</a><br />
@@ -44,7 +44,7 @@
         if(isset($_SESSION["User_ID"])){
           ?>
           <li class="menuitem dropdown" style="float:right;">
-          <a class="dropbtn" href="javascript:void(0)"><?php echo $_SESSION["User_Name"]; ?></a>
+          <a class="dropbtn" href=""><?php echo $_SESSION["User_Name"]; ?></a>
           <div style="right:0.5%;" class="dropdown-content">
           <?php
             if($U->getSetting("login.changepassword") == "1"){

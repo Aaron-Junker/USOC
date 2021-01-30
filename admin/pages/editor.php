@@ -44,8 +44,8 @@
       if(!$upload){
     ?>
       <form action="sendsite.php" method="post">
-        <?php echo $U->getLang("admin.edit.name") ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";} ?>/><br />
-        <?php echo $U->getLang("admin.edit.content") ?>
+        <?php echo $U->getLang("admin.edit.name"); ?><input name="N" <?php if($edit){echo "value='".$_GET["SiteName"]."' readonly";} ?>/><br />
+        <?php echo $U->getLang("admin.edit.content"); ?>
         <textarea id="editor" name="C">
         <?php
           if($edit){
@@ -54,6 +54,8 @@
             }else{
               echo $html;
             }
+          }elseif(isset($_GET["Code"])){
+            echo base64_decode($_GET["Code"]);
           }
         ?>
         </textarea>

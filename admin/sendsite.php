@@ -21,6 +21,12 @@
     $edit = True;
   }
   if(isset($_POST["N"])&&isset($_POST["Type"])&&isset($_POST["C"])&&$logina==1&&(!$edit)){
+    if(preg_match("/\.|\/|\?|\#|^(blogsite)|^[0-9]/", $_POST["N"]) === 1){
+      echo $U->getLang("admin.edit.letter")."<br />";
+      echo $U->getLang("admin.learnMore").": <a href=\"https://github.com/Case-Games/USOC/wiki/manual:Create-a-new-page#forbidden-names\">https://github.com/Case-Games/USOC/wiki/manual:Create-a-new-page#forbidden-names</a>";
+      echo "<br /><a href=\"index.php?URL=editor&Type=".$_POST["Type"]."&Code=".urlencode(base64_encode($_POST["C"]))."\">".$U->getLang("admin.back")."</a>";
+      exit();
+    }
     $U->addPage($_POST["Type"],$_POST["N"],htmlspecialchars($_POST["C"]),$user_id,date("Y-m-d"),$_POST["online"]);
     header("Location: ".$USOC["DOMAIN"].$U->contentHandlers[$_POST["Type"]]["URL"].$_POST["N"]);
   }

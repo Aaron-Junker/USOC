@@ -58,7 +58,7 @@
     "admin.welcome": "Willkommen",
     "login.username": "Benutzername",
     "login.password": "Passwort",
-    "lang.charset": "UTF-8",
+    "lang.charset": "utf-8",
     "login.not_logged_in": "Nicht eingeloggt",
     "login.2fa.false_code": "Code ist nicht korrekt",
     "login.2fa.succeed": "%a verbunden",

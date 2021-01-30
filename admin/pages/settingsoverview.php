@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title><?php echo $U->getLang("admin"); ?> - <?php echo $U->getLang("admin.settingsoverview"); ?></title>
     <style>
         <?php echo file_get_contents($USOC["SITE_PATH"]."/includes/SettingsAssets/switch.css"); ?>;

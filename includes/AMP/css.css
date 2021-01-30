@@ -1,0 +1,18 @@
+/*Noscript section deactivate*/
+header, footer, article {
+    display: block;
+}
+.noscript {
+    display: none;
+}
+
+
+* {
+    font-family: sans-serif;
+}
+#menu{
+    display: none;
+}
+header a h1, header a img {
+    display: inline;
+}

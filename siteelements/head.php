@@ -15,7 +15,6 @@
 
 <meta charset="<?php echo $U->getLang("lang.charset"); ?>">
 <title><?php echo $U->getSetting("site.name"); ?></title>
-
 <?php
   // Dark/Light mode switch
   if(isset($_COOKIE["css"])){

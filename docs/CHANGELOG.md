@@ -7,6 +7,21 @@
 ## Fixed bugs
 * _ (#)
 -->
+# Pb2.5Bfx0
+## Additions
+* Added AMP support
+  * To see a page with AMP just add `/amp/` before the URL (example: `localhost/amp/index`)
+  * This doesn't work in combination with `/raw/`
+* The admina area editor now accepts the parameter `Code` with base64 encoded code as placeholder
+## Changes
+* Image plugin
+  * `/raw` returns now the real raw image
+  * Added support for some alternative file extensions
+* Added a option to change another setting after you changed one in the advanced settings editor
+## Fixed bugs
+* Content pages can have invalid names (#60)
+
+
 # Pb2.4Bfx1
 ## Fixed bugs
 * Some debug function were still in the image plugin
