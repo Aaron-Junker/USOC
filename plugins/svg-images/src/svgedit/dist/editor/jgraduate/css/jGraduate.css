@@ -14,8 +14,8 @@ h2.jGraduate_Title {
   font-family: Arial, Helvetica, Sans-Serif;
   font-size: 11px !important;
   font-weight: bold;
-  margin: -13px 0px 0px 0px;
-  padding: 0px;
+  margin: -13px 0 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -70,8 +70,8 @@ li.jGraduate_tab_current {
 .jGraduate_tabs {
   position: relative;
   background-color: #EFEFEF;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   margin-bottom: 5px;
 }
 
@@ -82,7 +82,7 @@ div.jGraduate_Swatch {
 div.jGraduate_GradContainer {
   border: 2px inset #EEE;
   background-image: url(../images/map-opacity.png);
-  background-position: 0px 0px;
+  background-position: 0 0;
   height: 256px;
   width: 256px;
   position: relative;
@@ -96,7 +96,7 @@ div.jGraduate_GradContainer div.grad_coord {
   width: 10px;
   height: 10px;
   position: absolute;
-  margin: -5px -5px;
+  margin: -5px;
   top: 0;
   left: 0;
   text-align: center;
@@ -120,7 +120,7 @@ div.jGraduate_Opacity {
   margin-top: 14px;
   background-color: black;
   background-image: url(../images/Maps.png);
-  background-position: 0px -2816px;
+  background-position: 0 -2816px;
   height: 20px;
   cursor: ew-resize;
 }
@@ -150,7 +150,7 @@ input.jGraduate_Ok, input.jGraduate_Cancel {
   margin-right: -4px;
 }
 input.jGraduate_Ok {
-  margin: 9px -4px 5px -4px;
+  margin: 9px -4px 5px;
 }
 
 .colorBox {
@@ -182,7 +182,7 @@ div.jGraduate_Form_Section {
   border-color: grey;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  padding: 15px 5px 5px 5px;
+  padding: 15px 5px 5px;
   margin: 5px 2px;
   width: 110px;
   text-align: center;
@@ -200,10 +200,10 @@ div.jGraduate_Slider input[type=text] {
 
 div.jGraduate_LightBox {
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #000;
   opacity: 0.5;
   display: none;
@@ -244,7 +244,7 @@ div.jGraduate_stopPicker {
   width: 266px;
   height: 200px;
   top: 167px;
-  margin: -3px 3px 0px 10px;
+  margin: -3px 3px 0 10px;
 }
 
 .jGraduate_gradPick .jGraduate_Points {

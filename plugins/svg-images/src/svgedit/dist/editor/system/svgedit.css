@@ -59,7 +59,7 @@ select {
   vertical-align: middle;
   width: 640px;
   height: 480px;
-  -apple-dashboard-region:dashboard-region(control rectangle 0px 0px 0px 0px); /* for widget regions that shouldn't react to dragging */
+  -apple-dashboard-region:dashboard-region(control rectangle 0 0 0 0); /* for widget regions that shouldn't react to dragging */
   position: relative;
   /*
     A subtle gradient effect in the canvas.
@@ -189,7 +189,7 @@ select {
 #layerpanel {
   display: inline-block;
   position:relative;
-  top: 0px;
+  top: 0;
   bottom: 0;
   left: 12px;
   width: 0;
@@ -545,7 +545,7 @@ div.palette_item:first-child {
   background: rgba(0, 0, 0, 0.8);
   color: #ccc;
   padding: 0 10px;
-  border-radius: 0 0 3px 0;
+  border-radius: 0 0 3px;
 }
 
 #cur_context_panel a {
@@ -664,7 +664,7 @@ span.zoom_tool {
   padding: 4px;
   background: #E8E8E8;
   border: 1px solid #B0B0B0;
-  margin: 0 0 -1px 0;
+  margin: 0 0 -1px;
   line-height: 16px;
 }
 
@@ -696,7 +696,7 @@ span.zoom_tool {
 {
   height: 24px;
   width: 24px;
-  margin: 2px 2px 4px 2px;
+  margin: 2px 2px 4px;
   padding: 3px;
   -webkit-box-shadow: inset 1px 1px 2px white, 1px 1px 1px rgba(0,0,0,0.3);
   moz-box-shadow: inset 1px 1px 2px white, 1px 1px 1px rgba(0,0,0,0.3);
@@ -1294,7 +1294,7 @@ ul li.current {
 
 #dialog_content {
   height: 95px;
-  margin: 10px 10px 5px 10px;
+  margin: 10px 10px 5px;
   background: #DDD;
   overflow: auto;
   text-align: left;
@@ -1378,9 +1378,9 @@ ul li.current {
   width: 24px;
   height: 24px;
   margin: 0;
-  border-radius: 0px;
-  -moz-border-radius: 0px;
-  -webkit-border-radius: 0px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
 }
 
 /* Generic context menu styles */
@@ -1390,7 +1390,7 @@ ul li.current {
   border: solid 1px rgba(0,0,0,.33);
   background: rgba(255,255,255,.95);
   padding: 5px 0;
-  margin: 0px;
+  margin: 0;
   display: none;
   font: 12px/15px Lucida Sans, Helvetica, Verdana, sans-serif;
   border-radius: 5px;
@@ -1402,8 +1402,8 @@ ul li.current {
 
 .contextMenu LI {
   list-style: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 .contextMenu .shortcut {
@@ -1423,7 +1423,7 @@ ul li.current {
   background-position: 6px center;
   background-repeat: no-repeat;
   outline: none;
-  padding: 0px 15px 1px 20px;
+  padding: 0 15px 1px 20px;
 }
 
 .contextMenu LI.hover A {
