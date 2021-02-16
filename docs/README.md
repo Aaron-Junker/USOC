@@ -11,6 +11,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/Case-Games/USOC)
 [![License](https://img.shields.io/badge/License-Case%20Games%20Open--Source%20License-important)](https://standards.casegames.ch/cgs/0003/v1.txt)
 ![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c5f474aa55e4eb1a63729a4692aaf90)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FCase-Games%2FUSOC.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FCase-Games%2FUSOC?ref=badge_shield)
 
 
 Useful simple open-source CMS
@@ -45,3 +46,6 @@ USOC is under the Case Games Open-Source license
 [Case Games Standard 0003](https://standards.casegames.ch/cgs/0003/v1.txt)
 
 <img src="https://casegames.ch/license/os/v1.png" alt="License Logo" width="100" data-canonical-src="https://casegames.ch/license/os/v1.png">
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FCase-Games%2FUSOC.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FCase-Games%2FUSOC?ref=badge_large)
