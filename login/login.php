@@ -65,7 +65,7 @@
     $fa = False;
     unset($_SESSION['temp_User_ID'],$_SESSION['temp_User_Name']);
   }
-  //Checks if 2fa is enabled and user wasn't in 2fa.php
+  //Checks if 2fa is enabled and user wasn't in login.php
   if($fa && $login){
     //Unsets because it isn't true or false
     unset($login);

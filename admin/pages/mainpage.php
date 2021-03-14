@@ -20,8 +20,12 @@
     <i class="icofont-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingsoverview"><?php echo $U->getLang("admin.settings.edit"); ?></a><br />
     <?php
       }
+      if($U->userHasPermission("Backend", "User")){
     ?>
     <i class="icofont-ui-user"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=useredit"><?php echo $U->getLang("admin.user.edit"); ?></a><br />
+    <?php
+      }
+    ?>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
       <i class="icofont-page"></i><span><?php echo $U->getLang("admin.edit.new.create"); ?></span>
       <select name="Type">

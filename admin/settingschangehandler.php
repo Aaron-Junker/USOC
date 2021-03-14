@@ -14,9 +14,9 @@
             }
         }
         if($login == 1){
-            if(isset($_POST["Name"]) && isset($_POST["Value"])){
+            if(isset($_POST["Name"]) && isset($_POST["Value"])&&$U->userHasPermission("Backend", "Settings", "Standard")){
                 $U->editSetting($_POST["Name"], $_POST["Value"]);
-            }elseif(isset($_POST["Name"])){
+            }elseif(isset($_POST["Name"])&&$U->userHasPermission("Backend", "Settings", "Standard")){
                 echo $U->getSetting($_POST["Name"]);
             }
         }else{

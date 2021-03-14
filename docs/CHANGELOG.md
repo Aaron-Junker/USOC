@@ -16,6 +16,14 @@
 * Added a error handler for the advanced settings editor
 * Users can now delete their accounts in the profile settings
 * Added a link to change the password in the profile settings
+* Added function `$U->getPermissionName($level):mixed`
+  * Gives back all permission level names or one specific
+* Admin user editor
+  * Added a link to see more inforamtion about the user you're editing
+  * Added a success information
+* Added a browser check
+  * Your browser needs to support HTML5 videos, HTML5 input types, HTML5 eventlisteners and the HTML5 JSON API
+  * If the browser isn't supported you get redirected to a page with the newest browsers compared
 ## Changes
 * Image plugin
   * `/raw` returns now the real raw image
@@ -30,7 +38,7 @@
 * Content pages can have invalid names (#60)
 * No title for google account connect on profile page if already one connected
 * Image plugin and text file plugin don't have author information
-
+* The message "You can't edit yourself" was shown after you edited yourself. Now it's shown before you can do something
 # Pb2.4Bfx1
 ## Fixed bugs
 * Some debug function were still in the image plugin
