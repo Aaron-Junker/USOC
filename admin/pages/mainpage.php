@@ -14,7 +14,13 @@
     <?php
       }
     ?>
-    <i class="icofont-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingsoverview"><?php echo $U->getLang("admin.settings.edit"); ?></a><br />    
+    <?php
+      if($U->userHasPermission("Backend", "Settings", "Standard")){
+    ?>
+    <i class="icofont-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingsoverview"><?php echo $U->getLang("admin.settings.edit"); ?></a><br />
+    <?php
+      }
+    ?>
     <i class="icofont-ui-user"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=useredit"><?php echo $U->getLang("admin.user.edit"); ?></a><br />
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
       <i class="icofont-page"></i><span><?php echo $U->getLang("admin.edit.new.create"); ?></span>
@@ -44,9 +50,17 @@
       <input type="hidden" name="URL" value="deletepage">
       <button><?php echo $U->getLang("admin.delete.content.action"); ?></button>
     </form>
-    <i class="icofont-card"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=about"><?php echo $U->getLang("admin.about"); ?></a><br />
-    <i class="icofont-ui-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor"><?php echo $U->getLang("admin.settingsadvanced.edit"); ?></a><br />
     <?php
+      if($U->userHasPermission("Backend", "About")){
+    ?>
+        <i class="icofont-card"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=about"><?php echo $U->getLang("admin.about"); ?></a><br />
+    <?php
+      }
+      if($U->userHasPermission("Backend", "Settings", "Advanced")){
+    ?>
+        <i class="icofont-ui-settings"></i><a href="<?php echo $_SERVER['PHP_SELF']; ?>?URL=settingseditor"><?php echo $U->getLang("admin.settingsadvanced.edit"); ?></a><br />
+    <?php
+      }
       foreach($U->contentHandlers as $mainkey => $mainvalue){
         if($mainvalue["CreateNewContent"]){
           echo "<form action='".$_SERVER['PHP_SELF']."'>";

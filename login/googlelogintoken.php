@@ -20,7 +20,7 @@
             $user_id = $row["Id"];
             $user_name = $row["Username"];
             if($row["Type"] == 1){
-              $_SESSION["Admin"] = True;
+              $_SESSION["PermissionLevel"] = $row["Type"];
             }
           }
         }

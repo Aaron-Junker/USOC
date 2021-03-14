@@ -15,7 +15,7 @@
             return $language["en-en"][$string];
         }
     }
-    $U->contentHandlers["Images"] = ["PackageVersion" => 1, "Name" => "image", "DisplayName" => getLangImage("name"), "URL" => "/image/", "AddHandler" => function (int $Id, array $data){
+    $U->contentHandlers["Images"] = ["PackageVersion" => 1, "Name" => "image", "Author" => "Case Games", "InfoURL" => "https://github.com/case-games/USOC", "DisplayName" => getLangImage("name"), "URL" => "/image/", "AddHandler" => function (int $Id, array $data){
         $allowedTypes = array('jpg','png','jpeg','gif', "jpe", "jfif", "giff"); 
         $fileExtension = strtolower(pathinfo($data["Name"], PATHINFO_EXTENSION));
         if(in_array($fileExtension, $allowedTypes)){

@@ -42,8 +42,8 @@
       */
       $user_name = $row["Username"];
       //Checks if user is a admin
-      if($row["Type"] == 1){
-        $_SESSION["Admin"] = True;
+      if($USOC["userRights"][$row["Type"]]["Backend"][""][""] == 1){
+        $_SESSION["PermissionLevel"] = $row["Type"];
       }else{
         $login = False;
       }
@@ -69,7 +69,7 @@
     //Unsets because it isn't true or false
     unset($login);
     //Sets session variables for 2fa.php
-    $_SESSION["Admin"] = False;
+    $_SESSION["PermissionLevel"] = 0;
     $_SESSION['temp_User_ID'] = md5($user_id);
     $_SESSION['temp_User_Name'] = $user_name;
     //Outputs a form for the 2fa code

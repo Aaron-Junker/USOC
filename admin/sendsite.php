@@ -4,21 +4,28 @@
   require_once $USOC["SITE_PATH"]."/includes/class.inc.php";
   newclass();
   $logina = 0;
-  $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
-  $db_erg = mysqli_query($U->db_link, $sql);
-  while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
-    if (md5($row["Id"]) == $_SESSION["User_ID"] && $row["Type"] == 1){
-      $logina = 1;
-      $user_id = $row["Id"];
-    }
-  }
-  /**
+    /**
   * True if the contentpage was already created. False if not.
   * @var bool
   */
   $edit = False;
   if(isset($_POST["edit"])){
     $edit = True;
+  }
+  $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
+  $db_erg = mysqli_query($U->db_link, $sql);
+  while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+    if($edit){
+      if(md5($row["Id"]) == $_SESSION["User_ID"] && $U->userHasPermission("Backend","Edit")){
+        $logina = 1;
+        $user_id = $row["Id"];
+      }
+    }else{
+      if(md5($row["Id"]) == $_SESSION["User_ID"] && $U->userHasPermission("Backend","Create")){
+        $logina = 1;
+        $user_id = $row["Id"];
+      }
+    }
   }
   if(isset($_POST["N"])&&isset($_POST["Type"])&&isset($_POST["C"])&&$logina==1&&(!$edit)){
     if(preg_match("/\.|\/|\?|\#|^(blogsite)|^[0-9]/", $_POST["N"]) === 1){

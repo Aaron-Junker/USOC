@@ -5,7 +5,7 @@
   newClass();
   require_once '../vendor/autoload.php';
   $change = False;
-  if(file_exists("client_string.json")){
+  if(file_exists("client_string.json") && $U->userHasPermission("Profile", "Add_google_login")){
     if(isset($_POST["token"])){
       $client = new Google\Client();
       $client->setAuthConfigFile('client_string.JSON');
@@ -36,5 +36,7 @@
     }else{
       echo $U->getLang("login.oAuth.error_fail");
     }
+  }else{
+    echo "<p>".$U->getLang("rights.error")."</p>";
   }
 ?>

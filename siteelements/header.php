@@ -1,8 +1,14 @@
 <?php
   /**
-  * This file contains the header for all files.
+  * This file contains the header for all displayed pages.
   * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
   */
+  if(!isset($amp)){
+    $amp = False;
+  }
+  if(!isset($raw)){
+    $raw = False;
+  }
 ?>
 <header>
   <!-- Skip navigation for accesibility -->
@@ -42,30 +48,32 @@
           session_start();
         }
         if(isset($_SESSION["User_ID"])){
-          ?>
+        ?>
           <li class="menuitem dropdown" style="float:right;">
           <a class="dropbtn" href=""><?php echo $_SESSION["User_Name"]; ?></a>
           <div style="right:0.5%;" class="dropdown-content">
-          <?php
-            if($U->getSetting("login.changepassword") == "1"){
-          ?>
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/changepassword.php" class="dropdownlink"><?php echo $U->getLang("login.changepass"); ?></a><br />
-          <?php
+        <?php
+          if($U->getSetting("login.changepassword") == "1" && $U->userHasPermission("Profile", "Change_password")){
+        ?>
+            <a href="<?php echo $USOC["DOMAIN"]; ?>/changepassword.php" class="dropdownlink"><?php echo $U->getLang("login.changepass"); ?></a><br />
+        <?php
+          }
+          if($U->userHasPermission("Profile")){
+        ?>
+            <a href="<?php echo $USOC["DOMAIN"]; ?>/profile.php" class="dropdownlink"><?php echo $U->getLang("profile.settings"); ?></a><br />
+        <?php
+          }
+        ?>
+        <a href="<?php echo $USOC["DOMAIN"]; ?>/logout.php" class="dropdownlink"><?php echo $U->getLang("login.logout.action"); ?></a></div></li>
+        <?php
+          if($U->userHasPermission("Backend")){
+            echo '<li class="menuitem dropdown" style="float:right;"><a class="dropbtn" href="'.$USOC["ADMIN_PATH"].'">'.$U->getLang("admin").'</a>';
+            if(isset($_GET["URL"]) && preg_match('/(page)/i',$_SERVER["PHP_SELF"])){
+              echo '<div class="dropdown-content"><a class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=editor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
+            }elseif(isset($_GET["URL"]) && preg_match('/(blog)/i',$_SERVER["PHP_SELF"])){
+              echo '<div class="dropdown-content"><a class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=blogeditor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
             }
-          ?>
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/profile.php" class="dropdownlink"><?php echo $U->getLang("profile.settings"); ?></a><br />
-          <a href="<?php echo $USOC["DOMAIN"]; ?>/logout.php" class="dropdownlink"><?php echo $U->getLang("login.logout.action"); ?></a></div></li>
-          <?php
-          if(isset($_SESSION["Admin"])){
-            if($_SESSION["Admin"] == True){
-              echo '<li class="menuitem dropdown" style="float:right;"><a class="dropbtn" href="'.$USOC["ADMIN_PATH"].'">'.$U->getLang("admin").'</a>';
-              if(isset($_GET["URL"])&&preg_match('/(page)/i',$_SERVER["PHP_SELF"])){
-                  echo '<div class="dropdown-content"><a class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=editor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
-                }elseif(isset($_GET["URL"])&&preg_match('/(blog)/i',$_SERVER["PHP_SELF"])){
-                  echo '<div class="dropdown-content"><a class="dropdownlink" href="'.$USOC["ADMIN_PATH"].'/index.php?URL=blogeditor&SiteName='.$_GET["URL"].'">'.$U->getLang("admin.edit.site").'</a></div>';
-                }
-                echo "</li>";
-            }
+            echo "</li>";
           }
         }else{
           if($U->getSetting("login.login_open") == "1"){

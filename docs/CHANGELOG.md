@@ -13,14 +13,23 @@
   * To see a page with AMP just add `/amp/` before the URL (example: `localhost/amp/index`)
   * This doesn't work in combination with `/raw/`
 * The admina area editor now accepts the parameter `Code` with base64 encoded code as placeholder
+* Added a error handler for the advanced settings editor
+* Users can now delete their accounts in the profile settings
+* Added a link to change the password in the profile settings
 ## Changes
 * Image plugin
   * `/raw` returns now the real raw image
   * Added support for some alternative file extensions
 * Added a option to change another setting after you changed one in the advanced settings editor
+* The configuration.php in admin now has a fixed code
+  * That means you don't need to edit both files if you want to configure something
 ## Fixed bugs
+### Security bugs
+* You could change your password, even when it was deactivated
+### Other bugs
 * Content pages can have invalid names (#60)
-
+* No title for google account connect on profile page if already one connected
+* Image plugin and text file plugin don't have author information
 
 # Pb2.4Bfx1
 ## Fixed bugs

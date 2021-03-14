@@ -16,19 +16,19 @@
     $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
     $db_erg = mysqli_query($U->db_link, $sql);
     while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
-      if(md5($row["Id"]) == $_SESSION["User_ID"] && $row["Type"] == 1){
+      if(md5($row["Id"]) == $_SESSION["User_ID"] && $USOC["userRights"][$row["Type"]]["Backend"][""][""] == 1){
         $logina = 1;
       }
     }
-    if ($logina == 1){
+    if($logina == 1){
       if(isset($_GET["URL"]) && file_exists("pages/".$_GET["URL"].".php") && !str_contains($_GET["URL"], "..") && !str_contains($_GET["URL"], ".")){
         include_once "pages/".$_GET["URL"].".php";
       }else{
         include_once "pages/mainpage.php";
       }
     }else{
-      header("HTTP/1.1 403 Forbidden");
-      header('Location: '.$USOC["DOMAIN"].'/error?E=403');
+      //header("HTTP/1.1 403 Forbidden");
+      //header('Location: '.$USOC["DOMAIN"].'/error?E=403');
     }
   }else{
     ?>

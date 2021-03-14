@@ -98,6 +98,8 @@
     "profile": "Profile",
     "profile.settings": "Profile settings",
     "profile.changePP": "Change profile picture on Gravatar.com",
+    "profile.delete": "Delete profile",
+    "profile.delete.confirm": "Are you sure you want to delete your user account? That can not be undone",
     "accessibility.skipnavigation": "Skip Navigation",
     "errors.unknown": "Unknown error",
     "login.2fa.google_authenticator.scanned": "I've scanned the code",
@@ -169,5 +171,10 @@
     "login.abort.action": "Abort!",
     "admin.edit.upload.not": "Not every field is filled out",
     "admin.edit.upload.big": "File size is too big",
-    "admin.installFolder": "The install folder is still here! Please delete it."
+    "admin.installFolder": "The install folder is still here! Please delete it.",
+    "rights.name.visitor": "visitor",
+    "rights.name.user": "user",
+    "rights.name.editor": "editor",
+    "rights.name.admin": "administrator",
+    "rights.error": "You don't have the permission to execute this operation"
 }

@@ -15,15 +15,19 @@
     unset($_SESSION['temp_User_ID'],$_SESSION['temp_User_Name']);
     header("Location: ../login.php");
   }elseif(isset($_POST["secret"])&&isset($_POST["register"]) && $U->getSetting("2fa.enabled") == "1"){
-    $secret = $_POST["secret"];
-    $sql = "UPDATE User SET google_2fa='".$secret."' WHERE Username='".$_SESSION["User_Name"]."'";
-    $db_erg = mysqli_query($U->db_link, $sql);
-    echo str_replace("%a",$U->getLang("login.2fa.google_authenticator"),$U->getLang("login.2fa.succeed"));
+    if($U->userHasPermission("Profile", "Add_2FA")){
+      $secret = $_POST["secret"];
+      $sql = "UPDATE User SET google_2fa='".$secret."' WHERE Username='".$_SESSION["User_Name"]."'";
+      $db_erg = mysqli_query($U->db_link, $sql);
+      echo str_replace("%a",$U->getLang("login.2fa.google_authenticator"),$U->getLang("login.2fa.succeed"));
+    }else{
+      echo "<p>".$U->getLang("rights.error")."</p>";
+    }
   }elseif(isset($_POST["code"])&&isset($_POST["login"]) && $U->getSetting("2fa.enabled") == "1"){
     $code = $_POST["code"];
     $sql = "SELECT * FROM User WHERE Username='".$_SESSION['temp_User_Name']."';";
     $db_erg = mysqli_query($U->db_link, $sql);
-    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC))
+    while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC))
       {
         if($g->checkCode($row["google_2fa"], $code)){
           $_SESSION["code"] = True;

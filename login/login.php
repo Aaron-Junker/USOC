@@ -42,9 +42,7 @@
       */
       $user_name = $row["Username"];
       //Checks if user is a admin
-      if($row["Type"] == 1){
-        $_SESSION["Admin"] = True;
-      }
+      $_SESSION["PermissionLevel"] = $row["Type"];
       // Checks if user has 2fa with Google Authnticator
       if($row["google_2fa"] != "" && $U->getSetting("2fa.enabled") == "1"){
         $fa = True;
@@ -72,7 +70,7 @@
     //Unsets because it isn't true or false
     unset($login);
     //Sets session variables for 2fa.php
-    $_SESSION["Admin"] = False;
+    $_SESSION["PermissionLevel"] = 0;
     $_SESSION['temp_User_ID'] = md5($user_id);
     $_SESSION['temp_User_Name'] = $user_name;
     //redirects to "(root)/login.php"

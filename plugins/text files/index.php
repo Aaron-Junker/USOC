@@ -15,7 +15,7 @@
             return $language["en-en"][$string];
         }
     }
-    $U->contentHandlers["Text"] = ["PackageVersion" => 1, "Name" => "text", "DisplayName" => getLangText("name"), "URL" => "/text/", "AddHandler" => function (int $Id, array $data){
+    $U->contentHandlers["Text"] = ["PackageVersion" => 1, "Name" => "text", "Author" => "Case Games", "InfoURL" => "https://github.com/case-games/USOC", "DisplayName" => getLangText("name"), "URL" => "/text/", "AddHandler" => function (int $Id, array $data){
         $allowedTypes = array('txt'); 
         $fileExtension = strtolower(pathinfo($data["Name"], PATHINFO_EXTENSION));
         if(in_array($fileExtension, $allowedTypes)){
