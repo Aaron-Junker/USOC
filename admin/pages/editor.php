@@ -21,8 +21,8 @@
     if(isset($_GET["SiteName"])){
       $edit = false;
       $sql = "SELECT * FROM ".$U->contentHandlers[$_GET["Type"]]["Name"]." Where Name = '".$_GET["SiteName"]."'";
-      $db_erg = mysqli_query($U->db_link, $sql);
-      while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+      $dbRes = mysqli_query($U->db_link, $sql);
+      while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
         if($row["Name"] == $_GET["SiteName"]){
           $edit = true;
           $html = $row["Code"];

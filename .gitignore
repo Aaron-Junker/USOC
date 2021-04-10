@@ -1,10 +1,14 @@
+# Log files
 *.log
+# Configuration files
 /admin/configuration.php
 configuration*.php
+/login/*client_string*.json
+# Git and vs Code files
 *.lock
 /.VSCodeCounter
-test.*
 /.vscode
-/login/*client_string*.json
+# Files for testing
+test*.*
+# If the user deletes the installer folder
 /install/*
-/testmenu.php

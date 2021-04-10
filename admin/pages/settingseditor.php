@@ -16,8 +16,8 @@
           <select name="N">
           CODE;
           $sql = "SELECT * FROM Settings";
-          $db_erg = mysqli_query($U->db_link, $sql);
-          while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+          $dbRes = mysqli_query($U->db_link, $sql);
+          while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
             if(in_array($row["Name"], $USOC["lockedSettings"])){
               $text = $text."<option disabled value='".$row["Name"]."'>".$row["Name"]."</option>";
             }else{
@@ -35,8 +35,8 @@
           echo $text;
         }else{
           $sql = "SELECT * FROM Settings;";
-          $db_erg = mysqli_query($U->db_link, $sql);
-          while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+          $dbRes = mysqli_query($U->db_link, $sql);
+          while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
             if ($row["Name"] == $_GET["N"]){
               $type = $row["Type"];
               $value = $row["Value"];

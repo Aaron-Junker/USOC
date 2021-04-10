@@ -13,8 +13,8 @@
     $edit = True;
   }
   $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
-  $db_erg = mysqli_query($U->db_link, $sql);
-  while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+  $dbRes = mysqli_query($U->db_link, $sql);
+  while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
     if($edit){
       if(md5($row["Id"]) == $_SESSION["User_ID"] && $U->userHasPermission("Backend","Edit")){
         $logina = 1;

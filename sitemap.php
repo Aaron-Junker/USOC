@@ -3,7 +3,9 @@
   * This file is a dynamic sitemap for search engines. 
   */
   header ("Content-Type:text/xml");
-  include_once "configuration.php";
+  require_once "configuration.php";
+  require_once "includes/class.inc.php";
+  newClass();
   /* If this don't get printed it gets a error */
   echo '<?xml version="1.0" encoding="utf-8" ?>';
 ?>
@@ -23,14 +25,14 @@
   <?php
     /* Prints all sites out */
     $sql = "SELECT * FROM Sites";
-    $db_erg = mysqli_query( $U->db_link, $sql );
-    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+    $dbRes = mysqli_query($U->db_link, $sql);
+    while ($row = mysqli_fetch_array( $dbRes, MYSQLI_ASSOC)){
       echo "<url><loc>".$USOC["DOMAIN"]."/".$row["Name"]."</loc><changefreq>weekly</changefreq></url>";
     }
     /* Prints all blogsites out */
     $sql = "SELECT * FROM Blog";
-    $db_erg = mysqli_query( $U->db_link, $sql );
-    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+    $dbRes = mysqli_query($U->db_link, $sql);
+    while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
       echo "<url><loc>".$USOC["DOMAIN"]."/blog/".$row["Name"]."</loc><changefreq>weekly</changefreq></url>";
     }
   ?>

@@ -1,6 +1,6 @@
 <?php
   /**
-  * File with function getSetting()
+  * File with function editPage()
   * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
   */
   /**
@@ -24,10 +24,10 @@
         return False;
       }
       $sql = "UPDATE " . $U->contentHandlers[$content]["Name"] . " SET Code='" . addslashes($code) . "', Online='" . $online . "' WHERE Name='" . $name . "';";
-      $db_erg = mysqli_query($U->db_link, $sql);
+      $dbRes = mysqli_query($U->db_link, $sql);
       $sql = "SELECT * FROM ". $U->contentHandlers[$content]["Name"] . " WHERE name='" . $name . "';";
-      $db_erg2 = mysqli_query($U->db_link, $sql);
-      if($row = mysqli_fetch_array($db_erg2, MYSQLI_ASSOC)){
+      $dbRes2 = mysqli_query($U->db_link, $sql);
+      if($row = mysqli_fetch_array($dbRes2, MYSQLI_ASSOC)){
         $id = $row["ID"];
       }
       if($U->contentHandlers[$content]["EditHandler"]($id, ["Name" => $name, "Code" => $code, "Author" => $authorID, "Date" => $date, "Online" => $online, "Id" => $id]) === False){
@@ -36,7 +36,7 @@
         mysqli_query($U->db_link, $sql);
         return False;
       }
-      return $db_erg;
+      return $dbRes;
     }else{
       return False;
     }

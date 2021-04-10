@@ -1,3 +1,4 @@
+
 <?php
   /**
   * Page that contains profile settings and information.
@@ -59,8 +60,8 @@
         <?php
             }
             $sql = "SELECT * FROM User WHERE Username='".$_SESSION["User_Name"]."'";
-            $db_erg = mysqli_query($U->db_link, $sql);
-            while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+            $dbRes = mysqli_query($U->db_link, $sql);
+            while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
               if($row["google_token"] == "" && file_exists("login/client_string.json") && $U->userHasPermission("Profile","Add_google_login")){
         ?>
                 <b><?php echo str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.connect")); ?></b>

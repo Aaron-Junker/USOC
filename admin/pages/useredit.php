@@ -12,9 +12,9 @@
       <?php
         if(isset($_POST["N"])&& !isset($_POST["Submit"])){
           $sql = "SELECT * FROM user WHERE id='".$_POST["N"]."';";
-          $db_erg = mysqli_query($U->db_link, $sql);
+          $dbRes = mysqli_query($U->db_link, $sql);
           $userhere = False;
-          while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+          while($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
             $user_Type = $row["Type"];
             $user_Blocked = $row["blocked"];
             $userhere = True;
@@ -82,7 +82,7 @@
           }
           if($_SESSION["User_ID"] !== md5($_POST["N"])){
             $sql = "UPDATE User ".($permissionLevel === false?"":"SET Type='".$permissionLevel."'".($b==false?"":", ")).($b==false?"":"blocked ='".$b."' ")."WHERE Id='".$_POST["N"]."';";
-            $db_erg = mysqli_query($U->db_link, $sql);
+            $dbRes = mysqli_query($U->db_link, $sql);
             echo "<br />".$U->getLang("admin.user.changed");
           }else{
             // When the user tries to edit himself
@@ -90,12 +90,12 @@
           }
         }else{
           $sql = "SELECT * FROM User;";
-          $db_erg = mysqli_query($U->db_link, $sql);
+          $dbRes = mysqli_query($U->db_link, $sql);
           // Allow only values in the range from the lowest Id to the highest id
           $highestId = 0;
           // BUG: #54 Lowest ID don't work if over 10000000000000000000000000 accounts are created
           $lowestId = 10000000000000000000000000;
-          while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+          while($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
             if($row["Id"] > $highestId){
               $highestId = $row["Id"];
             }

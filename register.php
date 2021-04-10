@@ -5,17 +5,6 @@
   include_once "configuration.php";
   include_once "includes/class.inc.php";
   newClass();
-  /**
-  * Returns true if login.register_open is 1 and user is logged out otherwise it returns false.
-  * @return bool
-  */
-  function isRegisterOpen(){
-    global $U;
-    if($U->getSetting("login.register_open")=="0"  || isset($_SESSION["User_ID"]) || $U->getSetting("login.login_open") == "0"){
-      return False;
-    }
-    return True;
-  }
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $U->getSetting("site.lang"); ?>" dir="ltr">
@@ -31,7 +20,7 @@
     <article>
       <h3><?php echo $U->getLang("register.g"); ?></h3>
       <?php
-        if(isRegisterOpen()){
+        if($U->isRegisterOpen()){
           $HTML =<<<HEREDOC
           <form action="login/register.php" method="post">
             <label for="U">

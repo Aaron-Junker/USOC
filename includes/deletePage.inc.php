@@ -16,8 +16,8 @@
   function deletePage(string $content, string $name):bool{
     global $U, $USOC;
     $sql = "SELECT * FROM ". $U->contentHandlers[$content]["Name"] . " WHERE name='" . $name . "';";
-    $db_erg = mysqli_query($U->db_link, $sql);
-    if($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+    $dbRes = mysqli_query($U->db_link, $sql);
+    if($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
       $id = $row["ID"];
     }
     if($U->contentHandlers[$content]["DeleteHandler"]($id) === False){

@@ -13,8 +13,8 @@
       $user_id = $token_data['sub'];
       if(!isset($_SESSION["User_ID"])){
         $sql = "SELECT * FROM User";
-        $db_erg = mysqli_query($U->db_link, $sql);
-        while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+        $dbRes = mysqli_query($U->db_link, $sql);
+        while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
           if($row["google_token"]==$user_id){
             $login = True;
             $user_id = $row["Id"];

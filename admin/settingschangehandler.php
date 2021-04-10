@@ -7,8 +7,8 @@
         //Check login
         $login = 0;
         $sql = "SELECT * FROM User Where Username = '".$_SESSION["User_Name"]."'";
-        $db_erg = mysqli_query($U->db_link, $sql);
-        while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+        $dbRes = mysqli_query($U->db_link, $sql);
+        while($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
             if(md5($row["Id"]) == $_SESSION["User_ID"] && $USOC["userRights"][$row["Type"]]["Backend"]["Settings"][""] == 1){
                 $login = 1;
             }

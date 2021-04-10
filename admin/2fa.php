@@ -14,8 +14,8 @@
   if(isset($_POST["code"]) && isset($_POST["login"]) && $U->getSetting("2fa.enabled") == "1"){
     $code = $_POST["code"];
     $sql = "SELECT * FROM User WHERE Username='".$_SESSION['temp_User_Name']."';";
-    $db_erg = mysqli_query($U->db_link, $sql);
-    while ($row = mysqli_fetch_array( $db_erg, MYSQLI_ASSOC)){
+    $dbRes = mysqli_query($U->db_link, $sql);
+    while ($row = mysqli_fetch_array( $dbRes, MYSQLI_ASSOC)){
       if($g->checkCode($row["google_2fa"], $code)){
         $_SESSION["code"] = True;
         header("Location: login.php");

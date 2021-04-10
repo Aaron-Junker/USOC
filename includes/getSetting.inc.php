@@ -15,8 +15,8 @@
   function getSetting($name):string{
     global $U, $USOC;
     $sql = "SELECT * FROM Settings WHERE Name='".$name."'";
-    $db_erg = mysqli_query( $U->db_link, $sql );
-    while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+    $dbRes = mysqli_query($U->db_link, $sql);
+    while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
       return $row["Value"];
     }
   }

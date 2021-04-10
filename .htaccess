@@ -8,3 +8,6 @@ ErrorDocument 404 /error?E=404
 ErrorDocument 410 /error?E=410
 ErrorDocument 414 /error?E=414
 ErrorDocument 423 /error?E=423
+ErrorDocument 429 /error?E=429
+ErrorDocument 451 /error?E=451
+ErrorDocument 503 /error?E=503

@@ -18,7 +18,7 @@
   }?>#maincontent"><?php $U->getLang("accessibility.skipnavigation"); ?></a>
 
   <!-- Logo -->
-  <a href="<?php echo $USOC["DOMAIN"]; ?>/index.php" id="headerlink"><<?php if($amp){echo"amp-";};?>img src="<?php echo $USOC["DOMAIN"]; ?>/logo.png" height="100" width="200" alt="Logo"></<?php if($amp){echo"amp-";};?>img><h1><?php echo $U->getSetting("site.name") ?></h1></a>
+  <a href="<?php echo $USOC["DOMAIN"]; ?>/index.php" id="headerlink"><<?php if($amp){echo"amp-";};?>img src="<?php echo $USOC["DOMAIN"]; ?>/images/logo.png" height="100" width="200" alt="Logo"></<?php if($amp){echo"amp-";};?>img><h1><?php echo $U->getSetting("site.name") ?></h1></a>
   <br />
   <div style="border-top: 1px;border-top-style:solid;border-top-color:black;">
     <!-- Menu -->
@@ -35,15 +35,6 @@
       </li>
       <!-- Login links on the right side -->
       <?php
-        if(!function_exists("isRegisterOpen")){
-          function isRegisterOpen(){
-            global $U;
-            if($U->getSetting("login.register_open")=="0"  || isset($_SESSION["User_ID"]) || $U->getSetting("login.login_open") == "0"){
-              return False;
-            }
-            return True;
-          }
-        }
         if(session_status() == PHP_SESSION_NONE){
           session_start();
         }
@@ -79,7 +70,7 @@
           if($U->getSetting("login.login_open") == "1"){
             echo '<li class="menuitem" style="float:right;"><a href="'.$USOC["DOMAIN"].'/login.php">'.$U->getLang("login.g").'</a></li>';
           }
-          if(isRegisterOpen()){
+          if($U->isRegisterOpen()){
             echo '<li class="menuitem" style="float:right;"><a href="'.$USOC["DOMAIN"].'/register.php">'.$U->getLang("register.g").'</a></li>';
           }
         }

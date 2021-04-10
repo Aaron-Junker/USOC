@@ -59,8 +59,8 @@
               if(str_starts_with($_GET["URL"], '/blog/')){
                 // If it is a blog page {
                 $sql = "SELECT * FROM Blog";
-                $db_erg = mysqli_query($U->db_link, $sql);
-                while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+                $dbRes = mysqli_query($U->db_link, $sql);
+                while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
                   if($row["Name"] == $_GET["URL"]){
                     $sitehere = True;
                     if($row["Online"] == 1){
@@ -74,8 +74,8 @@
               }else{
                 // If it's a normal page {
                 $sql = "SELECT * FROM Sites";
-                $db_erg = mysqli_query($U->db_link, $sql);
-                while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+                $dbRes = mysqli_query($U->db_link, $sql);
+                while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
                   if($row["Name"] == $_GET["URL"]){
                     $sitehere = True;
                     if($row["Online"] == 1){
@@ -91,8 +91,8 @@
             }elseif(strtolower($_SERVER["REQUEST_URI"]) == "/index.php" || strtolower($_SERVER["REQUEST_URI"]) == "/index.html"|| strtolower($_SERVER["REQUEST_URI"]) == "/"){
               // Fallback for index pages
               $sql = "SELECT * FROM Sites WHERE Name='index'";
-              $db_erg = mysqli_query($U->db_link, $sql);
-              while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+              $dbRes = mysqli_query($U->db_link, $sql);
+              while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
                 $site = htmlspecialchars_decode($row["Code"]);
                 $sitehere = True;
               }
@@ -113,13 +113,13 @@
               // If the URL is "/blogsite" or "/blogsite.php" a overview of all blog pages appear {
               $site = "<h1>".$U->getLang("blog.overwiew")."</h1>";
               $sql = "SELECT * FROM Blog ORDER BY ID DESC;";
-              $db_erg = mysqli_query($U->db_link, $sql);
+              $dbRes = mysqli_query($U->db_link, $sql);
               /**
               * This variable is for counting the amount of blogarticles
               * @var int
               */
               $blogarticles = 0;
-              while ($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+              while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
                 if($row["Online"]==1){
                   $site .= "<h2 style='color:black;border-top: 1px;border-top-style:solid;border-top-color:black;'><a style='color:black;' href='/blog/".$row["Name"]."'>".$row["Name"]."</a></h2>";
                   $site .= substr($row["Code"],0,100)."...";
@@ -146,8 +146,8 @@
               }
               if(isset($contenttype)){
                 $sql = "SELECT * FROM ".$U->contentHandlers[$contenttype]["Name"];
-                $db_erg = mysqli_query($U->db_link, $sql);
-                while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+                $dbRes = mysqli_query($U->db_link, $sql);
+                while($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
                   if($row["Name"] == $URL){
                     $sitehere = True;
                     // Checks if the content page is online {

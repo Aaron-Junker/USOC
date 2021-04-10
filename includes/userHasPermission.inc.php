@@ -1,6 +1,6 @@
 <?php
   /**
-  * File with function getSetting()
+  * File with function userHasPermission()
   * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
   */
   /**
@@ -21,8 +21,8 @@
     $userRights = $USOC["userRights"];
     if(isset($_SESSION["User_ID"])){
       $sql = "SELECT * FROM user;";
-      $db_erg = mysqli_query($U->db_link, $sql);
-      while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+      $dbRes = mysqli_query($U->db_link, $sql);
+      while($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
         if(md5($row["Id"]) == $_SESSION["User_ID"]){
           $permissionLevel = $row["Type"];
         }

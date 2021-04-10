@@ -19,7 +19,6 @@
     /**
     * Includes backwards compatibilty functions 
     */
-    
     include_once "backwards compatibility.php";
     /**
     * This class contains all functions for USOC. When a function is needed, U includes it.
@@ -66,6 +65,7 @@
       function __construct(){
         // Set db_link
         $this->db_link = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE);
+        set_time_limit (20);
       }
       /**
       * @ignore
@@ -75,19 +75,11 @@
         try{
           include_once $name.".inc.php";
           $found = True;
-        } catch (Exception $e) {
+        }catch (Exception $e){
           echo "Error! Function not found: ".$name."()";
         }
         if($found){
-          if(count($arguments) == 0){
-            $code = $name.'();';
-          }elseif(count($arguments) == 1){
-            $code = $name.'("'.$arguments[0].'");';
-          }else{
-            $code = $name.'("'.implode('","', $arguments).'");';
-          }
-          eval('$return='.$code);
-          return $return;
+          return call_user_func_array($name,$arguments);
         }
       }
     }

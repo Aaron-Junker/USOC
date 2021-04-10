@@ -70,8 +70,8 @@
           echo "<form action='".$_SERVER['PHP_SELF']."'>";
           echo "<select name='SiteName'>";
           $sql = "SELECT * FROM ".$mainvalue["Name"];
-          $db_erg = mysqli_query($U->db_link, $sql);
-          while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+          $dbRes = mysqli_query($U->db_link, $sql);
+          while($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
             echo "<option value='".$row["Name"]."'>".$row["Name"]."</option>";
           }
           echo "</select>";

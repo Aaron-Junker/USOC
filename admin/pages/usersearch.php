@@ -27,24 +27,24 @@
                 if(isset($_GET["Name"])){
                     if($_GET["Name"] !== ""){
                         $sql = "SELECT * FROM User WHERE Username='".$_GET["Name"]."';";
-                        $db_erg = mysqli_query($U->db_link, $sql);
+                        $dbRes = mysqli_query($U->db_link, $sql);
                     }
                 }
                 if(isset($_GET["Mail"])){
                     if($_GET["Mail"] !== ""){
                         $sql = "SELECT * FROM User WHERE Mail='".$_GET["Mail"]."';";
-                        $db_erg = mysqli_query($U->db_link, $sql);
+                        $dbRes = mysqli_query($U->db_link, $sql);
                     }
                 }
                 if(isset($_GET["Id"])){
                     if($_GET["Id"] !== ""){
                         $sql = "SELECT * FROM User WHERE Id='".$_GET["Id"]."';";
-                        $db_erg = mysqli_query($U->db_link, $sql);
+                        $dbRes = mysqli_query($U->db_link, $sql);
                     }
                 }
                 if(isset($_GET["Mail"]) || isset($_GET["Name"]) || isset($_GET["Id"])){
                     $userhere = False;
-                    while($row = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)){
+                    while($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
                         $userhere = True;
             ?>
                         <h4><?php echo str_replace("%a",$row["Username"],$U->getLang("admin.user.search.title")); ?></h4>

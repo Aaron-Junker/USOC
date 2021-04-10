@@ -31,6 +31,9 @@
 * Added a option to change another setting after you changed one in the advanced settings editor
 * The configuration.php in admin now has a fixed code
   * That means you don't need to edit both files if you want to configure something
+* Moved standard logo to `/images/`
+* Placeholder variable `$db_erg` got renamed to `$dbRes`
+* function `isRegisterOpen()` got moved to `$U->isRegisterOpen():bool`
 ## Fixed bugs
 ### Security bugs
 * You could change your password, even when it was deactivated
@@ -39,6 +42,8 @@
 * No title for google account connect on profile page if already one connected
 * Image plugin and text file plugin don't have author information
 * The message "You can't edit yourself" was shown after you edited yourself. Now it's shown before you can do something
+* 410 error message had wrong string name
+* Not all HTTP errors have a string to display
 # Pb2.4Bfx1
 ## Fixed bugs
 * Some debug function were still in the image plugin
