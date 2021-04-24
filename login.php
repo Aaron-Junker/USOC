@@ -12,24 +12,22 @@
     ?>
 
     <script>
-    window.onLoadCallback = function(){
-      gapi.load('auth2', function(){
-        gapi.signin2.render('g-signin2', {
-          'longtitle': true,
-          'theme': 'dark'
-        });
-
-    })
-
-  }
-  function onSignIn(googleUser) {
-    var id_token = googleUser.getAuthResponse().id_token;
-    var idfield=document.getElementsByName("token")[0];
-    var idsubmit = document.getElementsByName("bsubmit")[0];
-    idfield.value=id_token;
-    googleUser.disconnect()
-    idsubmit.click()
-}
+      window.onLoadCallback = function(){
+        gapi.load('auth2', function(){
+          gapi.signin2.render('g-signin2', {
+            'longtitle': true,
+            'theme': 'dark'
+          });
+        })
+      }
+      function onSignIn(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;
+        var idfield=document.getElementsByName("token")[0];
+        var idsubmit = document.getElementsByName("bsubmit")[0];
+        idfield.value=id_token;
+        googleUser.disconnect()
+        idsubmit.click()
+      }
     </script>
     <meta name="google-signin-client_id" content="<?php echo $U->getSetting("oAuth.google.client_id"); ?>.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>

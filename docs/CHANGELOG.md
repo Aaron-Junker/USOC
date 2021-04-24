@@ -25,6 +25,7 @@
   * Your browser needs to support HTML5 videos, HTML5 input types, HTML5 eventlisteners and the HTML5 JSON API
   * If the browser isn't supported you get redirected to a page with the newest browsers compared
 ## Changes
+* Changed the location of all function files from `/includes` to `/includes/functions` 
 * Image plugin
   * `/raw` returns now the real raw image
   * Added support for some alternative file extensions
@@ -33,7 +34,8 @@
   * That means you don't need to edit both files if you want to configure something
 * Moved standard logo to `/images/`
 * Placeholder variable `$db_erg` got renamed to `$dbRes`
-* function `isRegisterOpen()` got moved to `$U->isRegisterOpen():bool`
+* Function `isRegisterOpen()` got moved to `$U->isRegisterOpen():bool`
+* Changed the way `U` calls functions
 ## Fixed bugs
 ### Security bugs
 * You could change your password, even when it was deactivated
