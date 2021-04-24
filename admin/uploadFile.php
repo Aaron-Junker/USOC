@@ -29,9 +29,8 @@
       <?php
       echo "<p>".$U->getLang("errors.unknown")."</p>"; 
     }else{
-      include_once $USOC["SITE_PATH"]."/includes/addPage.inc.php";
       if(!isset($U->contentHandlers[$_POST["Type"]]["HTML"]) || $U->contentHandlers[$_POST["Type"]]["HTML"] == True){
-        if(addPage($_POST["Type"],strtolower($_FILES['File']['name']),htmlspecialchars(file_get_contents($_FILES['File']['tmp_name'])),$user_id,date("Y-m-d"),$_POST["online"])){
+        if($U->addPage($_POST["Type"],strtolower($_FILES['File']['name']),htmlspecialchars(file_get_contents($_FILES['File']['tmp_name'])),$user_id,date("Y-m-d"),$_POST["online"])){
           header("Location: ./index.php");
         }else{
           ?>
@@ -40,7 +39,7 @@
           echo "<p>".$U->getLang("errors.unknown")."</p>"; 
         }
       }else{
-        if(addPage($_POST["Type"],strtolower($_FILES['File']['name']),file_get_contents($_FILES['File']['tmp_name']),$user_id,date("Y-m-d"),$_POST["online"])){
+        if($U->addPage($_POST["Type"],strtolower($_FILES['File']['name']),file_get_contents($_FILES['File']['tmp_name']),$user_id,date("Y-m-d"),$_POST["online"])){
           header("Location: ./index.php");
         }else{
           ?>
