@@ -7,10 +7,10 @@
 <!DOCTYPE html>
 <html lang="<?php echo $U->getSetting("site.lang") ?>" dir="ltr">
   <head>
-  <?php
+    <?php
       include_once "siteelements/head.php"
     ?>
-
+    <base href="<?php echo $USOC["DOMAIN"] ?>" />
     <script>
       window.onLoadCallback = function(){
         gapi.load('auth2', function(){
@@ -61,33 +61,17 @@
           }elseif($U->getSetting("login.login_open")==0){
             echo "<h3>".$U->getLang("login.login_closed")."</h3>";
           }else{
-            $HTML = <<<HEREDOC
-            <form action="login/login.php" method="post">
-              <label for="B">%a</label>
-              <input type="text" name="B" />
-              <label for="P">%b</label>
-              <input type="password" name="P" />
-              <input type="submit" name="button" value="%d" />
-            </form>
-            HEREDOC;
+            $HTML = $U->getHTMLTemplate("login/loginForm");
             if(file_exists("login/client_string.json")){
-              $HTML .= <<<HEREDOC
-              <h5>%c</h5>
-              <div class="g-signin2" data-onsuccess="onSignIn"></div>
-              HEREDOC;
+              $HTML .= $U->getHTMLTemplate("login/googleLogin");
             }
             $HTML = str_replace("%a",$U->getLang("login.username.g"),$HTML);
             $HTML = str_replace("%b",$U->getLang("login.password.g"),$HTML);
-            $HTML = str_replace("%c",str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.login")),$HTML);
-            $HTML = str_replace("%d",$U->getLang("login.action"),$HTML);
+            $HTML = str_replace("%c",$U->getLang("login.action"),$HTML);
+            $HTML = str_replace("%d",str_replace("%a",$U->getLang("login.oAuth.google"),$U->getLang("login.oAuth.login")),$HTML);
+
             echo $HTML;
           }
-        ?>
-        <form style="display:none;" action="login/googlelogintoken.php" method="post">
-          <input type="text" name="token" />
-          <input type="submit" name="bsubmit"/>
-        </form>
-      <?php
         }
       ?>
     </article>

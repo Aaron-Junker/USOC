@@ -32,5 +32,5 @@
 
         }
         return $code;
-    }, "HTML" => False, "EditHandler" => function (int $Id, $data){}, "CreateNewContent" => True, "ContentCreateHandler" => "Upload", "ContentEditHandler" => "Upload"];
+    }, "HTML" => False, "EditHandler" => function (int $Id, $data){}, "CreateNewContent" => true, "ContentCreateHandler" => "Upload", "ContentEditHandler" => "Upload"];
 ?>

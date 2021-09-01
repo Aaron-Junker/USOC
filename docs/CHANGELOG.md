@@ -9,6 +9,7 @@
 -->
 # Pb2.5Bfx0
 ## Additions
+* Removed support for PHP 7.4. You now need PHP 8 or higher
 * Added AMP support
   * To see a page with AMP just add `/amp/` before the URL (example: `localhost/amp/index`)
   * This doesn't work in combination with `/raw/`
@@ -36,6 +37,7 @@
 * Placeholder variable `$db_erg` got renamed to `$dbRes`
 * Function `isRegisterOpen()` got moved to `$U->isRegisterOpen():bool`
 * Changed the way `U` calls functions
+* Updated some composer packages
 ## Fixed bugs
 ### Security bugs
 * You could change your password, even when it was deactivated
@@ -46,6 +48,7 @@
 * The message "You can't edit yourself" was shown after you edited yourself. Now it's shown before you can do something
 * 410 error message had wrong string name
 * Not all HTTP errors have a string to display
+* When you just accessed a page under "/login", which didn't exist you wasn't able to log in with google anymore.
 # Pb2.4Bfx1
 ## Fixed bugs
 * Some debug function were still in the image plugin

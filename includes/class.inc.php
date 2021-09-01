@@ -17,10 +17,6 @@
       }
     }
     /**
-    * Includes backwards compatibilty functions 
-    */
-    include_once "backwards compatibility.php";
-    /**
     * This class contains all functions for USOC. When a function is needed, U includes it.
     * This class only works when configuration.php is included.
     * Use newClass() and not this class.
@@ -73,7 +69,7 @@
       function __call($name,$arguments){
         $found = False;
         try{
-          include_once $name.".inc.php";
+          include_once "functions/".$name.".inc.php";
           $found = True;
         }catch (Exception $e){
           echo "Error! Function not found: ".$name."()";

@@ -10,5 +10,6 @@ configuration*.php
 /.vscode
 # Files for testing
 test*.*
+/test/*
 # If the user deletes the installer folder
 /install/*
