@@ -296,7 +296,7 @@
   vertical-align: middle;
   font-size: 1rem;
   font-weight: normal;
-  padding: 0 0 0.625rem 0;
+  padding: 0 0 0.625rem;
   outline: none;
   cursor: pointer;
   display: block;
@@ -623,7 +623,7 @@ a.tool-button {
 }
 .toolbar.vertical {
   flex-flow: column nowrap;
-  padding: 0.5725rem 0 0 0;
+  padding: 0.5725rem 0 0;
   width: 32px;
   margin-left: 0;
   margin-top: 4px;
@@ -2479,7 +2479,7 @@ a.tool-button {
   max-width: 120px;
 }
 .tag.small {
-  margin: 2px 2px;
+  margin: 2px;
   height: 18px;
   line-height: 18px;
 }
@@ -2494,7 +2494,7 @@ a.tool-button {
   font-size: 0.8rem;
 }
 .tag.large {
-  margin: 2px 2px;
+  margin: 2px;
   height: 36px;
   line-height: 36px;
 }
@@ -2562,7 +2562,7 @@ a.tool-button {
   display: block;
   background-color: #ffffff;
   color: #1d1d1d;
-  margin: 0 0 -1px 0;
+  margin: 0 0 -1px;
 }
 .tabs > ul.tabs-list > li > a {
   padding: 0.5rem 1rem;
@@ -2594,7 +2594,7 @@ a.tool-button {
   border: none;
 }
 .tabs.bottom > ul.tabs-list > li {
-  margin: -1px 0 0 0;
+  margin: -1px 0 0;
 }
 .tabs.vertical > ul.tabs-list {
   flex-direction: column;
@@ -3183,7 +3183,7 @@ a.tool-button {
   bottom: 12px;
 }
 .sidenav-m3 .title {
-  padding: 20px 20px 10px 20px;
+  padding: 20px 20px 10px;
   font-size: 24px;
   border: 0;
 }
@@ -3293,7 +3293,7 @@ a.tool-button {
 }
 .ribbon-menu .content-holder .section {
   display: none;
-  padding: 4px 4px;
+  padding: 4px;
   border-bottom: 1px solid #dadbdc;
   justify-content: flex-start;
 }
@@ -3447,7 +3447,7 @@ a.tool-button {
   height: 0;
   border-style: solid;
   border-width: 0 0 4px 4px;
-  border-color: transparent transparent #1d1d1d transparent;
+  border-color: transparent transparent #1d1d1d;
   z-index: 1;
 }
 .ribbon-icon-button.dropdown-toggle {
@@ -3517,7 +3517,7 @@ a.tool-button {
   height: 0;
   border-style: solid;
   border-width: 0 0 4px 4px;
-  border-color: transparent transparent #1d1d1d transparent;
+  border-color: transparent transparent #1d1d1d;
   z-index: 1;
 }
 .ribbon-dropdown {
@@ -3746,7 +3746,7 @@ a.tool-button {
 @keyframes progress-loading {
   0% {
     opacity: 1;
-    background-position: 0px -23px;
+    background-position: 0 -23px;
   }
   50% {
     opacity: 0;
