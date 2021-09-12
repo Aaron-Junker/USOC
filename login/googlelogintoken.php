@@ -1,5 +1,7 @@
 <?php
+  set_time_limit(5);
   session_start();
+
   include_once "../configuration.php";
   include_once "../includes/class.inc.php";
   require_once '../vendor/autoload.php';

@@ -12,8 +12,5 @@
 	"license": "CGS0003",
 	"require": {
 		"google/apiclient": "^2.7"
-	},
-	"require-dev": {
-		"friendsofphp/php-cs-fixer": "^2.17"
 	} 
 }
