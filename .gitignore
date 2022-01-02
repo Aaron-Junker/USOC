@@ -13,3 +13,4 @@ test*.*
 /test/*
 # If the user deletes the installer folder
 /install/*
+/docs/.phpdoc/
