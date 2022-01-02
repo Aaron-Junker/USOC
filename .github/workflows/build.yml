@@ -37,6 +37,11 @@ jobs:
     needs: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Create Tag
+        uses: negz/create-tag@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: ${{ secrets.NEW_VERSION }}
       - name: Create Release
         uses: ncipollo/release-action@v1.9.0
         with:
