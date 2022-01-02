@@ -13,10 +13,11 @@
             <source dsn=".">
                 <path>.</path>
             </source>
+            <ignore hidden="true" symlinks="true">
+                <!--1 or more repetitions:-->
+                <path>vendor/**/*</path>
+            </ignore>
         </api>
-        <ignore hidden="true" symlinks="true">
-            <!--1 or more repetitions:-->
-            <path>vendor/**/*</path>
-        </ignore>
+
     </version>
 </phpdocumentor>
