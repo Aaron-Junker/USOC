@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: aaron-junker/actions-phpDocumentor@2.0
         with:
-         dir: './'
+         dir: '.'
