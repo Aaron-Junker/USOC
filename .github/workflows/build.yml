@@ -24,8 +24,12 @@ jobs:
         run: |
           rm composer.json
           rm phpdoc.dist.xml
-      - name: Upload the release
+      - name: Create zip file
+        uses: TheDoctor0/zip-release@0.6.0
+        with:
+          filename: release.zip
+      - name: Upload the release zip file
         uses: actions/upload-artifact@v2.3.1
         with:
           name: Release
-          path: .
+          path: release.zip
