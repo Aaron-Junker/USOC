@@ -2,14 +2,12 @@
 
 namespace USOC\Plugin;
 
-/**
- * @property $Name
- */
 abstract class Plugin
 {
     private static $Name;
     private static $Version;
     private static $DisplayName;
+    private static $PackageVersion;
 
     public function getName()
     {
@@ -24,6 +22,15 @@ abstract class Plugin
     public function getDisplayName()
     {
         return self::$DisplayName;
+    }
+}
+
+abstract class ContentPlugin extends Plugin
+{
+    private static $PackageVersion;
+    public function getPackageVersion()
+    {
+        return self::$PackageVersion;
     }
 }
 

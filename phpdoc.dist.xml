@@ -1,0 +1,22 @@
+<phpdocumentor
+        configVersion="3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://www.phpdoc.org"
+        xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
+>
+    <paths>
+        <output>docs/api</output>
+        <cache>docs/.phpdoc/cache</cache>
+    </paths>
+    <version number="3.2.0">
+        <api>
+            <source dsn=".">
+                <path>.</path>
+            </source>
+        </api>
+        <ignore hidden="true" symlinks="true">
+            <!--1 or more repetitions:-->
+            <path>vendor/**/*</path>
+        </ignore>
+    </version>
+</phpdocumentor>
