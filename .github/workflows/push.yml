@@ -13,7 +13,7 @@ jobs:
           ignore: master
           min_length: 5
           max_length: 1000
-      - name: Commit changes
+      - shell: bash
         run: |
           echo "test"
           git config --global user.name 'Aaron-Junker'
