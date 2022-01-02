@@ -1,6 +1,31 @@
 name: build
-on: [pull_request, issues]
+on:
+  workflow_dispatch:
 jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Delete docs .idea and .github folder
+        shell: bash
+        run: |
+          rm -r docs
+          rm -r .idea
+          rm -r .github
+      - name: Delete git files
+        shell: bash
+        run: |
+          rm .gitattribute
+          rm .gitignore
+          rm .gitmodules
+      - name: Delete composer and phpdoc donfig files
+        shell: bash
+        run: |
+          rm composer.json
+          rm phpdoc.dist.xml
+      - name: Upload the release
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: Release
+          path: .
