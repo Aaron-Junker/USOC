@@ -8,6 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: aaron-junker/actions-phpDocumentor@2.0
-        with:
-         dir: ${{GITHUB_WORKSPACE}}
+      - uses: aaron-junker/actions-phpDocumentor@2.1
