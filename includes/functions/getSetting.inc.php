@@ -1,23 +1,29 @@
 <?php
-  /**
-  * File with function getSetting()
-  * @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
-  */
-  /**
-  * This is a function for the class U.
-  * This function gets a value from the "settings" database.
-  * @see U For more informations about U.
-  * @version Pb2.0Bfx0RCA
-  * @since Pb2.0Bfx0RCA
-  * @param string $name The name of the setting. (For example: login.name)
-  * @return string The value from the database.
-  */
-  function getSetting($name):string{
-    global $U, $USOC;
-    $sql = "SELECT * FROM Settings WHERE Name='".$name."'";
-    $dbRes = mysqli_query($U->db_link, $sql);
-    while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
-      return $row["Value"];
-    }
+/**
+* File with function getSetting()
+* @license https://standards.casegames.ch/cgs/0003/v1.txt Case Games Open-Source license
+*/
+/**
+ * This is a function for the class U.
+ * This function gets a value from the "settings" database.
+ * @param string $name The name of the setting. (For example: login.name)
+ * @return string The value from the database.
+ * @throws Exception
+ * @version Pb2.0Bfx0RCA
+ * @since Pb2.0Bfx0RCA
+ */
+namespace USOC;
+use USOC\Database\Database;
+include_once IP.'/includes/Database.inc.php';
+include_once IP.'/configuration.php';
+
+function getSetting(string $name): string
+{
+  $sql = "SELECT * FROM Settings WHERE Name='".$name."'";
+  $dbRes = Database::query($sql);
+  $row = Database::getRows($dbRes);
+  if(!isset($row['Value'])) {
+    throw new Exception("The setting ".$name." does not exist.");
   }
-?>
+  return $row['Value'];
+}

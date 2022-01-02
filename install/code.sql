@@ -63,7 +63,7 @@ CREATE TABLE `sites` (
 
 
 
-INSERT INTO `sites` (`ID`, `Name`, `Date`, `Author`, `Code`, `Online`) VALUES
+INSERT INTO pages (`ID`, `Name`, `Date`, `Author`, `Code`, `Online`) VALUES
 (1, 'index', '0000-00-00', 0, '<h2>Welcome to USOC</h2><p>&nbsp;</p><p>Edit this Page on /admin</p>', 1);
 
 
@@ -96,7 +96,7 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`Id`);
 
 
-ALTER TABLE `sites`
+ALTER TABLE pages
   ADD PRIMARY KEY (`ID`);
 
 
@@ -113,7 +113,7 @@ ALTER TABLE `settings`
   MODIFY `Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 
-ALTER TABLE `sites`
+ALTER TABLE pages
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 

@@ -74,7 +74,7 @@
                 // }
               }else{
                 // If it's a normal page {
-                $sql = "SELECT * FROM Sites";
+                $sql = "SELECT * FROM pages";
                 $dbRes = mysqli_query($U->db_link, $sql);
                 while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
                   if($row["Name"] == $_GET["URL"]){
@@ -91,7 +91,7 @@
               // }
             }elseif(strtolower($_SERVER["REQUEST_URI"]) == "/index.php" || strtolower($_SERVER["REQUEST_URI"]) == "/index.html"|| strtolower($_SERVER["REQUEST_URI"]) == "/"){
               // Fallback for index pages
-              $sql = "SELECT * FROM Sites WHERE Name='index'";
+              $sql = "SELECT * FROM pages WHERE Name='index'";
               $dbRes = mysqli_query($U->db_link, $sql);
               while ($row = mysqli_fetch_array($dbRes, MYSQLI_ASSOC)){
                 $site = htmlspecialchars_decode($row["Code"]);

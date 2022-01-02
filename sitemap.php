@@ -24,7 +24,7 @@
    </url>
   <?php
     /* Prints all sites out */
-    $sql = "SELECT * FROM Sites";
+    $sql = "SELECT * FROM pages";
     $dbRes = mysqli_query($U->db_link, $sql);
     while ($row = mysqli_fetch_array( $dbRes, MYSQLI_ASSOC)){
       echo "<url><loc>".$USOC["DOMAIN"]."/".$row["Name"]."</loc><changefreq>weekly</changefreq></url>";

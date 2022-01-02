@@ -19,7 +19,7 @@
   // Dark/Light mode switch
   if(isset($_COOKIE["css"])){
     if($_COOKIE["css"] == "l"){
-      echo '<link rel="stylesheet" href="'.$USOC["DOMAIN"].'/styles/'.$U->getSetting("style.light.filename").'" type="text/css" />';
+      echo '<'.$USOC["DOMAIN"].'/styles/'.$U->getSetting("style.light.filename").'" type="text/css" />';
     }elseif ($_COOKIE["css"] == "d") {
       echo '<link rel="stylesheet" href="'.$USOC["DOMAIN"].'/styles/'.$U->getSetting("style.dark.filename").'" type="text/css" />';
     }else{

@@ -1,5 +1,9 @@
+FallbackResource /pagenew.php
 
-FallbackResource /page.php
+<Files ~ ".inc.php$">
+Order allow,deny
+Deny from all
+</Files>
 
 ErrorDocument 400 /error?E=400
 ErrorDocument 403 /error?E=403

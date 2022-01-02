@@ -1,0 +1,41 @@
+<meta charset="%1" />
+<title>%2</title>
+<link rel="stylesheet" href="%3" type="text/css" />
+<script>
+    function switchStyle(c){
+        document.cookie = "css=" + c;
+        location.reload();
+    }
+    // Checks if javascript is enabled
+    document.addEventListener("DOMContentLoaded", function(event) {
+        document.getElementsByClassName("noscript")[0].style ="display:none;"
+        document.getElementsByTagName("header")[0].style ="display:block;"
+        document.getElementsByTagName("footer")[0].style ="display:block;"
+        document.getElementsByTagName("article")[0].style ="display:block;"
+    })
+</script>
+
+<style>
+    header, footer, article {
+        display: none;
+    }
+    .noscript {
+        display: block;
+    }
+</style>
+
+<script>
+    window.addEventListener('storage', () => {
+        if(localStorage.getItem('LogOut') == "1"){
+            location.href = "%4";
+        }
+    });
+</script>
+
+<!-- Meta data -->
+<meta name="author" content="%5">
+<meta name="description" content="%6">
+<meta name="keywords" content="%7">
+<meta http-equiv="content-language" content="%8">
+<meta name="robots" content="%9">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
