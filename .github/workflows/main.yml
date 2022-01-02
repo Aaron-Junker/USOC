@@ -1,0 +1,12 @@
+name: PhpDocumentor
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: aaron-junker/actions-phpDocumentor@1.0
+      - with:
+         dir: './'
