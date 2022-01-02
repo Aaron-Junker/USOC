@@ -13,3 +13,9 @@ jobs:
           ignore: master
           min_length: 5
           max_length: 1000
+      - name: Commit changes
+        run: |
+          git config --global user.name 'Aaron-Junker'
+          git config --global user.email 'aaron.junker@edu.sh.ch'
+          git commit -am "Push Docs"
+          git push
