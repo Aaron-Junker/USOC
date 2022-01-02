@@ -37,6 +37,10 @@ jobs:
     needs: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Download build zip
+        uses: actions/download-artifact@v2.1.0
+        with:
+          name: Release
       - name: Create Tag
         uses: negz/create-tag@v1
         with:
@@ -45,5 +49,8 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1.9.0
         with:
+          tag: ${{ secrets.NEW_VERSION }}
+        with:
           artifact: Release
           artifactContentType: zip
+          
