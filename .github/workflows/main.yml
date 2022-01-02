@@ -9,3 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: aaron-junker/actions-phpDocumentor@2.1
+      - shell: bash
+        run: |
+          echo "test"
+          git config --global user.name 'Aaron-Junker'
+          git config --global user.email 'aaron.junker@edu.sh.ch'
+          git commit -am "Push Docs"
+          git push
