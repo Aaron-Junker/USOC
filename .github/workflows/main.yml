@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: aaron-junker/actions-phpDocumentor@2.0
         with:
-         dir: $GITHUB_WORKSPACE
+         dir: ${{GITHUB_WORKSPACE}}
