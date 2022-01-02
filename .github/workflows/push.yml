@@ -15,6 +15,7 @@ jobs:
           max_length: 1000
       - name: Commit changes
         run: |
+          echo "test"
           git config --global user.name 'Aaron-Junker'
           git config --global user.email 'aaron.junker@edu.sh.ch'
           git commit -am "Push Docs"
