@@ -2,7 +2,7 @@ name: build
 on:
   workflow_dispatch:
 jobs:
-  greeting:
+  PrepareBuild:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,6 +24,9 @@ jobs:
         run: |
           rm composer.json
           rm phpdoc.dist.xml
+  ArtifactCreation:
+    runs-on: ubuntu-latest
+    steps:
       - name: Create zip file
         uses: TheDoctor0/zip-release@0.6.0
         with:
