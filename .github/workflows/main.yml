@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: aaron-junker/actions-phpDocumentor@1.0
-      - with:
+        with:
          dir: './'
