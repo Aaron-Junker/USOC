@@ -26,19 +26,19 @@
             <?php
                 if(isset($_GET["Name"])){
                     if($_GET["Name"] !== ""){
-                        $sql = "SELECT * FROM User WHERE Username='".$_GET["Name"]."';";
+                        $sql = "SELECT * FROM User WHERE Username='".mysqli::real_escape_string($_GET["Name"])."';";
                         $dbRes = mysqli_query($U->db_link, $sql);
                     }
                 }
                 if(isset($_GET["Mail"])){
                     if($_GET["Mail"] !== ""){
-                        $sql = "SELECT * FROM User WHERE Mail='".$_GET["Mail"]."';";
+                        $sql = "SELECT * FROM User WHERE Mail='".mysqli::real_escape_string($_GET["Mail"])."';";
                         $dbRes = mysqli_query($U->db_link, $sql);
                     }
                 }
                 if(isset($_GET["Id"])){
                     if($_GET["Id"] !== ""){
-                        $sql = "SELECT * FROM User WHERE Id='".$_GET["Id"]."';";
+                        $sql = "SELECT * FROM User WHERE Id='".mysqli::real_escape_string($_GET["Id"])."';";
                         $dbRes = mysqli_query($U->db_link, $sql);
                     }
                 }
