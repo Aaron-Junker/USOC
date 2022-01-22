@@ -43,3 +43,7 @@ class ContentPlugin
 }
 
 $a = new ContentPlugin("Test", "Test", "Test", "Test", "Test", function(){return "a";}, function(){}, function(){}, function(){});
+
+$contentPlugins[] = $a;
+echo ($contentPlugins[0]->addHandler)();
+echo $contentPlugins[0]->addHandler->__invoke();

@@ -55,6 +55,9 @@
 * When you just accessed a page under "/login", which didn't exist you wasn't able to log in with google anymore.
 # Pb2.4Bfx1
 ## Fixed bugs
+* Fixed a security bug
+# Pb2.4Bfx1
+## Fixed bugs
 * Some debug function were still in the image plugin
 # Pb2.4Bfx0
 > USOC now supports PHP8. Through a backwards compatibity script it still supports PHP7.4.
