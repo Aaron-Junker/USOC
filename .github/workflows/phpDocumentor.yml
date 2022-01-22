@@ -1,0 +1,20 @@
+name: PhpDocumentor
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run php Documentor
+        uses: aaron-junker/actions-phpDocumentor@2.1
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config --global user.name 'Aaron-Junker'
+          git config --global user.email 'aaron.junker@edu.sh.ch'
+          git commit -am "Push Docs"
+          git push

@@ -57,7 +57,7 @@
   if($register){
     //Register succeeded:
     //Register user
-    $sql = 'INSERT INTO User (Username, Mail, Password, Type) VALUES ('."'".$_POST["U"]."'".','."'".$_POST["M"]."'".','."'".password_hash($_POST["P"],PASSWORD_DEFAULT)."'".','.$USOC["userRights"]["AfterRegistration"].');';
+    $sql = 'INSERT INTO User (Username, Mail, Password, Type) VALUES ('."'".mysqli::real_escape_string($_POST["U"])."'".','."'".mysqli::real_escape_string($_POST["M"])."'".','."'".password_hash(mysqli::real_escape_string($_POST["P"]),PASSWORD_DEFAULT)."'".','.$USOC["userRights"]["AfterRegistration"].');';
     if($dbRes = mysqli_query($U->db_link, $sql)){
       //Database register is succeeded
       echo $U->getLang("register.succeed");
