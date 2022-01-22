@@ -676,75 +676,65 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#function_getLangText"
         },                {
-            "fqsen": "\\USOC\\Plugin\\Plugin",
-            "name": "Plugin",
-            "summary": "",
-            "url": "classes/USOC-Plugin-Plugin.html"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\Plugin\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "",
-            "url": "classes/USOC-Plugin-Plugin.html#method_getName"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\Plugin\u003A\u003AgetVersion\u0028\u0029",
-            "name": "getVersion",
-            "summary": "",
-            "url": "classes/USOC-Plugin-Plugin.html#method_getVersion"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\Plugin\u003A\u003AgetDisplayName\u0028\u0029",
-            "name": "getDisplayName",
-            "summary": "",
-            "url": "classes/USOC-Plugin-Plugin.html#method_getDisplayName"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\Plugin\u003A\u003A\u0024Name",
-            "name": "Name",
-            "summary": "",
-            "url": "classes/USOC-Plugin-Plugin.html#property_Name"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\Plugin\u003A\u003A\u0024Version",
-            "name": "Version",
-            "summary": "",
-            "url": "classes/USOC-Plugin-Plugin.html#property_Version"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\Plugin\u003A\u003A\u0024DisplayName",
-            "name": "DisplayName",
-            "summary": "",
-            "url": "classes/USOC-Plugin-Plugin.html#property_DisplayName"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\Plugin\u003A\u003A\u0024PackageVersion",
-            "name": "PackageVersion",
-            "summary": "",
-            "url": "classes/USOC-Plugin-Plugin.html#property_PackageVersion"
-        },                {
             "fqsen": "\\USOC\\Plugin\\ContentPlugin",
             "name": "ContentPlugin",
             "summary": "",
             "url": "classes/USOC-Plugin-ContentPlugin.html"
         },                {
-            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003AgetPackageVersion\u0028\u0029",
-            "name": "getPackageVersion",
-            "summary": "",
-            "url": "classes/USOC-Plugin-ContentPlugin.html#method_getPackageVersion"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024PackageVersion",
-            "name": "PackageVersion",
-            "summary": "",
-            "url": "classes/USOC-Plugin-ContentPlugin.html#property_PackageVersion"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\PagePlugin",
-            "name": "PagePlugin",
-            "summary": "",
-            "url": "classes/USOC-Plugin-PagePlugin.html"
-        },                {
-            "fqsen": "\\USOC\\Plugin\\PagePlugin\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/USOC-Plugin-PagePlugin.html#method___construct"
+            "url": "classes/USOC-Plugin-ContentPlugin.html#method___construct"
         },                {
-            "fqsen": "\\USOC\\Plugin\\PagePlugin\u003A\u003A\u0024Name",
-            "name": "Name",
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "Name\u0020of\u0020the\u0020database\u0020table",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_name"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024DisplayName",
+            "name": "DisplayName",
+            "summary": "Name\u0020of\u0020the\u0020plugin\u0020shown\u0020for\u0020the\u0020user.",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_DisplayName"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024Author",
+            "name": "Author",
             "summary": "",
-            "url": "classes/USOC-Plugin-PagePlugin.html#property_Name"
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_Author"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024infoUrl",
+            "name": "infoUrl",
+            "summary": "",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_infoUrl"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024Url",
+            "name": "Url",
+            "summary": "",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_Url"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024addHandler",
+            "name": "addHandler",
+            "summary": "",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_addHandler"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024editHandler",
+            "name": "editHandler",
+            "summary": "",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_editHandler"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024deleteHandler",
+            "name": "deleteHandler",
+            "summary": "",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_deleteHandler"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024viewHandler",
+            "name": "viewHandler",
+            "summary": "",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_viewHandler"
+        },                {
+            "fqsen": "\\USOC\\Plugin\\ContentPlugin\u003A\u003A\u0024html",
+            "name": "html",
+            "summary": "",
+            "url": "classes/USOC-Plugin-ContentPlugin.html#property_html"
         },                {
             "fqsen": "\\USOC\\Style\\Style",
             "name": "Style",
