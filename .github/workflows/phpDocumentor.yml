@@ -15,7 +15,7 @@ jobs:
         shell: bash
         run: |
           git add .
-          git config --global user.name 'Aaron-Junker'
-          git config --global user.email 'aaron.junker@edu.sh.ch'
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" 
           git commit -am "Push Docs"
           git push
