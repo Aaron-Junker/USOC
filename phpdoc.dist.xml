@@ -21,6 +21,16 @@
                 <path>.git/**/*</path>
             </ignore>
         </api>
-
+        <guide>
+            <source dsn=".">
+                <path>docs</path>
+            </source>
+            <output>guide</output>
+            <ignore hidden="true" symlinks="true">
+                <!--1 or more repetitions:-->
+                <path>docs/api/**/*</path>
+                <cache>docs/.phpdoc/cache/**/*</cache>
+            </ignore>
+        </guide>
     </version>
 </phpdocumentor>
