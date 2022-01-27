@@ -11,6 +11,7 @@
     </paths>
     <version number="latest">
         <api>
+            <output>api</output>
             <source dsn=".">
                 <path>.</path>
             </source>
@@ -22,6 +23,7 @@
             </ignore>
         </api>
         <guide>
+            <output>guide</output>
             <source dsn=".">
                 <path>docs</path>
             </source>
