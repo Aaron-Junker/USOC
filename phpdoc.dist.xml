@@ -4,11 +4,12 @@
         xmlns="https://www.phpdoc.org"
         xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
 >
+    <title>USOC - Useful simple open source CMS</title>
     <paths>
         <output>docs/api</output>
         <cache>docs/.phpdoc/cache</cache>
     </paths>
-    <version number="3.2.0">
+    <version number="latest">
         <api>
             <source dsn=".">
                 <path>.</path>
@@ -16,6 +17,8 @@
             <ignore hidden="true" symlinks="true">
                 <!--1 or more repetitions:-->
                 <path>vendor/**/*</path>
+                <path>.github/**/*</path>
+                <path>.git/**/*</path>
             </ignore>
         </api>
 
