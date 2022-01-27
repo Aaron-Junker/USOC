@@ -14,6 +14,7 @@ jobs:
       - name: Commit changes
         shell: bash
         run: |
+          git add .
           git config --global user.name 'Aaron-Junker'
           git config --global user.email 'aaron.junker@edu.sh.ch'
           git commit -am "Push Docs"
