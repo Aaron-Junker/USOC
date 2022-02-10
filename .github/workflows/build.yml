@@ -1,6 +1,9 @@
 name: build
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        required: true
 jobs:
   Build:
     runs-on: ubuntu-latest
